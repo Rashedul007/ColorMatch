@@ -41,7 +41,6 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activities.ColorMatchingActivity"></activity>
     </application>
 
 </manifest>

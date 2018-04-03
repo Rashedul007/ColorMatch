@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:2:1-47:12
+ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:2:1-46:12
 	package
 		ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:3:5-47
 		INJECTED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml
@@ -30,7 +30,7 @@ ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:
 	android:name
 		ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:8:22-62
 application
-ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:10:5-45:19
+ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:10:5-44:19
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\rhsha\.android\build-cache\42e5c4310a0446b7e29e4c72d43df7b266b78913\output\AndroidManifest.xml:9:5-20
 MERGED from [com.android.support:design:25.2.0] C:\Users\rhsha\.android\build-cache\26d84c54594d21bcd364c37c76660fa17ecfb9a0\output\AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:appcompat-v7:25.2.0] C:\Users\rhsha\.android\build-cache\c9b42a3b152657a33136fa32211659fdd3c4cc0c\output\AndroidManifest.xml:25:5-20
@@ -92,10 +92,6 @@ activity#com.simlelifesolution.colormatch.Activities.PaletteDetailsActivity
 ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:39:9-43:20
 	android:name
 		ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:39:19-68
-activity#com.simlelifesolution.colormatch.Activities.ColorMatchingActivity
-ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:44:9-79
-	android:name
-		ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:44:19-67
 uses-sdk
 INJECTED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\rhsha\.android\build-cache\42e5c4310a0446b7e29e4c72d43df7b266b78913\output\AndroidManifest.xml:5:5-7:41
