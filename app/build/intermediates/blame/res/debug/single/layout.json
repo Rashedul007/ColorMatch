@@ -24,12 +24,12 @@
         "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\layout\\activity_details.xml"
     },
     {
-        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_lines_media.xml",
-        "source": "C:\\Users\\rhsha\\.android\\build-cache\\c9b42a3b152657a33136fa32211659fdd3c4cc0c\\output\\res\\layout\\notification_template_lines_media.xml"
-    },
-    {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_time.xml",
         "source": "C:\\Users\\rhsha\\.android\\build-cache\\c9b42a3b152657a33136fa32211659fdd3c4cc0c\\output\\res\\layout\\notification_template_part_time.xml"
+    },
+    {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_lines_media.xml",
+        "source": "C:\\Users\\rhsha\\.android\\build-cache\\c9b42a3b152657a33136fa32211659fdd3c4cc0c\\output\\res\\layout\\notification_template_lines_media.xml"
     },
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_view.xml",
@@ -166,6 +166,10 @@
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_layout.xml",
         "source": "C:\\Users\\rhsha\\.android\\build-cache\\c9b42a3b152657a33136fa32211659fdd3c4cc0c\\output\\res\\layout\\abc_action_menu_layout.xml"
+    },
+    {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_color_matching.xml",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\layout\\activity_color_matching.xml"
     },
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_singlechoice_material.xml",
