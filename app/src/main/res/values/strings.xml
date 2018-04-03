@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Color Match</string>
+    <string name="upload_url">http://simple-life-solutions.com/ceye/getcolours.php</string>
+    <string name="color_picker_button_chooser">Add To Palette: </string>
+
+    <string-array name="country_arrays">
+        <item>Apple</item>
+        <item>Banana</item>
+        <item>Orange</item>
+        <item>Mango</item>
+        <item>Pineapple</item>
+        <item>Strawberry</item>
+        <item>Cranberry</item>
+    </string-array>
+
+</resources>

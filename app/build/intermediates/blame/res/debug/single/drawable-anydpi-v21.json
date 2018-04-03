@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_list_black_24dp.xml",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_list_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\design_ic_visibility_off.xml",
+        "source": "C:\\Users\\rhsha\\.android\\build-cache\\26d84c54594d21bcd364c37c76660fa17ecfb9a0\\output\\res\\drawable-anydpi-v21\\design_ic_visibility_off.xml"
+    },
+    {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\design_ic_visibility.xml",
+        "source": "C:\\Users\\rhsha\\.android\\build-cache\\26d84c54594d21bcd364c37c76660fa17ecfb9a0\\output\\res\\drawable-anydpi-v21\\design_ic_visibility.xml"
+    },
+    {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_add_op18.xml",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_add_op18.xml"
+    }
+]
