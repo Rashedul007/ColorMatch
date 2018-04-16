@@ -3,6 +3,10 @@
     <string name="upload_url">http://simple-life-solutions.com/ceye/getcolours.php</string>
     <string name="color_picker_button_chooser">Add To Palette: </string>
 
+<!-- ................. Common fileds used ...................  -->
+    <string name="common_log">LogColorMatch</string>
+<!--............................................................. -->
+
     <string-array name="country_arrays">
         <item>Apple</item>
         <item>Banana</item>

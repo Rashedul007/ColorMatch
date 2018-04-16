@@ -11,7 +11,7 @@
     <!--for cardview & recyclerview-->
     <dimen name="card_margin">5dp</dimen>
     <dimen name="card_album_radius">5dp</dimen>
-    <dimen name="album_cover_height">160dp</dimen>
+    <dimen name="album_cover_height">100dp</dimen>
     <dimen name="album_cover_height_details">100dp</dimen>
     <dimen name="album_title_padding">10dp</dimen>
     <dimen name="album_title">15sp</dimen>
@@ -23,5 +23,8 @@
     <dimen name="colrviewsize_height">20dp</dimen>
     <dimen name="colrviewsize_width">25dp</dimen>
     <dimen name="colrviewpadding">2dp</dimen>
-    <!--.............................-->
+
+    <!--...... for colormatch...............-->
+    <dimen name="album_coverht_clrmatch">100dp</dimen>
+
 </resources>

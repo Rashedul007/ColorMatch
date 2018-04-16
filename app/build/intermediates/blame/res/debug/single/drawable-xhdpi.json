@@ -1,14 +1,14 @@
 [
     {
-        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_add_op18.png",
-        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_add_op18.png"
-    },
-    {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_delete.png",
         "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\drawable-xhdpi\\ic_delete.png"
     },
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_list_black_24dp.png",
         "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_list_black_24dp.png"
+    },
+    {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_add_op.png",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_add_op.png"
     }
 ]

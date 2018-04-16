@@ -24,17 +24,20 @@ import java.util.Comparator;
 
 public class PaletteListActivity extends AppCompatActivity
 {
-    private DatabaseHelper mDbHelper = new DatabaseHelper(this);
+//region...... variables declaration
+    private DatabaseHelper mDbHelper;
 
     private RecyclerView mRecyclerView;
     private MyRecycleAdapter_PaletteList mAdapter;
     private static final int SPAN_COUNT = 2;
+//endregion
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_color_palette_list);
 
+        mDbHelper = new DatabaseHelper(this);
         mRecyclerView= (RecyclerView)findViewById(R.id.rcView_paletteList);
 
        // func_getAllPalettesFromDb();
@@ -105,13 +108,15 @@ public class PaletteListActivity extends AppCompatActivity
         mAdapter.setOnItemClickListener(new MyRecycleAdapter_PaletteList.onRecyclerViewItemClickListener()
         {
             @Override
-            public void onItemClickListener(View view, int position, String pltID, String pltNm)
+            public void onItemClickListener(View view, int position, String pltID, String pltNm, String cvr_flag, String cvr_ID)
             {
                    // Toast.makeText(PaletteListActivity.this,"Palette clicked at position:: " + position +"---paletteid::" + pltID, Toast.LENGTH_SHORT).show();
 
                 Intent intent_DetailsAct = new Intent(PaletteListActivity.this, PaletteDetailsActivity.class);
                     intent_DetailsAct.putExtra("xtra_pltID_fromListClk", pltID);
                     intent_DetailsAct.putExtra("xtra_pltName_fromListClk", pltNm);
+                    intent_DetailsAct.putExtra("xtra_pltCoverFlag_fromListClk", cvr_flag);
+                    intent_DetailsAct.putExtra("xtra_pltCoverID_fromListClk", cvr_ID);
                 startActivity(intent_DetailsAct);
             }
         });

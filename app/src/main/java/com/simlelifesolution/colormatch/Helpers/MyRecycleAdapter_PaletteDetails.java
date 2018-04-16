@@ -1,8 +1,10 @@
 package com.simlelifesolution.colormatch.Helpers;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -45,7 +47,8 @@ public class MyRecycleAdapter_PaletteDetails extends RecyclerView.Adapter<MyRecy
     }
 
     public interface onRecyclerViewItemClickListener {
-        void onItemClickListener(View view, int position,String flag_clrImg, String clrOrImgID);
+        //void onItemClickListener(View view, int position,String flag_clrImg, String clrOrImgID, String clrCd);
+        void onItemClickListener(View view, int position,String flag_clrImg, BeanObject mBeanObj);
     }
 
 
@@ -70,6 +73,8 @@ public class MyRecycleAdapter_PaletteDetails extends RecyclerView.Adapter<MyRecy
 
         @Override
         public void onClick(View v) {
+            String clrcod="0";
+
             if (mItemClickListener != null) {
                 str_id_clicked="";
 
@@ -88,9 +93,10 @@ public class MyRecycleAdapter_PaletteDetails extends RecyclerView.Adapter<MyRecy
                     BeanColor _clrObj = (BeanColor)_beanObj.getAnyObjLst();
                     flag_imgOrClr_clicked = "color";
                     str_id_clicked = _clrObj.getColorId();
+                    clrcod = _clrObj.getColorCode();
                 }
-
-               mItemClickListener.onItemClickListener(v, getAdapterPosition(), flag_imgOrClr_clicked, str_id_clicked);
+                mItemClickListener.onItemClickListener(v, getAdapterPosition(), flag_imgOrClr_clicked, _beanObj);
+             //  mItemClickListener.onItemClickListener(v, getAdapterPosition(), flag_imgOrClr_clicked, str_id_clicked, clrcod);
             }
         }
     }
@@ -110,16 +116,20 @@ public class MyRecycleAdapter_PaletteDetails extends RecyclerView.Adapter<MyRecy
       final   BeanObject  _beanObj = mbeanAllObj.get(position);
       final String flag_imgOrClr = _beanObj.getFlag_imgOrClr();
 
+//region...... if object is of type "image" then set image for imgVw
        if(flag_imgOrClr.equals("image"))
         {
             BeanImage _imgObj = (BeanImage)_beanObj.getAnyObjLst();
 
-            Drawable d = Drawable.createFromPath(_imgObj.getimagePath());
+            Drawable d = Drawable.createFromPath(_imgObj.getThumbPath());
             holder.mImgVw.setBackground(d);
 
             holder.mTxtVw.setText(_imgObj.getimageName() );
             holder.mDeleteButton.setTag(_imgObj.getimageId());
         }
+//endregion
+
+//region...... if object is of type "color" then set color as background of imgVw
         else if(flag_imgOrClr.equals("color"))
         {
             BeanColor _clrObj = (BeanColor)_beanObj.getAnyObjLst();
@@ -130,23 +140,44 @@ public class MyRecycleAdapter_PaletteDetails extends RecyclerView.Adapter<MyRecy
             holder.mTxtVw.setText(_clrObj.getColorName());
             holder.mDeleteButton.setTag(_clrObj.getColorId());
         }
-
+//endregion
 
         holder.mDeleteButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-               // Log.e("DBDel",  "AdapterPos:: "+ position + " ID::"+ holder.mDeleteButton.getTag() + "\n");
-                myDbHelper.deletePaletteItem(holder.mDeleteButton.getTag().toString(), flag_imgOrClr);
+ //region...............Delete button ................
+                DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        switch (which){
+                            case DialogInterface.BUTTON_POSITIVE:
 
-//----------to rearrange the list
-                mbeanAllObj.remove(position);
-                notifyItemRemoved(position);
-                notifyItemRangeChanged(position, mbeanAllObj.size());
-                notifyDataSetChanged();
+                                myDbHelper.deletePaletteItem(holder.mDeleteButton.getTag().toString(), flag_imgOrClr);
+
+                                mbeanAllObj.remove(position);
+                                notifyItemRemoved(position);
+                                notifyItemRangeChanged(position, mbeanAllObj.size());
+                                notifyDataSetChanged();
+
+
+                                break;
+
+                            case DialogInterface.BUTTON_NEGATIVE:
+                                //
+                                break;
+                        }
+                    }
+                };
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
+                builder.setMessage("Are you sure you want to delete the item?").setPositiveButton("Yes", dialogClickListener)
+                        .setNegativeButton("No", dialogClickListener).show();
+
+ //endregion
             }
         });
-
     }
+
 
     private Boolean chkImageExist(String pth)
     {

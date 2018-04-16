@@ -16,6 +16,10 @@
         "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
     },
     {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi\\ico_plus.png",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\mipmap-xxxhdpi\\ico_plus.png"
+    },
+    {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi\\colorpicker.png",
         "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\mipmap-xxxhdpi\\colorpicker.png"
     },

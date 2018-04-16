@@ -56,6 +56,7 @@ public class DatabaseHelper extends SQLiteOpenHelper
     private static final String KEY_IMAGEID_PK = "imageid_pk";
     private static final String KEY_MAINID_FK_IMG = "paletteid_fk_img";
     private static final String KEY_IMAGE_PATH = "image_path";
+    private static final String KEY_THUMB_PATH = "thumbnail_path";
     private static final String KEY_IMAGE_NAME = "image_name";
     private static final String KEY_IMAGE_UPDATEDT = "update_dt";
 
@@ -77,7 +78,7 @@ public class DatabaseHelper extends SQLiteOpenHelper
 
     // IMAGE table create statement
     private static final String CREATE_TABLE_IMAGE = "CREATE TABLE " + TABLE_IMAGE + "("
-            + KEY_IMAGEID_PK + " INTEGER  NOT NULL PRIMARY KEY AUTOINCREMENT," + KEY_MAINID_FK_IMG + " INTEGER  NOT NULL," + KEY_IMAGE_PATH + " TEXT,"
+            + KEY_IMAGEID_PK + " INTEGER  NOT NULL PRIMARY KEY AUTOINCREMENT," + KEY_MAINID_FK_IMG + " INTEGER  NOT NULL," + KEY_IMAGE_PATH + " TEXT," + KEY_THUMB_PATH + " TEXT,"
             + KEY_IMAGE_NAME + " TEXT NOT NULL UNIQUE," + KEY_IMAGE_UPDATEDT + " TEXT,"
             + " FOREIGN KEY(" + KEY_MAINID_FK_IMG + ") REFERENCES " + TABLE_MAIN +"("+KEY_MAIN_ID_PK+")"
             + ")";
@@ -176,6 +177,7 @@ public class DatabaseHelper extends SQLiteOpenHelper
        // values.put(KEY_IMAGEID_PK, objImage.getimageId());
         values.put(KEY_MAINID_FK_IMG, Integer.valueOf(objImage.getPaletteID()));
         values.put(KEY_IMAGE_PATH, objImage.getimagePath());
+        values.put(KEY_THUMB_PATH, objImage.getThumbPath());
         values.put(KEY_IMAGE_NAME, objImage.getimageName());
         values.put(KEY_IMAGE_UPDATEDT, getDateTime());
 
@@ -183,6 +185,29 @@ public class DatabaseHelper extends SQLiteOpenHelper
         long imageTblIn_id = db.insert(TABLE_IMAGE, null, values);
 
         return imageTblIn_id;
+    }
+
+
+//////////////////////////////////////////////////// ---- For adding cover in palette table
+
+    public long updateCoverInPalette(String pltID, String flagImgOrClr, String imgOrClrID)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+
+            values.put(KEY_COVERID_FLAG, flagImgOrClr );
+            values.put(KEY_COVERID, imgOrClrID );
+            values.put(KEY_MAIN_UPDATEDT, getDateTime());
+
+        // insert row
+        //long mainTblIn_id = db.insert(TABLE_MAIN, null, values);
+
+        long mainTblIn_id =  db.update(TABLE_MAIN, values, "paletteid_pk = ?", new String[]{pltID});
+
+       Log.d("dbResult", "update value:: "+ mainTblIn_id);
+
+        return mainTblIn_id;
     }
 
 
@@ -219,7 +244,7 @@ public class DatabaseHelper extends SQLiteOpenHelper
 
         String selectQuery = "SELECT  * FROM " + TABLE_MAIN;
 
-        Log.e(LOG, selectQuery);
+        Log.d(LOG, selectQuery);
 
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = db.rawQuery(selectQuery, null);
@@ -251,7 +276,7 @@ public class DatabaseHelper extends SQLiteOpenHelper
         else if(lmt == 0)
             selectQuery = "SELECT  * FROM " + TABLE_COLOR + " WHERE paletteid_fk_clr=" + Integer.valueOf(pltID) + "  ORDER BY update_dt";
 
-        Log.e("LogDbPLt", selectQuery + "\n");
+        Log.d("LogDbPLt", selectQuery + "\n");
 
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = db.rawQuery(selectQuery, null);
@@ -274,7 +299,7 @@ public class DatabaseHelper extends SQLiteOpenHelper
 
     public ArrayList<BeanImage> getImageListFromPaletteID(String pltID, int lmt)
     {
-        ArrayList<BeanImage> mImageList = new ArrayList<BeanImage>();
+         ArrayList<BeanImage> mImageList = new ArrayList<BeanImage>();
 
         String selectQuery = "";
 
@@ -282,7 +307,7 @@ public class DatabaseHelper extends SQLiteOpenHelper
             selectQuery = "SELECT  * FROM " + TABLE_IMAGE + " WHERE paletteid_fk_img=" + Integer.valueOf(pltID) + "  ORDER BY update_dt limit "+lmt;
         else if(lmt == 0)
             selectQuery = "SELECT  * FROM " + TABLE_IMAGE + " WHERE paletteid_fk_img=" + Integer.valueOf(pltID) + "  ORDER BY update_dt";
-        Log.e("LogDbPLt", selectQuery + "\n");
+        Log.d("LogDbPLt", selectQuery + "\n");
 
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = db.rawQuery(selectQuery, null);
@@ -293,6 +318,7 @@ public class DatabaseHelper extends SQLiteOpenHelper
                 mImageObj.setimageId(c.getString(c.getColumnIndex(KEY_IMAGEID_PK)));
                 mImageObj.setPaletteID(c.getString(c.getColumnIndex(KEY_MAINID_FK_IMG)));
                 mImageObj.setimagePath(c.getString(c.getColumnIndex(KEY_IMAGE_PATH)));
+                mImageObj.setThumbPath(c.getString(c.getColumnIndex(KEY_THUMB_PATH)));
                 mImageObj.setimageName(c.getString(c.getColumnIndex(KEY_IMAGE_NAME)));
                 mImageObj.setUpdateTime(c.getString(c.getColumnIndex(KEY_IMAGE_UPDATEDT)));
 
@@ -301,9 +327,42 @@ public class DatabaseHelper extends SQLiteOpenHelper
         }
 
         return mImageList;
+      }
+
+
+//--------------------------- fetch by ID's
+
+    public BeanColor getColorFromColorID(String clr_ID)
+    {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor c = db.query(TABLE_COLOR, new String[]{KEY_COLORID_PK, KEY_MAINID_FK_CLR, KEY_COLOR_CODE, KEY_COLOR_NAME, KEY_COLOR_UPDATEDT},
+                                    KEY_COLORID_PK + "=?", new String[]{String.valueOf(clr_ID)},
+                                        null, null, null, null);
+        if (c != null)
+            c.moveToFirst();
+
+        BeanColor _clrObj = new BeanColor( c.getString(c.getColumnIndex(KEY_COLORID_PK)), c.getString(c.getColumnIndex(KEY_MAINID_FK_CLR)),
+                                             c.getString(c.getColumnIndex(KEY_COLOR_CODE)), c.getString(c.getColumnIndex(KEY_COLOR_NAME)), c.getString(c.getColumnIndex(KEY_COLOR_UPDATEDT))  );
+        return _clrObj;
     }
 
-//method to get now dateTime
+    public BeanImage getImageFromImageID(String img_ID)
+    {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor c = db.query(TABLE_IMAGE, new String[]{KEY_IMAGEID_PK, KEY_MAINID_FK_IMG, KEY_IMAGE_PATH, KEY_THUMB_PATH, KEY_IMAGE_NAME, KEY_IMAGE_UPDATEDT },
+                KEY_IMAGEID_PK + "=?", new String[]{String.valueOf(img_ID)},
+                null, null, null, null);
+        if (c != null)
+            c.moveToFirst();
+
+        BeanImage _imgObj = new BeanImage( c.getString(c.getColumnIndex(KEY_IMAGEID_PK)), c.getString(c.getColumnIndex(KEY_MAINID_FK_IMG)), c.getString(c.getColumnIndex(KEY_IMAGE_PATH)),
+                                                c.getString(c.getColumnIndex(KEY_THUMB_PATH)), c.getString(c.getColumnIndex(KEY_IMAGE_NAME)), c.getString(c.getColumnIndex(KEY_IMAGE_UPDATEDT)) );
+        return _imgObj;
+    }
+
+//////////////////////////////////////////////////////method to get now dateTime
     private String getDateTime() {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         Date date = new Date();
@@ -337,7 +396,7 @@ public class DatabaseHelper extends SQLiteOpenHelper
     {
         SQLiteDatabase db = this.getWritableDatabase();
         int res=0;
-        Log.e("DBDel", "passedID::" + m_id + " flag::"+ flg);
+        Log.d("DBDel", "passedID::" + m_id + " flag::"+ flg);
         db.beginTransaction();
         try {
             if(flg.equals("image"))
@@ -352,10 +411,9 @@ public class DatabaseHelper extends SQLiteOpenHelper
         finally{
             db.endTransaction();
             db.close();
-            Log.e("DBDel", "deleted row::" + res);
+            Log.d("DBDel", "deleted row::" + res);
         }
     }
-
 
 
 //////////////////////////////// checkings
@@ -387,8 +445,6 @@ public class DatabaseHelper extends SQLiteOpenHelper
         else
             return false;
     }
-
-
 
     public void getDBVersion_fkCheck()
     {

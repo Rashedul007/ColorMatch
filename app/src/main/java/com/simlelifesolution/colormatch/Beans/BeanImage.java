@@ -8,16 +8,18 @@ public class BeanImage implements Parcelable
     private String imageId;
     private String paletteID;
     private String imagePath;
+    private String thumbPath;
     private String imageName;
     private String updateTime;
 
     public BeanImage(){}
 
-    public BeanImage(String _imageID, String _palateID, String _imagepth, String _imageName, String _updateTime)
+    public BeanImage(String _imageID, String _palateID, String _imagepth, String _thumbpth, String _imageName, String _updateTime)
     {
         this.imageId = _imageID;
         this.paletteID = _palateID;
         this.imagePath = _imagepth;
+        this.thumbPath = _thumbpth;
         this.imageName = _imageName;
         this.updateTime = _updateTime;
     }
@@ -34,6 +36,7 @@ public class BeanImage implements Parcelable
         dest.writeString(this.imageId);
         dest.writeString(this.paletteID);
         dest.writeString(this.imagePath);
+        dest.writeString(this.thumbPath);
         dest.writeString(this.imageName);
         dest.writeString(this.updateTime);
     }
@@ -42,6 +45,7 @@ public class BeanImage implements Parcelable
         this.imageId = in.readString();
         this.paletteID = in.readString();
         this.imagePath = in.readString();
+        this.thumbPath = in.readString();
         this.imageName = in.readString();
         this.updateTime = in.readString();
     }
@@ -97,4 +101,11 @@ public class BeanImage implements Parcelable
         this.updateTime = updateTime;
     }
 
+    public String getThumbPath() {
+        return thumbPath;
+    }
+
+    public void setThumbPath(String thumbPath) {
+        this.thumbPath = thumbPath;
+    }
 }

@@ -1,12 +1,17 @@
 package com.simlelifesolution.colormatch.Activities;
 
 
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -16,6 +21,8 @@ import com.simlelifesolution.colormatch.Beans.BeanImage;
 import com.simlelifesolution.colormatch.Beans.BeanMain;
 import com.simlelifesolution.colormatch.Beans.BeanObject;
 import com.simlelifesolution.colormatch.Helpers.DatabaseHelper;
+import com.simlelifesolution.colormatch.Helpers.MyColorHelper;
+import com.simlelifesolution.colormatch.Helpers.MyImageHelper;
 import com.simlelifesolution.colormatch.Helpers.MyRecycleAdapter_PaletteDetails;
 import com.simlelifesolution.colormatch.R;
 
@@ -26,17 +33,18 @@ import java.util.Comparator;
 
 public class PaletteDetailsActivity extends AppCompatActivity
 {
+//region...... variables declaration
     private Toolbar mToolbar;
 
     ImageView mImgViewCover;
     RecyclerView mRecycleVw;
 
-    String intent_pltID;
+    String intent_pltID, intent_pltName;
 
-    private DatabaseHelper mDbHelper = new DatabaseHelper(this);
+    private DatabaseHelper mDbHelper ;
     private MyRecycleAdapter_PaletteDetails mAdapter;
     private static final int SPAN_COUNT = 2;
-
+//endregion
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,8 +63,23 @@ public class PaletteDetailsActivity extends AppCompatActivity
 
         if (extras != null) {
             intent_pltID = extras.getString("xtra_pltID_fromListClk");
-           String intent_pltName = extras.getString("xtra_pltName_fromListClk");
+
+             intent_pltName = extras.getString("xtra_pltName_fromListClk");
             actionBar.setTitle(intent_pltName);
+
+            String intent_CoverFlag = extras.getString("xtra_pltCoverFlag_fromListClk");
+            String intent_CoverID = extras.getString("xtra_pltCoverID_fromListClk");
+
+            if(intent_CoverFlag.equals("color"))
+                {
+                   BeanColor _clrObj =  mDbHelper.getColorFromColorID(intent_CoverID);
+                    mImgViewCover.setBackgroundColor(Color.parseColor(_clrObj.getColorCode()));
+                }
+            else if(intent_CoverFlag.equals("image"))
+                {
+                    BeanImage _imgObj = mDbHelper.getImageFromImageID(intent_CoverID);
+                     mImgViewCover.setBackground(Drawable.createFromPath(_imgObj.getimagePath()));
+                }
         }
     }
 
@@ -69,20 +92,17 @@ public class PaletteDetailsActivity extends AppCompatActivity
 
     private void  initialize()
     {
+        mDbHelper = new DatabaseHelper(this);
         mImgViewCover = (ImageView) findViewById(R.id.imgVw_detailActivityCover);
 
         //get cover image from DB and fillup
-        mImgViewCover.setImageResource(R.mipmap.colorpicker);
+       // mImgViewCover.setImageResource(R.mipmap.colorpicker);
 
         mRecycleVw = (RecyclerView)findViewById(R.id.rcView_paletteDetails);
-
-
     }
 
     private void  func_getPaletteDetailFromDB()
     {
-        //ArrayList<BeanObjectList> mAllPaletteInfoObj_s_sorted = new ArrayList<BeanObjectList>();
-
         BeanMain mDbPltObj = mDbHelper.getPaletteObjFromID(intent_pltID);
         ArrayList<BeanImage> mDbImgList = mDbHelper.getImageListFromPaletteID(intent_pltID, 0);
         ArrayList<BeanColor> mDbClrList = mDbHelper.getColorListFromPaletteID(intent_pltID, 0);
@@ -118,14 +138,46 @@ public class PaletteDetailsActivity extends AppCompatActivity
 
         mAdapter.setOnItemClickListener(new MyRecycleAdapter_PaletteDetails.onRecyclerViewItemClickListener()
         {
+            //public void onItemClickListener(View view, int position, String flagClrImg, String clrOrImgID, String colorCd)
             @Override
-            public void onItemClickListener(View view, int position, String flagClrImg, String clrOrImgID)
+            public void onItemClickListener(View view, int position, String flagClrImg, BeanObject mBeanObj)
             {
-                Toast.makeText(PaletteDetailsActivity.this,"Palette clicked at position:: " + position +"---flag::" + flagClrImg +"---id::" + clrOrImgID, Toast.LENGTH_SHORT).show();
+//                Toast.makeText(PaletteDetailsActivity.this,"Palette clicked at position:: " + position +"---flag::" + flagClrImg +"---id::" + clrOrImgID, Toast.LENGTH_SHORT).show();
 
+                if(flagClrImg.equals("image"))
+                {// Toast.makeText(PaletteDetailsActivity.this,"This is a image....Need to work on it", Toast.LENGTH_SHORT).show();
+                    BeanImage mImgObj = (BeanImage) mBeanObj.getAnyObjLst();
+
+                    try{
+                        Bitmap mImgBitmap = MyImageHelper.getBitmapFromPath(mImgObj.getimagePath());
+                        ArrayList<String> mColorsInImgArr = new MyColorHelper().getDominantColorFromImage(mImgBitmap);
+
+                        Intent intnt = new Intent(PaletteDetailsActivity.this, ColorListFromImageActivity.class);
+                            intnt.putStringArrayListExtra("xtra_colorList", mColorsInImgArr);
+                            intnt.putExtra("xtra_inside_plt_ID", intent_pltID);
+                            intnt.putExtra("xtra_inside_plt_name", intent_pltName);
+                            intnt.putExtra("xtra_img_path", mImgObj.getimagePath());
+                        startActivity(intnt);
+                    }
+                    catch(Exception ex)
+                        {
+                            Log.e(getResources().getString(R.string.common_log), "errs:: " + ex.toString());
+                            Toast.makeText(PaletteDetailsActivity.this, "There is an error, please contact the support team!", Toast.LENGTH_SHORT);
+                        }
+
+                    //new MyColorHelper().getDominantColorFromImage()
+                }
+                else if(flagClrImg.equals("color")) {
+                    {
+                        BeanColor mClrObj = (BeanColor) mBeanObj.getAnyObjLst();
+
+                        Intent intent = new Intent(PaletteDetailsActivity.this, ColorMatchingActivity.class);
+                            intent.putExtra("intnt_colorCode", mClrObj.getColorCode());
+                        startActivity(intent);
+                    }
+                }
             }
         });
-
     }
 
 

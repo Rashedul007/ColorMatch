@@ -12,6 +12,10 @@
         "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\mipmap-hdpi\\paletteicon.png"
     },
     {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\ico_plus.png",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\mipmap-hdpi\\ico_plus.png"
+    },
+    {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\pointer_simple.png",
         "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\mipmap-hdpi\\pointer_simple.png"
     },

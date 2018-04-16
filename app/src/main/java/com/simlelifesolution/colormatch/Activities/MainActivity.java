@@ -23,6 +23,7 @@ import com.simlelifesolution.colormatch.R;
 
 public class MainActivity extends AppCompatActivity
 {
+//region...... variables declaration
     Button mCameraBtn, mGalleryBtn, mPalette, mColorPickerBtn;
     TextView mTxtVwColorCode;
     EditText mEtVwAutoCompleteColor;
@@ -38,7 +39,7 @@ public class MainActivity extends AppCompatActivity
     private SharedPreferences permissionStatus;
 
     private static final int REQUEST_COLOR_PICKER_ACTIVITY = 9;
-
+//endregion
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

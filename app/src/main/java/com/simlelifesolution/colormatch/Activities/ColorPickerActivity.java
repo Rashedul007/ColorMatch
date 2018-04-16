@@ -6,6 +6,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
@@ -24,8 +25,9 @@ import com.simlelifesolution.colormatch.R;
 
 import java.util.ArrayList;
 
-public class ColorPickerActivity extends AppCompatActivity {
-
+public class ColorPickerActivity extends AppCompatActivity
+{
+//region...... variables declaration
     private MyGradientView mTop;
     private MyGradientView mBottom;
     private TextView mTextView;
@@ -35,18 +37,21 @@ public class ColorPickerActivity extends AppCompatActivity {
 
     String colorPickerResult_hexColor ="";
 
-    private DatabaseHelper myDbHelper = new DatabaseHelper(this);
+    private DatabaseHelper myDbHelper;
     MySpinAdapter_PaletteNames mSpinnerAdapter;
     private Spinner mSpinner;
     ArrayList<BeanMain> listPaletteDB ;
     public String mpalettetNameFromSpinner ="";
     public String mpalettetIDFromSpinner ="";
+//endregion
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         View view = View.inflate(this, R.layout.activity_color_picker, null);
         setContentView(view);
+
+        myDbHelper = new DatabaseHelper(this);
         listPaletteDB = new ArrayList<BeanMain>();
 
         mIcon = getResources().getDrawable(R.mipmap.colorchk);
@@ -65,7 +70,7 @@ public class ColorPickerActivity extends AppCompatActivity {
                 mColor = color;
                 mTextView.setText("#" + Integer.toHexString(color));
                  colorPickerResult_hexColor = String.format("#%06X", (0xFFFFFF & color));
-                // Log.d("colroCHk"," Color:: " +color +"\n rgbconverted:: " +colorPickerResult_hexColor );
+                Log.d("colroCHk"," Color:: " +color +"\n rgbconverted:: " +colorPickerResult_hexColor );
 
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                     mIcon.setTint(color);
@@ -119,6 +124,14 @@ public class ColorPickerActivity extends AppCompatActivity {
                             Long dbColorInsert = myDbHelper.insert_newColor(_PaletteObj);
                             //Log.d("dbResult", "DBresult:::" + paletteID_pkDB.toString());
                             Toast.makeText(ColorPickerActivity.this, "Color inserted successfully with row no# : " + dbColorInsert, Toast.LENGTH_SHORT).show();
+
+                            if (dbColorInsert == -1)
+                                Toast.makeText(ColorPickerActivity.this, "Something went wrong when saving the color in existing palette!", Toast.LENGTH_SHORT).show();
+                            else
+                            {
+                                Toast.makeText(ColorPickerActivity.this, "Color saved succssfuly!", Toast.LENGTH_SHORT).show();
+                                Long dbUpdateCover = myDbHelper.updateCoverInPalette(mpalettetIDFromSpinner.toString(), "color", dbColorInsert.toString());
+                            }
 
                             mAlertDialog.dismiss();
                         }
@@ -202,7 +215,6 @@ public class ColorPickerActivity extends AppCompatActivity {
                             //---------------------------------------------------
                             if(paletteID_pkDB != -1)
                             {
-//                                Toast.makeText(ColorPickerActivity.this, "New Palette created successfully.", Toast.LENGTH_SHORT).show();
                                 setupSpinner_paletteList();
                                 mAlertDialog.dismiss();
 

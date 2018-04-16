@@ -34,5 +34,9 @@
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\galleryicon.png",
         "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\mipmap-xhdpi\\galleryicon.png"
+    },
+    {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ico_plus.png",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\mipmap-xhdpi\\ico_plus.png"
     }
 ]
