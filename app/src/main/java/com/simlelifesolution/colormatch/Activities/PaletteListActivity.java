@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Toast;
 
@@ -25,6 +26,8 @@ import java.util.Comparator;
 public class PaletteListActivity extends AppCompatActivity
 {
 //region...... variables declaration
+    private Toolbar mToolbar;
+
     private DatabaseHelper mDbHelper;
 
     private RecyclerView mRecyclerView;
@@ -33,9 +36,16 @@ public class PaletteListActivity extends AppCompatActivity
 //endregion
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_color_palette_list);
+
+        mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(mToolbar);
+        android.support.v7.app.ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setTitle("My Palette List");
 
         mDbHelper = new DatabaseHelper(this);
         mRecyclerView= (RecyclerView)findViewById(R.id.rcView_paletteList);
@@ -121,6 +131,12 @@ public class PaletteListActivity extends AppCompatActivity
             }
         });
 
+    }
+
+    @Override
+    public boolean onSupportNavigateUp(){
+        finish();
+        return true;
     }
 
 

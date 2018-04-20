@@ -1,0 +1,7 @@
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+       <external-path name="CameraPicture" path="."  />
+</paths>
+    <!--<external-path name="CameraPicture" path="data/data/com.simlelifesolution.mycameraapp" />-->
+    <!-- Configure shared external storage path, path value is relative to your device external storage root path ( /sdcard ). -->
+    <!--<external-path name="CameraPicture" path="Android/data/com.simlelifesolution.mycameraapp/cache/" />-->
+    <!--<internal-path name="CameraPicture" path="."  />-->
