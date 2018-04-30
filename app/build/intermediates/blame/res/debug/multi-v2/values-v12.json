@@ -4,7 +4,7 @@
             "outputFile": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v12\\values-v12.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\95cdab8bb88983eb3ad64f5f46842ff5\\res\\values-v12\\values-v12.xml",
+                    "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\values-v12\\values-v12.xml",
                     "from": {
                         "startLines": "2,5,8,9",
                         "startColumns": "4,4,4,4",

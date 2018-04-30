@@ -3,18 +3,20 @@
     <string name="upload_url">http://simple-life-solutions.com/ceye/getcolours.php</string>
     <string name="color_picker_button_chooser">Add To Palette: </string>
 
-<!-- ................. Common fileds used ...................  -->
-    <string name="common_log">LogColorMatch</string>
-<!--............................................................. -->
 
-    <string-array name="country_arrays">
-        <item>Apple</item>
-        <item>Banana</item>
-        <item>Orange</item>
-        <item>Mango</item>
-        <item>Pineapple</item>
-        <item>Strawberry</item>
-        <item>Cranberry</item>
-    </string-array>
+    <!--region.................custom camera ..........................-->
+    <string name="start_image_capture">Take a New Picture</string>
+    <string name="capture_image">Snap it!</string>
+    <string name="save_image_new">Save To New Palette</string>
+    <string name="save_image_existing">Save To Existing Palette</string>
+    <string name="recapture_image">Retake Picture</string>
+    <string name="capturing_image">Taking New Picture</string>
+    <string name="done">Done</string>
+    <!--endregion-->
+
+    <!-- region................. Common fileds used ...................  -->
+    <string name="common_log">LogColorMatch</string>
+    <!--endregion-->
+
 
 </resources>

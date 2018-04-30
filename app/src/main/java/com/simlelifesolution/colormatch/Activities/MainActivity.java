@@ -58,6 +58,7 @@ public class MainActivity extends AppCompatActivity
         mPalette = (Button)findViewById(R.id.btnMyPalette);
         mColorPickerBtn = (Button)findViewById(R.id.btnColorPicker);
         mTxtVwColorCode = (TextView)findViewById(R.id.txtVwColorCode);
+
       //  mEtVwAutoCompleteColor = (EditText)findViewById(R.id.etAutoColor);
     }
 
@@ -86,6 +87,7 @@ public class MainActivity extends AppCompatActivity
                 Intent intentPaletteActivity = new Intent(MainActivity.this, PaletteListActivity.class);
                 startActivity(intentPaletteActivity);
                 break;
+
 
             default:
                 break;

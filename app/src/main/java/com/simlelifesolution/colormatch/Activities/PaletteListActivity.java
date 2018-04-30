@@ -120,7 +120,7 @@ public class PaletteListActivity extends AppCompatActivity
             @Override
             public void onItemClickListener(View view, int position, String pltID, String pltNm, String cvr_flag, String cvr_ID)
             {
-                   // Toast.makeText(PaletteListActivity.this,"Palette clicked at position:: " + position +"---paletteid::" + pltID, Toast.LENGTH_SHORT).show();
+                   // Toast.makeText(PaletteListActivity.this,"Palette clicked at position:: " + position +"---paletteid::" + pltID_from_Spinner, Toast.LENGTH_SHORT).show();
 
                 Intent intent_DetailsAct = new Intent(PaletteListActivity.this, PaletteDetailsActivity.class);
                     intent_DetailsAct.putExtra("xtra_pltID_fromListClk", pltID);

@@ -30,10 +30,19 @@
                 android:id="@+id/btnDeletePaletteItem"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:layout_gravity="center_horizontal|right|end"
+                android:layout_gravity="center_horizontal|left|end"
                 android:background="@drawable/ic_delete"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentRight="true"/>
+
+            <Button
+                android:id="@+id/btnCustomCamera"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_horizontal|right|end"
+                android:background="@drawable/cameraicon"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"/>
 
 
             <TextView

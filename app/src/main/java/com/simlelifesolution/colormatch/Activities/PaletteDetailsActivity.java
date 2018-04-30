@@ -13,6 +13,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -143,39 +144,69 @@ public class PaletteDetailsActivity extends AppCompatActivity
             public void onItemClickListener(View view, int position, String flagClrImg, BeanObject mBeanObj)
             {
 //                Toast.makeText(PaletteDetailsActivity.this,"Palette clicked at position:: " + position +"---flag::" + flagClrImg +"---id::" + clrOrImgID, Toast.LENGTH_SHORT).show();
-
+//region.... if image
                 if(flagClrImg.equals("image"))
                 {// Toast.makeText(PaletteDetailsActivity.this,"This is a image....Need to work on it", Toast.LENGTH_SHORT).show();
                     BeanImage mImgObj = (BeanImage) mBeanObj.getAnyObjLst();
 
-                    try{
-                        Bitmap mImgBitmap = MyImageHelper.getBitmapFromPath(mImgObj.getimagePath());
-                        ArrayList<String> mColorsInImgArr = new MyColorHelper().getDominantColorFromImage(mImgBitmap);
+//region.... if instance of Button - for maera button
+                    if(view instanceof Button) {
+                        Intent intntCameraAct = new Intent(PaletteDetailsActivity.this, CallingCameraActivity.class);
+                            intntCameraAct.putExtra("xtra_inside_plt_ID", intent_pltID);
+                            intntCameraAct.putExtra("xtra_inside_plt_name", intent_pltName);
+                            intntCameraAct.putExtra("xtra_img_path", mImgObj.getimagePath());
+                            intntCameraAct.putExtra("xtra_flag_imgOrClr", "image");
+                        startActivity(intntCameraAct);
 
-                        Intent intnt = new Intent(PaletteDetailsActivity.this, ColorListFromImageActivity.class);
+                    }
+//endregion
+
+//region.... if instance of imageview
+                    else if(view instanceof ImageView) {
+                        try {
+                            Bitmap mImgBitmap = MyImageHelper.getBitmapFromPath(mImgObj.getimagePath());
+                            ArrayList<String> mColorsInImgArr = new MyColorHelper().getDominantColorFromImage(mImgBitmap);
+
+                            Intent intnt = new Intent(PaletteDetailsActivity.this, ColorListFromImageActivity.class);
                             intnt.putStringArrayListExtra("xtra_colorList", mColorsInImgArr);
                             intnt.putExtra("xtra_inside_plt_ID", intent_pltID);
                             intnt.putExtra("xtra_inside_plt_name", intent_pltName);
                             intnt.putExtra("xtra_img_path", mImgObj.getimagePath());
-                        startActivity(intnt);
-                    }
-                    catch(Exception ex)
-                        {
+                            startActivity(intnt);
+                        } catch (Exception ex) {
                             Log.e(getResources().getString(R.string.common_log), "errs:: " + ex.toString());
                             Toast.makeText(PaletteDetailsActivity.this, "There is an error, please contact the support team!", Toast.LENGTH_SHORT);
                         }
+                    }
+//endregion
 
                     //new MyColorHelper().getDominantColorFromImage()
                 }
+//endregion
+
+//region.... if color
                 else if(flagClrImg.equals("color")) {
                     {
                         BeanColor mClrObj = (BeanColor) mBeanObj.getAnyObjLst();
 
+                        if(view instanceof Button) {
+                            Intent intntCameraAct = new Intent(PaletteDetailsActivity.this, CallingCameraActivity.class);
+                                intntCameraAct.putExtra("xtra_inside_plt_ID", intent_pltID);
+                                intntCameraAct.putExtra("xtra_inside_plt_name", intent_pltName);
+                                intntCameraAct.putExtra("xtra_colorCode", mClrObj.getColorCode());
+                                intntCameraAct.putExtra("xtra_flag_imgOrClr", "color");
+                            startActivity(intntCameraAct);
+                        }
+//region.... if instance of imageview
+                        else if(view instanceof ImageView) {
                         Intent intent = new Intent(PaletteDetailsActivity.this, ColorMatchingActivity.class);
-                            intent.putExtra("intnt_colorCode", mClrObj.getColorCode());
+                        intent.putExtra("intnt_colorCode", mClrObj.getColorCode());
                         startActivity(intent);
                     }
+//endregion
+                    }
                 }
+//endregion
             }
         });
     }

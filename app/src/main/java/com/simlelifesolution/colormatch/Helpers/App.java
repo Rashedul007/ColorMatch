@@ -21,12 +21,13 @@ public class App extends Application
         {
             // <---- run your one time code here
             String baseDir = Environment.getExternalStorageDirectory().getAbsolutePath();
+
             String pathDir1 = baseDir + File.separator + "ColorApp_Thumb";
             String pathDir2 = baseDir +File.separator + "ColorappImgs";
 
 
-       /*     deleteRecursive(new File(pathDir1));
-            deleteRecursive(new File(pathDir2));*/
+          deleteRecursive(new File(pathDir1));
+          //  deleteRecursive(new File(pathDir2));
 
             // mark first time has runned.
             SharedPreferences.Editor editor = prefs.edit();

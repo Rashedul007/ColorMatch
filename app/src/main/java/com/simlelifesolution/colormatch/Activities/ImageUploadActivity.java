@@ -3,16 +3,13 @@ package com.simlelifesolution.colormatch.Activities;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.ContentResolver;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
-import android.os.Build;
 import android.provider.MediaStore;
-import android.support.v4.content.FileProvider;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -29,7 +26,6 @@ import android.widget.Toast;
 
 import com.simlelifesolution.colormatch.Beans.BeanImage;
 import com.simlelifesolution.colormatch.Beans.BeanMain;
-import com.simlelifesolution.colormatch.BuildConfig;
 import com.simlelifesolution.colormatch.Helpers.DatabaseHelper;
 import com.simlelifesolution.colormatch.Helpers.MyImageHelper;
 import com.simlelifesolution.colormatch.Helpers.MySpinAdapter_PaletteNames;
@@ -37,7 +33,6 @@ import com.simlelifesolution.colormatch.R;
 
 import java.io.BufferedInputStream;
 import java.io.File;
-import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.util.ArrayList;
@@ -66,9 +61,9 @@ public class ImageUploadActivity extends AppCompatActivity {
     private DatabaseHelper myDbHelper;
     Long paletteID_pkDB = -1L;
 
-    MySpinAdapter_PaletteNames adapter;
-    public String pltName = "";
-    public String pltID = "";
+    MySpinAdapter_PaletteNames adapter_Spinner;
+    public String pltName_from_Spinner = "";
+    public String pltID_from_Spinner = "";
 
     private Uri outputImgUri;
     static String img_Time_Name = "" ;
@@ -239,12 +234,12 @@ public class ImageUploadActivity extends AppCompatActivity {
                                     {
                                         Toast.makeText(ImageUploadActivity.this, "New Palette created succssfuly!\n Please wait for storing the image. ", Toast.LENGTH_SHORT).show();
 
-                                        pltID = String.valueOf(paletteID_pkDB);
+                                        pltID_from_Spinner = String.valueOf(paletteID_pkDB);
 
-                                        BeanImage _imgObj = new BeanImage("", pltID, strImgPath, strThumbPath, _imgName, "");
+                                        BeanImage _imgObj = new BeanImage("", pltID_from_Spinner, strImgPath, strThumbPath, _imgName, "");
                                         Long dbImgInsertID = myDbHelper.insert_newImage(_imgObj);
 
-                                        Log.d("dbResult_explt", "Image Created DBresult:::" + dbImgInsertID.toString() + " pltID: " + _imgObj.getPaletteID().toString());
+                                        Log.d("dbResult_explt", "Image Created DBresult:::" + dbImgInsertID.toString() + " pltID_from_Spinner: " + _imgObj.getPaletteID().toString());
 
                                         if (dbImgInsertID == -1)
                                             Toast.makeText(ImageUploadActivity.this, "Something went wrong when saving the image in existing palette!", Toast.LENGTH_SHORT).show();
@@ -301,17 +296,17 @@ public class ImageUploadActivity extends AppCompatActivity {
 
                     @Override
                     public void onClick(View view) {
-                        if ((mEdtVwImageName.getText().toString().trim().length() > 0)  && !(pltName.equals("")))
+                        if ((mEdtVwImageName.getText().toString().trim().length() > 0)  && !(pltName_from_Spinner.equals("")))
                         {
                            String _imgName = mEdtVwImageName.getText().toString();
 
                             if (myDbHelper.checkDuplicateImgName(_imgName)) {
                                 Toast.makeText(ImageUploadActivity.this, "Image Name already exists! Please try another name.", Toast.LENGTH_SHORT).show();
                             } else {
-                                BeanImage _imgObj = new BeanImage("", pltID, strImgPath,strThumbPath, _imgName, "");
+                                BeanImage _imgObj = new BeanImage("", pltID_from_Spinner, strImgPath, strThumbPath, _imgName, "");
                                 Long dbImgInsertID_exstPlt = myDbHelper.insert_newImage(_imgObj);
 
-                                Log.d("dbResult_explt", "Image Created DBresult:::" + dbImgInsertID_exstPlt.toString() + " pltID: " + _imgObj.getPaletteID().toString());
+                                Log.d("dbResult_explt", "Image Created DBresult:::" + dbImgInsertID_exstPlt.toString() + " pltID_from_Spinner: " + _imgObj.getPaletteID().toString());
 
                                 if (dbImgInsertID_exstPlt == -1)
                                     Toast.makeText(ImageUploadActivity.this, "Something went wrong when saving the image in existing palette!", Toast.LENGTH_SHORT).show();
@@ -319,7 +314,7 @@ public class ImageUploadActivity extends AppCompatActivity {
                                 {
                                     if(mChkBx_existing.isChecked()) {
                                         Toast.makeText(ImageUploadActivity.this, "Image saved succssfuly!", Toast.LENGTH_SHORT).show();
-                                        Long dbUpdateCover = myDbHelper.updateCoverInPalette(pltID.toString(), "image", dbImgInsertID_exstPlt.toString());
+                                        Long dbUpdateCover = myDbHelper.updateCoverInPalette(pltID_from_Spinner.toString(), "image", dbImgInsertID_exstPlt.toString());
                                     }
                                 }
 
@@ -342,16 +337,16 @@ public class ImageUploadActivity extends AppCompatActivity {
         // BeanMain _paletteObj = new BeanMain();
 
 
-        adapter = new MySpinAdapter_PaletteNames(ImageUploadActivity.this, android.R.layout.simple_spinner_item, listPaletteDB);
-        mSpn.setAdapter(adapter);
+        adapter_Spinner = new MySpinAdapter_PaletteNames(ImageUploadActivity.this, android.R.layout.simple_spinner_item, listPaletteDB);
+        mSpn.setAdapter(adapter_Spinner);
         mSpn.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
-                BeanMain _paletteObj = (BeanMain) adapter.getItem(position);
+                BeanMain _paletteObj = (BeanMain) adapter_Spinner.getItem(position);
 
-                pltName = _paletteObj.getPaletteName().toString();
-                pltID = _paletteObj.getPaletteID();
+                pltName_from_Spinner = _paletteObj.getPaletteName().toString();
+                pltID_from_Spinner = _paletteObj.getPaletteID();
 
                 //Log.d("dbResult", mpalettetNameFromSpinner + mpalettetIDFromSpinner);
             }

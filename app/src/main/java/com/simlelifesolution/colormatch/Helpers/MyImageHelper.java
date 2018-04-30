@@ -71,6 +71,7 @@ public class MyImageHelper {
     {
         String baseDir = Environment.getExternalStorageDirectory().getAbsolutePath();
 
+
         String pathDir = baseDir +File.separator + folderName;
         File mydir = new File(pathDir);
 

@@ -2,6 +2,7 @@ package com.simlelifesolution.colormatch.Helpers;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.support.v7.app.AlertDialog;
@@ -13,7 +14,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.simlelifesolution.colormatch.Activities.CallingCameraActivity;
 import com.simlelifesolution.colormatch.Beans.BeanColor;
 import com.simlelifesolution.colormatch.Beans.BeanImage;
 import com.simlelifesolution.colormatch.Beans.BeanObject;
@@ -54,7 +57,7 @@ public class MyRecycleAdapter_PaletteDetails extends RecyclerView.Adapter<MyRecy
 
     public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener
     {
-         Button mDeleteButton;
+         Button mDeleteButton, mCameraButton;
          ImageView mImgVw;
          TextView mTxtVw;
 
@@ -64,10 +67,12 @@ public class MyRecycleAdapter_PaletteDetails extends RecyclerView.Adapter<MyRecy
             super(view);
 
             mDeleteButton = (Button) view.findViewById(R.id.btnDeletePaletteItem);
+            mCameraButton  = (Button) view.findViewById(R.id.btnCustomCamera);
             mImgVw = (ImageView) view.findViewById(R.id.imgVw_pltDetails);
             mTxtVw = (TextView) view.findViewById(R.id.title_pltDetails);
 
             mImgVw.setOnClickListener(this);
+            mCameraButton.setOnClickListener(this);
 
         }
 
@@ -143,31 +148,33 @@ public class MyRecycleAdapter_PaletteDetails extends RecyclerView.Adapter<MyRecy
 //endregion
 
         holder.mDeleteButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
- //region...............Delete button ................
-                DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
                     @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        switch (which){
-                            case DialogInterface.BUTTON_POSITIVE:
+                    public void onClick(View v) {
+                        //region...............Delete button ................
+                        DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                switch (which){
+                                    case DialogInterface.BUTTON_POSITIVE:
 
-                                myDbHelper.deletePaletteItem(holder.mDeleteButton.getTag().toString(), flag_imgOrClr);
+                                        myDbHelper.deletePaletteItem(holder.mDeleteButton.getTag().toString(), flag_imgOrClr);
 
-                                mbeanAllObj.remove(position);
-                                notifyItemRemoved(position);
-                                notifyItemRangeChanged(position, mbeanAllObj.size());
-                                notifyDataSetChanged();
+                                        mbeanAllObj.remove(position);
+                                        notifyItemRemoved(position);
+                                        notifyItemRangeChanged(position, mbeanAllObj.size());
+                                        notifyDataSetChanged();
 
 
-                                break;
+                                        break;
 
-                            case DialogInterface.BUTTON_NEGATIVE:
-                                //
-                                break;
-                        }
-                    }
-                };
+                                    case DialogInterface.BUTTON_NEGATIVE:
+                                        //
+                                        break;
+                                }
+                            }
+                        };
+
+
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
                 builder.setMessage("Are you sure you want to delete the item?").setPositiveButton("Yes", dialogClickListener)
@@ -175,8 +182,22 @@ public class MyRecycleAdapter_PaletteDetails extends RecyclerView.Adapter<MyRecy
 
  //endregion
             }
-        });
-    }
+        }); //end of deleteButton
+
+
+      /*  holder.mCameraButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                //region...............Delete button ................
+                    // Toast.makeText(mContext, "Camera", Toast.LENGTH_SHORT).show();
+                    Intent intntCameraAct = new Intent(mContext, CallingCameraActivity.class);
+                    mContext.startActivity(intntCameraAct);
+                //endregion
+            }
+        });*/ //end of cameraButton
+
+
+    } //end of onBindViewHolder
 
 
     private Boolean chkImageExist(String pth)
