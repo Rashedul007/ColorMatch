@@ -3,6 +3,7 @@ package com.simlelifesolution.colormatch.Activities;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.ContentResolver;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
@@ -42,6 +43,7 @@ import static android.media.ThumbnailUtils.extractThumbnail;
 public class ImageUploadActivity extends AppCompatActivity {
 
 //region...... variables declaration
+    Context mContext;
     ImageView imgVw_upload;
     Button uploadButton, corpButton, addToNewPalleteButton;
 
@@ -83,6 +85,8 @@ public class ImageUploadActivity extends AppCompatActivity {
     }
 
     private void initialize() {
+        mContext = ImageUploadActivity.this;
+
         imgVw_upload = (ImageView) findViewById(R.id.imgVw);
         uploadButton = (Button) findViewById(R.id.btnAddToNewPallete);
         corpButton = (Button) findViewById(R.id.btnCrop);
@@ -136,14 +140,16 @@ public class ImageUploadActivity extends AppCompatActivity {
 
                 Uri selectedImageUri = data.getData();
 
-                strImgPath = MyImageHelper.getRealPathFromURI(ImageUploadActivity.this, selectedImageUri).toString();
-                Log.d("Log_ColorMatch", "Selected imgpath from gallery= " + strImgPath);
+               String galleryImgPth = MyImageHelper.getRealPathFromURI(mContext, selectedImageUri).toString();
+                Log.d("Log_ColorMatch", "Selected imgpath from gallery= " + galleryImgPth); //
 
  //--------------------------copy the image from galery to app's image folder and create thumbnail
     //----- copy-----------------------------
-                File source_file = new File(strImgPath) ;
+                File source_file = new File(galleryImgPth) ; //
                 img_Time_Name = String.valueOf(System.currentTimeMillis());
-                File dest_file = MyImageHelper.func_makeFolderForImage(ImageUploadActivity.this, "ColorappImgs", "colorappImg_", img_Time_Name, ".png");
+                File dest_file = MyImageHelper.func_makeFolderForImage(mContext, "ColorappImgs", "colorappImg_", img_Time_Name, ".png");
+
+                strImgPath = dest_file.getAbsolutePath();
 
                 MyImageHelper.copyFile(source_file, dest_file);
 
@@ -152,7 +158,7 @@ public class ImageUploadActivity extends AppCompatActivity {
                 Bitmap thumbBitmap_galry = BitmapFactory.decodeStream(thumbInputStream_gallery);
                 // int size_afterDesample3 = BitmapCompat.getAllocationByteCount(mBtmp3);
 
-                strThumbPath = MyImageHelper.func_giveBitmap_aFileName(ImageUploadActivity.this, thumbBitmap_galry, img_Time_Name);
+                strThumbPath = MyImageHelper.func_giveBitmap_aFileName(mContext, thumbBitmap_galry, img_Time_Name);
 
             } catch(Exception ex){Log.d("Log_ColorMatch", "Exception for copying file: " + ex );        }
 
@@ -221,18 +227,18 @@ public class ImageUploadActivity extends AppCompatActivity {
 
                             if(myDbHelper.checkDuplicatePltName(_pltName))
                             {
-                                Toast.makeText(ImageUploadActivity.this, "Palette Name already exists! Please try another name.", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(mContext, "Palette Name already exists! Please try another name.", Toast.LENGTH_SHORT).show();
                             }
                             else {
                                 if (myDbHelper.checkDuplicateImgName(_imgName)) {
-                                    Toast.makeText(ImageUploadActivity.this, "Image Name already exists! Please try another name.", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(mContext, "Image Name already exists! Please try another name.", Toast.LENGTH_SHORT).show();
                                 } else {
                                     BeanMain _PaletteObj = new BeanMain("NULL", _pltName, "image", "0", "");
                                     paletteID_pkDB = myDbHelper.createNewPalette(_PaletteObj);
 
                                     if (paletteID_pkDB != -1)   //new palette created successfully
                                     {
-                                        Toast.makeText(ImageUploadActivity.this, "New Palette created succssfuly!\n Please wait for storing the image. ", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(mContext, "New Palette created succssfuly!\n Please wait for storing the image. ", Toast.LENGTH_SHORT).show();
 
                                         pltID_from_Spinner = String.valueOf(paletteID_pkDB);
 
@@ -242,10 +248,10 @@ public class ImageUploadActivity extends AppCompatActivity {
                                         Log.d("dbResult_explt", "Image Created DBresult:::" + dbImgInsertID.toString() + " pltID_from_Spinner: " + _imgObj.getPaletteID().toString());
 
                                         if (dbImgInsertID == -1)
-                                            Toast.makeText(ImageUploadActivity.this, "Something went wrong when saving the image in existing palette!", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(mContext, "Something went wrong when saving the image in existing palette!", Toast.LENGTH_SHORT).show();
                                         else {
                                             if(mChkBx.isChecked()) {
-                                                Toast.makeText(ImageUploadActivity.this, "Image saved succssfuly!", Toast.LENGTH_SHORT).show();
+                                                Toast.makeText(mContext, "Image saved succssfuly!", Toast.LENGTH_SHORT).show();
                                                 Long dbUpdateCover = myDbHelper.updateCoverInPalette(paletteID_pkDB.toString(), "image", dbImgInsertID.toString());
                                             }
 

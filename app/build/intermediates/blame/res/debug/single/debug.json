@@ -92,6 +92,10 @@
         "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\mipmap-hdpi\\galleryicon.png"
     },
     {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_icon_no_image.png.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\mipmap-mdpi\\icon_no_image.png"
+    },
+    {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-mdpi-v17_abc_ic_menu_cut_mtrl_alpha.png.flat",
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable-ldrtl-mdpi-v17\\abc_ic_menu_cut_mtrl_alpha.png"
     },
@@ -724,12 +728,12 @@
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\color-v23\\abc_tint_edittext.xml"
     },
     {
-        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\layout_dialog_existingpalette.xml.flat",
-        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\layout\\dialog_existingpalette.xml"
-    },
-    {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_calling_camera.xml.flat",
         "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\layout\\activity_calling_camera.xml"
+    },
+    {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\layout_dialog_existingpalette.xml.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\layout\\dialog_existingpalette.xml"
     },
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_colorlist_fromimage.xml.flat",
@@ -1666,6 +1670,10 @@
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_ic_ab_back_material.xml.flat",
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable\\abc_ic_ab_back_material.xml"
+    },
+    {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\layout_popup_image.xml.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\layout\\popup_image.xml"
     },
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable_custom_spinner.xml.flat",

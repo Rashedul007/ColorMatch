@@ -1,6 +1,5 @@
 package com.simlelifesolution.colormatch.Activities;
 
-
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
@@ -12,9 +11,11 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.simlelifesolution.colormatch.Beans.BeanColor;
@@ -31,6 +32,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
+import android.widget.PopupWindow;
+import android.view.ViewGroup.LayoutParams;
 
 public class PaletteDetailsActivity extends AppCompatActivity
 {
@@ -45,6 +48,11 @@ public class PaletteDetailsActivity extends AppCompatActivity
     private DatabaseHelper mDbHelper ;
     private MyRecycleAdapter_PaletteDetails mAdapter;
     private static final int SPAN_COUNT = 2;
+
+    String intent_CoverFlag = "";
+    String intent_CoverID = "";
+
+    Boolean flag_isCoverImgPopUpOn = false;
 //endregion
 
     @Override
@@ -68,8 +76,8 @@ public class PaletteDetailsActivity extends AppCompatActivity
              intent_pltName = extras.getString("xtra_pltName_fromListClk");
             actionBar.setTitle(intent_pltName);
 
-            String intent_CoverFlag = extras.getString("xtra_pltCoverFlag_fromListClk");
-            String intent_CoverID = extras.getString("xtra_pltCoverID_fromListClk");
+            intent_CoverFlag = extras.getString("xtra_pltCoverFlag_fromListClk");
+            intent_CoverID = extras.getString("xtra_pltCoverID_fromListClk");
 
             if(intent_CoverFlag.equals("color"))
                 {
@@ -78,8 +86,11 @@ public class PaletteDetailsActivity extends AppCompatActivity
                 }
             else if(intent_CoverFlag.equals("image"))
                 {
-                    BeanImage _imgObj = mDbHelper.getImageFromImageID(intent_CoverID);
-                     mImgViewCover.setBackground(Drawable.createFromPath(_imgObj.getimagePath()));
+                    if(!intent_CoverID.equals("0"))
+                    { BeanImage _imgObj = mDbHelper.getImageFromImageID(intent_CoverID);
+                     mImgViewCover.setBackground(Drawable.createFromPath(_imgObj.getimagePath()));}
+                     else
+                         mImgViewCover.setBackgroundResource(R.mipmap.icon_no_image);
                 }
         }
     }
@@ -172,6 +183,7 @@ public class PaletteDetailsActivity extends AppCompatActivity
                             intnt.putExtra("xtra_inside_plt_ID", intent_pltID);
                             intnt.putExtra("xtra_inside_plt_name", intent_pltName);
                             intnt.putExtra("xtra_img_path", mImgObj.getimagePath());
+                            intnt.putExtra("xtra_img_name", mImgObj.getimageName());
                             startActivity(intnt);
                         } catch (Exception ex) {
                             Log.e(getResources().getString(R.string.common_log), "errs:: " + ex.toString());
@@ -212,10 +224,43 @@ public class PaletteDetailsActivity extends AppCompatActivity
     }
 
 
+    public void clkCoverImage_details(View v) {
+        // Toast.makeText(this, "clicked", Toast.LENGTH_SHORT).show();
+        if (intent_CoverFlag.equals("image") && flag_isCoverImgPopUpOn==false )
+        { flag_isCoverImgPopUpOn = true;
+
+        LayoutInflater layoutInflater = (LayoutInflater) getBaseContext().getSystemService(LAYOUT_INFLATER_SERVICE);
+        View popupView = layoutInflater.inflate(R.layout.popup_image, null);
+        ImageView mImg = (ImageView) popupView.findViewById(R.id.popupimgvw);
+        TextView mTxt = (TextView) popupView.findViewById(R.id.popuptxtVw);
+
+//region.........set the image & text
+          if (!intent_CoverID.equals("0")) {
+                BeanImage _imgObj = mDbHelper.getImageFromImageID(intent_CoverID);
+                mImg.setBackground(Drawable.createFromPath(_imgObj.getimagePath()));
+                mTxt.setText(_imgObj.getimageName().toString());
+            } else {
+                mImg.setBackgroundResource(R.mipmap.icon_no_image);
+                mTxt.setText("There isn't any cover selected for this item.");
+            }
+//endregion
+
+        final PopupWindow popupWindow = new PopupWindow(popupView, LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
+
+        Button btnDismiss = (Button)popupView.findViewById(R.id.dismiss);
+
+        btnDismiss.setOnClickListener(new Button.OnClickListener(){
+                @Override
+                public void onClick(View v) {  popupWindow.dismiss();  flag_isCoverImgPopUpOn = false;    }});
+
+        popupWindow.showAsDropDown(mImgViewCover, 200, 0);
+        }
+    }
+
+
     @Override
     protected void onStop() {
         super.onStop();
-
     }
 
     @Override

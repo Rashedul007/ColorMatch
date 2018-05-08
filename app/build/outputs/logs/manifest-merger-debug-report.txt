@@ -64,7 +64,7 @@ ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:
 	android:name
 		ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:8:22-62
 application
-ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:12:5-75:19
+ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:11:5-75:19
 MERGED from [com.android.support:design:25.2.0] C:\Users\rhsha\.gradle\caches\transforms-1\files-1.1\design-25.2.0.aar\ec3ba639c6475a4b95eb643a1895183d\AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:design:25.2.0] C:\Users\rhsha\.gradle\caches\transforms-1\files-1.1\design-25.2.0.aar\ec3ba639c6475a4b95eb643a1895183d\AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:appcompat-v7:25.2.0] C:\Users\rhsha\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.2.0.aar\a15b23bb4246ae6c7bb03ff4cce6bf47\AndroidManifest.xml:25:5-20
@@ -105,6 +105,8 @@ MERGED from [com.android.support:support-compat:25.2.0] C:\Users\rhsha\.gradle\c
 		ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:13:9-35
 	android:theme
 		ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:18:9-40
+	android:name
+		ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:12:9-36
 activity#com.simlelifesolution.colormatch.Activities.MainActivity
 ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:19:9-25:20
 	android:name

@@ -23,6 +23,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.channels.FileChannel;
@@ -67,30 +68,33 @@ public class MyImageHelper {
        return myBitmap;
     }
 
+
+
     public static File func_makeFolderForImage(Context ctx, String folderName, String img_prefix, String img_middleTIme, String img_ext)
     {
-        String baseDir = Environment.getExternalStorageDirectory().getAbsolutePath();
+        File outputImageFile = null;
+        try {
+            File root = new File(ctx.getExternalFilesDir(null), folderName);
+
+            if (!root.exists()) {
+                if (!root.mkdirs()) {
+                    Log.d("myCamTag", "failed to create directory");
+                    return null;
+                }    }
 
 
-        String pathDir = baseDir +File.separator + folderName;
-        File mydir = new File(pathDir);
+            String imageFileName = img_prefix + img_middleTIme + img_ext;
 
-        if (!mydir.exists())
-        {  if (!mydir.mkdirs()) { Log.d("myCamTag", "failed to create directory");
-            return null;}      }
+             outputImageFile = new File(root, imageFileName);
+//            FileWriter writer = new FileWriter(outputImageFile);
 
-
-        String imageFileName = img_prefix + img_middleTIme + img_ext;
-
-        File outputImageFile = new File(pathDir + File.separator + imageFileName);
-
-        try {outputImageFile.createNewFile();}
-        catch(Exception exp){
+        }
+            catch(Exception exp){
             String errmsg = "Inside func_MakeFolderForImage():: \t"+exp;
             Log.d("TAG_LOG_TAKE_PICTURE", errmsg);
             Toast.makeText(ctx, errmsg, Toast.LENGTH_LONG).show();}
 
-        return outputImageFile;
+      return outputImageFile;
 
     }
 

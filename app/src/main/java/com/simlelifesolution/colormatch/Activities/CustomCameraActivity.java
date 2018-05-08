@@ -30,6 +30,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 import android.hardware.Camera.Size;
 
+import com.simlelifesolution.colormatch.Helpers.App;
 import com.simlelifesolution.colormatch.Helpers.MyImageHelper;
 import com.simlelifesolution.colormatch.R;
 
@@ -57,6 +58,7 @@ public class CustomCameraActivity extends AppCompatActivity implements PictureCa
     private OnClickListener mCaptureImageButtonClickListener = new OnClickListener() {
         @Override
         public void onClick(View v) {
+            App.getInstance().setCapturedPhotoData(null);
             captureImage();
         }
     };
@@ -64,6 +66,7 @@ public class CustomCameraActivity extends AppCompatActivity implements PictureCa
     private OnClickListener mRecaptureImageButtonClickListener = new OnClickListener() {
         @Override
         public void onClick(View v) {
+            App.getInstance().setCapturedPhotoData(null);
             setupImageCapture();
         }
     };
@@ -72,9 +75,12 @@ public class CustomCameraActivity extends AppCompatActivity implements PictureCa
         @Override
         public void onClick(View v) {
             if (mCameraData != null) {
-                Intent intent = new Intent();
+                /*Intent intent = new Intent();
                 intent.putExtra(EXTRA_CAMERA_DATA, mCameraData);
-                setResult(RESULT_OK, intent);
+                setResult(RESULT_OK, intent);*/
+
+                App.getInstance().setCapturedPhotoData(mCameraData);
+                setResult(RESULT_OK, new Intent());
             } else {
                 setResult(RESULT_CANCELED);
             }

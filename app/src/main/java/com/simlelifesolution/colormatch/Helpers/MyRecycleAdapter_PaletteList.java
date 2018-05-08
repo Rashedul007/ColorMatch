@@ -158,7 +158,9 @@ public class MyRecycleAdapter_PaletteList extends RecyclerView.Adapter<MyRecycle
 
                    holder.lnrLayout.addView(_imgVw);
 
-                    if( (beanClass.get_paletteObj().getCoverID().toString()).equals(imgObj.getimageId().toString()) )
+                    if (beanClass.get_paletteObj().getCoverID().toString().equals("0"))
+                        holder.mCoverImgVw.setBackgroundResource(R.mipmap.icon_no_image);
+                    else if( (beanClass.get_paletteObj().getCoverID().toString()).equals(imgObj.getimageId().toString()) )
                     {
                         Drawable cvrImg = Drawable.createFromPath(imgObj.getimagePath());
                         holder.mCoverImgVw.setBackground(cvrImg);

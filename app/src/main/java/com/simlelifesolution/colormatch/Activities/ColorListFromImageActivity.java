@@ -3,6 +3,7 @@ package com.simlelifesolution.colormatch.Activities;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -12,15 +13,18 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.PopupWindow;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.simlelifesolution.colormatch.Beans.BeanColor;
+import com.simlelifesolution.colormatch.Beans.BeanImage;
 import com.simlelifesolution.colormatch.Beans.BeanMain;
 import com.simlelifesolution.colormatch.Helpers.DatabaseHelper;
 import com.simlelifesolution.colormatch.Helpers.MyImageHelper;
@@ -41,7 +45,7 @@ public class ColorListFromImageActivity extends AppCompatActivity
 
 //--- for intent extra data fetch
     ArrayList<String> arr_ColorsFromIntent;
-    String inside_which_plt_ID, inside_which_plt_Name, xtra_image_path;
+    String inside_which_plt_ID, inside_which_plt_Name, xtra_image_path, xtra_image_name;
 
     String mColor_HexConverted;
     int mColor = 0;
@@ -51,6 +55,8 @@ public class ColorListFromImageActivity extends AppCompatActivity
     ArrayList<BeanMain> listPaletteDB ;
     public String mpalettetNameFromSpinner ="";
     public String mpalettetIDFromSpinner ="";
+
+    Boolean flag_isCoverImgPopUpOn = false;
 
 //endregion
 
@@ -80,7 +86,8 @@ public class ColorListFromImageActivity extends AppCompatActivity
             arr_ColorsFromIntent = extras.getStringArrayList("xtra_colorList");
             inside_which_plt_ID = extras.getString("xtra_inside_plt_ID");
             inside_which_plt_Name = extras.getString("xtra_inside_plt_name");
-            xtra_image_path = extras.getString("xtra_img_path");
+            xtra_image_path = extras.getString("xtra_img_path"); //xtra_img_name
+            xtra_image_name = extras.getString("xtra_img_name");
 
             actionBar.setTitle(inside_which_plt_Name);
             mImageView.setImageBitmap(MyImageHelper.getBitmapFromPath(xtra_image_path));
@@ -248,6 +255,32 @@ public class ColorListFromImageActivity extends AppCompatActivity
             }
         });
         mAlertDialog.show();
+    }
+
+
+    public void clkCoverImage_details(View v) {
+        // Toast.makeText(this, "clicked", Toast.LENGTH_SHORT).show();
+        if (flag_isCoverImgPopUpOn==false )
+        { flag_isCoverImgPopUpOn = true;
+
+            LayoutInflater layoutInflater = (LayoutInflater) getBaseContext().getSystemService(LAYOUT_INFLATER_SERVICE);
+            View popupView = layoutInflater.inflate(R.layout.popup_image, null);
+            ImageView mImg = (ImageView) popupView.findViewById(R.id.popupimgvw);
+            TextView mTxt = (TextView) popupView.findViewById(R.id.popuptxtVw);
+
+                mImg.setImageBitmap(MyImageHelper.getBitmapFromPath(xtra_image_path));
+                mTxt.setText(xtra_image_name.toString());
+
+            final PopupWindow popupWindow = new PopupWindow(popupView, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+
+            Button btnDismiss = (Button)popupView.findViewById(R.id.dismiss);
+
+            btnDismiss.setOnClickListener(new Button.OnClickListener(){
+                @Override
+                public void onClick(View v) {  popupWindow.dismiss();  flag_isCoverImgPopUpOn = false;    }});
+
+            popupWindow.showAsDropDown(mImageView, 200, 0);
+        }
     }
 
 
