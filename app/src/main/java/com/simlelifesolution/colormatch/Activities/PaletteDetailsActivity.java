@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -28,6 +29,7 @@ import com.simlelifesolution.colormatch.Helpers.MyImageHelper;
 import com.simlelifesolution.colormatch.Helpers.MyRecycleAdapter_PaletteDetails;
 import com.simlelifesolution.colormatch.R;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -237,7 +239,13 @@ public class PaletteDetailsActivity extends AppCompatActivity
 //region.........set the image & text
           if (!intent_CoverID.equals("0")) {
                 BeanImage _imgObj = mDbHelper.getImageFromImageID(intent_CoverID);
-                mImg.setBackground(Drawable.createFromPath(_imgObj.getimagePath()));
+              Uri outputImgUri = Uri.fromFile(new File(_imgObj.getimagePath()));
+              try {
+                  Bitmap cameraBitmap = MyImageHelper.rotateImageFromURI(this, outputImgUri);
+                   mImg.setImageBitmap(cameraBitmap);
+              }catch(Exception ex){}
+
+            //   mImg.setBackground(Drawable.createFromPath(_imgObj.getimagePath()));
                 mTxt.setText(_imgObj.getimageName().toString());
             } else {
                 mImg.setBackgroundResource(R.mipmap.icon_no_image);

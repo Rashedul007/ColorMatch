@@ -121,6 +121,8 @@ public class MyRecycleAdapter_PaletteDetails extends RecyclerView.Adapter<MyRecy
       final   BeanObject  _beanObj = mbeanAllObj.get(position);
       final String flag_imgOrClr = _beanObj.getFlag_imgOrClr();
 
+
+
 //region...... if object is of type "image" then set image for imgVw
        if(flag_imgOrClr.equals("image"))
         {
@@ -130,7 +132,9 @@ public class MyRecycleAdapter_PaletteDetails extends RecyclerView.Adapter<MyRecy
             holder.mImgVw.setBackground(d);
 
             holder.mTxtVw.setText(_imgObj.getimageName() );
-            holder.mDeleteButton.setTag(_imgObj.getimageId());
+            //holder.mDeleteButton.setTag(_imgObj.getimageId());
+            holder.mDeleteButton.setTag(_imgObj);
+
         }
 //endregion
 
@@ -143,7 +147,8 @@ public class MyRecycleAdapter_PaletteDetails extends RecyclerView.Adapter<MyRecy
             holder.mImgVw.setBackgroundColor(Color.parseColor(mCOlorCode));
 
             holder.mTxtVw.setText(_clrObj.getColorName());
-            holder.mDeleteButton.setTag(_clrObj.getColorId());
+          //  holder.mDeleteButton.setTag(_clrObj.getColorId());
+            holder.mDeleteButton.setTag(_clrObj);
         }
 //endregion
 
@@ -157,7 +162,25 @@ public class MyRecycleAdapter_PaletteDetails extends RecyclerView.Adapter<MyRecy
                                 switch (which){
                                     case DialogInterface.BUTTON_POSITIVE:
 
-                                        myDbHelper.deletePaletteItem(holder.mDeleteButton.getTag().toString(), flag_imgOrClr);
+                                        if(flag_imgOrClr.equals("image")) {
+                                            BeanImage clkImgObj = (BeanImage) holder.mDeleteButton.getTag();
+                                            myDbHelper.deletePaletteItem(clkImgObj.getimageId().toString(), flag_imgOrClr);
+
+                                            String mainImgPath = clkImgObj.getimagePath() ;
+                                            String thumbPath = clkImgObj.getThumbPath();
+
+                                            if(chkImageExist(mainImgPath))
+                                                MyImageHelper.deleteRecursive(new File(mainImgPath));
+
+                                            if(chkImageExist(thumbPath))
+                                                MyImageHelper.deleteRecursive(new File(thumbPath));
+
+                                        }
+                                        else if(flag_imgOrClr.equals("color")){
+                                            BeanColor clkClrObj = (BeanColor) holder.mDeleteButton.getTag();
+                                            myDbHelper.deletePaletteItem(clkClrObj.getColorId().toString(), flag_imgOrClr);
+                                            }
+
 
                                         mbeanAllObj.remove(position);
                                         notifyItemRemoved(position);

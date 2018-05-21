@@ -13,9 +13,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.simlelifesolution.colormatch.Beans.BeanColor;
-import com.simlelifesolution.colormatch.Beans.BeanImage;
-import com.simlelifesolution.colormatch.Beans.BeanObject;
 import com.simlelifesolution.colormatch.Beans.BeanSimilarColor;
 import com.simlelifesolution.colormatch.R;
 

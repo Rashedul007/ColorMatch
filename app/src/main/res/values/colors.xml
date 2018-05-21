@@ -9,4 +9,9 @@
 
     <!--for recyclerview & cardview-->
     <color name="album_title">#4c4c4c</color>
+
+    <!--for animated fab icons-->
+    <color name="colorFABcamera">#2196F3</color>
+    <color name="colorFABgallery">#E040FB</color>
+    <color name="colorFABcolorpicker">#3dc190</color>
 </resources>

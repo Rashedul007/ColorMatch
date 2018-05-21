@@ -2,6 +2,7 @@ package com.simlelifesolution.colormatch.Activities;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,6 +12,7 @@ import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.support.v7.app.AlertDialog;
 
+import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
@@ -52,7 +54,7 @@ public class CallingCameraActivity extends AppCompatActivity
     private Bitmap mCameraBitmap;
     private Button mSaveImageButton_new, mSaveImageButton_existing;
 
-    static String img_Time_Name, strImgPath, strThumbPath;
+    static String img_Time_Name, strImgPath, strThumbPath, strTempImgPath;
 
     private DatabaseHelper myDbHelper;
     Long paletteID_pkDB = -1L;
@@ -121,15 +123,32 @@ public class CallingCameraActivity extends AppCompatActivity
         myDbHelper = new DatabaseHelper(this);
     }
 
+    /**
+     * Dispatch onPause() to fragments.
+     */
+    @Override
+    protected void onStop() {
+        super.onStop();
+
+        if (mCameraBitmap != null && !mCameraBitmap.isRecycled()) {
+    mCameraImageView.setImageBitmap(null);
+    mCameraBitmap.recycle();
+    mCameraBitmap = null;
+}
+    }
+
+
+
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == TAKE_PICTURE_REQUEST_B) {
             if (resultCode == RESULT_OK) {
                 // Recycle the previous bitmap.
-                if (mCameraBitmap != null) {
+              /*  if (mCameraBitmap != null && !mCameraBitmap.isRecycled()) {
                     mCameraBitmap.recycle();
                     mCameraBitmap = null;
-                }
+                }*/
                 /*Bundle extras = data.getExtras();
                 byte[] cameraData = extras.getByteArray(CustomCameraActivity.EXTRA_CAMERA_DATA);*/
 
@@ -138,11 +157,23 @@ public class CallingCameraActivity extends AppCompatActivity
 
                 if (cameraData != null) {
                     mCameraBitmap = BitmapFactory.decodeByteArray(cameraData, 0, cameraData.length);
+
                     mCameraImageView.setImageBitmap(mCameraBitmap);
                     mSaveImageButton_new.setEnabled(true);
                     mSaveImageButton_existing.setEnabled(true);
+                    ////////////// to rotate image//////
+                  /*  img_Time_Name = String.valueOf(System.currentTimeMillis());
+                    File tempFile = MyImageHelper.func_makeFolderForImage(mContext, "TempFolder", "temp_", "customCameraImage", ".png");
+                    strTempImgPath = tempFile.getAbsolutePath();
+
+                    if (tempFile != null)
+                        new AsyncSaveTempImage(strTempImgPath).execute(tempFile);*/
+
+
+
 
                 }
+
             } else {
                 mCameraBitmap = null;
                 mSaveImageButton_new.setEnabled(false);
@@ -167,6 +198,7 @@ public class CallingCameraActivity extends AppCompatActivity
 
     private void startImageCapture() {
         //startActivityForResult(new Intent(MediaStore.ACTION_IMAGE_CAPTURE), TAKE_PICTURE_REQUEST_B);
+
         Intent custIntent = new Intent(CallingCameraActivity.this, CustomCameraActivity.class);
             custIntent.putExtra("xtra_inside_plt_ID", getIntent_pltID);
             custIntent.putExtra("xtra_inside_plt_name", getIntent_pltName);
@@ -181,7 +213,7 @@ public class CallingCameraActivity extends AppCompatActivity
 
 //region*****************************save images in DB
 
-    private Long addImageToNewPlt()
+    private void addImageToNewPlt()
     {
         dbImgInsertID_exstPlt = -1L;
 
@@ -251,7 +283,9 @@ public class CallingCameraActivity extends AppCompatActivity
                                         Toast.makeText(mContext, "Something went wrong when creating a new palette!", Toast.LENGTH_SHORT).show();
 
                                 }
+                                finish();
                             }
+
                         }
                         else    // either PaletteName or ImageName was not given
                             Toast.makeText(mContext, "Please check the Palette & Image Name!", Toast.LENGTH_SHORT).show();
@@ -261,10 +295,10 @@ public class CallingCameraActivity extends AppCompatActivity
         });
         mAlertDialog.show();
 
-        return dbImgInsertID_exstPlt;
+           // return dbImgInsertID_exstPlt;
     }
 
-    private Long addImageToExistingPlt()
+    private void addImageToExistingPlt()
     {
         dbImgInsertID_exstPlt = -1L;
 
@@ -318,6 +352,8 @@ public class CallingCameraActivity extends AppCompatActivity
                                 }
 
                                 mAlertDialog.dismiss();
+
+                                finish();
                             }
 
                         }
@@ -329,7 +365,9 @@ public class CallingCameraActivity extends AppCompatActivity
         });
         mAlertDialog.show();
 
-        return dbImgInsertID_exstPlt;
+
+
+        //return dbImgInsertID_exstPlt;
 
     }
 
@@ -361,12 +399,12 @@ public class CallingCameraActivity extends AppCompatActivity
 
 //endregion
 
-//*********************************** asyntask
+//*********************************** asyntask for saving in palette
     private class AsyncSaveImage extends AsyncTask<File, Void, Boolean>
     {
         Boolean flag_success = false;
         String flag_ExistingOrNew = "";
-        Long flag_saveToDB = -1L;
+       // Long flag_saveToDB = -1L;
 
         public AsyncSaveImage(String flag_ExistOrNew)
             {  super();
@@ -413,13 +451,13 @@ public class CallingCameraActivity extends AppCompatActivity
             if(resultFlag)
             {
                 if(flag_ExistingOrNew.equals("exist"))
-                    flag_saveToDB =  addImageToExistingPlt();
+                    addImageToExistingPlt();
                 else if(flag_ExistingOrNew.equals("new"))
-                    flag_saveToDB =   addImageToNewPlt();
+                    addImageToNewPlt();
             }
 
-            Log.d("Log_Async", "SaveTODB::"+ flag_saveToDB);
             pDialog.dismiss();
+
 
         }
 
@@ -434,10 +472,74 @@ public class CallingCameraActivity extends AppCompatActivity
           //  pDialog.setOnDismissListener(this);
             pDialog.show();
         }
+    }//asyncTask End
+
+
+    //*********************************** asyntask for saving temp file
+    private class AsyncSaveTempImage extends AsyncTask<File, Void, Boolean>
+    {
+        Boolean flag_success = false;
+        String tmpImgPth= "";
+
+        public AsyncSaveTempImage(String imgPthh)
+            {            tmpImgPth = imgPthh ;       }
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+
+            pDialog = new ProgressDialog(mContext);
+            pDialog.setMessage("Please wait...");
+            pDialog.setCancelable(true);
+            pDialog.show();
+        }
+
+
+        @Override
+        protected Boolean doInBackground(File... paramsFile)
+        {
+            try {
+                if (mCameraBitmap != null) {
+                    FileOutputStream outStream = null;
+                    try {
+                        outStream = new FileOutputStream(paramsFile[0]);
+                        if (!mCameraBitmap.compress(Bitmap.CompressFormat.PNG, 100, outStream)) {
+                            Toast.makeText(mContext, "Something went wrong, please try again!", Toast.LENGTH_LONG).show();
+                            flag_success = false;
+                        } else
+                            flag_success = true;
+
+                        outStream.close();
+                    } catch (Exception e) {
+                        flag_success = false;
+                    }
+                }
+            } catch (Exception e) {   e.printStackTrace();   }
+
+            return flag_success;
+        }
+
+
+        @Override
+        protected void onPostExecute(Boolean resultFlag) {
+
+            pDialog.dismiss();
+            if(resultFlag == true)
+            {
+                //mCameraImageView.setImageBitmap(mCameraBitmap);
+                try {
+                    Uri tempImgUri = Uri.fromFile(new File(tmpImgPth));
+                    Bitmap cameraBitmap = MyImageHelper.rotateImageFromURI(CallingCameraActivity.this, tempImgUri);
+                    mCameraImageView.setImageBitmap(cameraBitmap);
+                }     catch(Exception ex){}
+                mSaveImageButton_new.setEnabled(true);
+                mSaveImageButton_existing.setEnabled(true);
+
+            }
+        }
 
 
 
-    }
-
+    }//asyncTask End
 
 }

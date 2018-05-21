@@ -79,7 +79,8 @@
             android:id="@+id/done_button"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:text="@string/done" />
+            android:text="@string/done"
+            android:visibility="gone"/>
     </LinearLayout>
 
 </LinearLayout>

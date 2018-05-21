@@ -70,25 +70,23 @@ public class MainActivity extends AppCompatActivity
             case R.id.btnCamera:
                 btnPressType = 1;
                 func_getPermission();
-              //  proceedAfterPermission();
-                break;
 
+                break;
             case R.id.btnGallery:
                 btnPressType = 2;
                 func_getPermission();
-                break;
 
+                break;
             case R.id.btnColorPicker:
-                Intent colorPkrIntent = new Intent(MainActivity.this, ColorPickerActivity.class);
-                startActivityForResult(colorPkrIntent, 9);
-                break;
+                btnPressType = 3;
+                func_getPermission();
 
+                break;
             case R.id.btnMyPalette:
-                Intent intentPaletteActivity = new Intent(MainActivity.this, PaletteListActivity.class);
-                startActivity(intentPaletteActivity);
-                break;
+                btnPressType = 4;
+                func_getPermission();
 
-
+               break;
             default:
                 break;
         }
@@ -176,14 +174,18 @@ public class MainActivity extends AppCompatActivity
 
     private void proceedAfterPermission()
     {
-        //We've got the permission, now we can proceed further
-      //  Toast.makeText(getBaseContext(), "We got the Storage Permission", Toast.LENGTH_LONG).show();
-
-        Intent intnt = new Intent(this, ImageUploadActivity.class);
-        intnt.putExtra("btnPressed",btnPressType);
-        startActivity(intnt);
-            // startActivityForResult(new Intent(MediaStore.ACTION_IMAGE_CAPTURE), TAG_CAMERA);
-            //startActivityForResult(new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI), TAG_GALLERY);
+        if(btnPressType < 3)
+        {Intent intnt = new Intent(this, ImageUploadActivity.class);
+            intnt.putExtra("btnPressed",btnPressType);
+            startActivity(intnt);}
+        else if(btnPressType == 3){
+            Intent colorPkrIntent = new Intent(MainActivity.this, ColorPickerActivity.class);
+            startActivityForResult(colorPkrIntent, 9);
+        }
+        else if(btnPressType == 4){
+            Intent intentPaletteActivity = new Intent(MainActivity.this, PaletteListActivity.class);
+            startActivity(intentPaletteActivity);
+        }
     }
 
     @Override

@@ -3,9 +3,11 @@ package com.simlelifesolution.colormatch.Activities;
 import android.content.ContentResolver;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
@@ -99,6 +101,8 @@ public class CustomCameraActivity extends AppCompatActivity implements PictureCa
         android.support.v7.app.ActionBar actionBar = getSupportActionBar();
 
         actionBar.setDisplayHomeAsUpEnabled(true);
+
+        actionBar.setTitle("Custom Camera");
 
         mImgViewCover = (ImageView) findViewById(R.id.imgVw_customCameraCover);
 
@@ -250,13 +254,25 @@ public class CustomCameraActivity extends AppCompatActivity implements PictureCa
     }
 
     private void setupImageDisplay() {
-        Bitmap bitmap = BitmapFactory.decodeByteArray(mCameraData, 0, mCameraData.length);
+       /* Bitmap bitmap = BitmapFactory.decodeByteArray(mCameraData, 0, mCameraData.length);
         mCameraImage.setImageBitmap(bitmap);
         mCamera.stopPreview();
         mCameraPreview.setVisibility(View.INVISIBLE);
         mCameraImage.setVisibility(View.VISIBLE);
         mCaptureImageButton.setText(getString(R.string.recapture_image));
-        mCaptureImageButton.setOnClickListener(mRecaptureImageButtonClickListener);
+        mCaptureImageButton.setOnClickListener(mRecaptureImageButtonClickListener);*/
+
+        if (mCameraData != null) {
+                /*Intent intent = new Intent();
+                intent.putExtra(EXTRA_CAMERA_DATA, mCameraData);
+                setResult(RESULT_OK, intent);*/
+
+            App.getInstance().setCapturedPhotoData(mCameraData);
+            setResult(RESULT_OK, new Intent());
+        } else {
+            setResult(RESULT_CANCELED);
+        }
+        finish();
     }
 
 
@@ -342,6 +358,8 @@ public class CustomCameraActivity extends AppCompatActivity implements PictureCa
         finish();
         return true;
     }
+
+
 
 
 

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
+import android.os.Environment;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -102,6 +103,7 @@ public class MyRecycleAdapter_PaletteList extends RecyclerView.Adapter<MyRecycle
             public void onClick(View v) {
 //region...............Delete button ................
              final  String plt_id = beanClass.get_paletteObj().getPaletteID();
+             final String coverIdFlag_inPalleteObj = beanClass.get_paletteObj().getCoverID_flag();
 
                 DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
                     @Override
@@ -109,6 +111,23 @@ public class MyRecycleAdapter_PaletteList extends RecyclerView.Adapter<MyRecycle
                         switch (which){
                             case DialogInterface.BUTTON_POSITIVE:
                                    myDbHelper.deleteSinglePalette(plt_id);
+
+                                   if(coverIdFlag_inPalleteObj.equals("image"))
+                                   {
+                                       if(!beanClass.get_paletteObj().getCoverID().equals("0")) {
+                                           for (BeanObject mObj : beanClass.get_imgOrClrObjLst()) {
+                                               BeanImage imgObj = (BeanImage) mObj.getAnyObjLst();
+                                               String mainImgPath = imgObj.getimagePath();
+                                               String thumbPath = imgObj.getThumbPath();
+
+                                               if (chkImageExist(mainImgPath))
+                                                   MyImageHelper.deleteRecursive(new File(mainImgPath));
+
+                                               if (chkImageExist(thumbPath))
+                                                   MyImageHelper.deleteRecursive(new File(thumbPath));
+                                           }
+                                       }
+                                   }
 
                                    beanClassList_s.remove(position);
                                     notifyItemRemoved(position);
@@ -132,6 +151,9 @@ public class MyRecycleAdapter_PaletteList extends RecyclerView.Adapter<MyRecycle
         });
 
         holder.lnrLayout.removeAllViewsInLayout();
+
+        if (beanClass.get_paletteObj().getCoverID_flag().equals("image") && beanClass.get_paletteObj().getCoverID().toString().equals("0"))
+            holder.mCoverImgVw.setBackgroundResource(R.mipmap.icon_no_image);
 
 //region.... For Loop through  each obj & dynamically make views horizontally -for images & colors
         for(BeanObject mObj: beanClass.get_imgOrClrObjLst())
@@ -157,14 +179,15 @@ public class MyRecycleAdapter_PaletteList extends RecyclerView.Adapter<MyRecycle
                    _imgVw.setLayoutParams(lnr);
 
                    holder.lnrLayout.addView(_imgVw);
-
-                    if (beanClass.get_paletteObj().getCoverID().toString().equals("0"))
-                        holder.mCoverImgVw.setBackgroundResource(R.mipmap.icon_no_image);
-                    else if( (beanClass.get_paletteObj().getCoverID().toString()).equals(imgObj.getimageId().toString()) )
+                     if (beanClass.get_paletteObj().getCoverID().toString().equals("0"))
+                          holder.mCoverImgVw.setBackgroundResource(R.mipmap.icon_no_image);
+                   else if( (beanClass.get_paletteObj().getCoverID().toString()).equals(imgObj.getimageId().toString()) )
                     {
                         Drawable cvrImg = Drawable.createFromPath(imgObj.getimagePath());
                         holder.mCoverImgVw.setBackground(cvrImg);
                     }
+
+
                 }
             }
 //endregion

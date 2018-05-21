@@ -2,8 +2,9 @@ package com.simlelifesolution.colormatch.Activities;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.Color;
-import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -24,7 +25,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.simlelifesolution.colormatch.Beans.BeanColor;
-import com.simlelifesolution.colormatch.Beans.BeanImage;
 import com.simlelifesolution.colormatch.Beans.BeanMain;
 import com.simlelifesolution.colormatch.Helpers.DatabaseHelper;
 import com.simlelifesolution.colormatch.Helpers.MyImageHelper;
@@ -32,6 +32,7 @@ import com.simlelifesolution.colormatch.Helpers.MyRecycleAdapter_ColorListFromIm
 import com.simlelifesolution.colormatch.Helpers.MySpinAdapter_PaletteNames;
 import com.simlelifesolution.colormatch.R;
 
+import java.io.File;
 import java.util.ArrayList;
 
 public class ColorListFromImageActivity extends AppCompatActivity
@@ -268,7 +269,12 @@ public class ColorListFromImageActivity extends AppCompatActivity
             ImageView mImg = (ImageView) popupView.findViewById(R.id.popupimgvw);
             TextView mTxt = (TextView) popupView.findViewById(R.id.popuptxtVw);
 
-                mImg.setImageBitmap(MyImageHelper.getBitmapFromPath(xtra_image_path));
+            Uri outputImgUri = Uri.fromFile(new File(xtra_image_path));
+            try {
+                Bitmap cameraBitmap = MyImageHelper.rotateImageFromURI(this, outputImgUri);
+                mImg.setImageBitmap(cameraBitmap);
+            }catch(Exception ex){}
+              //  mImg.setImageBitmap(MyImageHelper.getBitmapFromPath(c));
                 mTxt.setText(xtra_image_name.toString());
 
             final PopupWindow popupWindow = new PopupWindow(popupView, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);

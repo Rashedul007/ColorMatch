@@ -102,7 +102,7 @@ MERGED from [com.android.support:support-compat:25.2.0] C:\Users\rhsha\.gradle\c
 	android:icon
 		ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:14:9-43
 	android:allowBackup
-		ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:13:9-35
+		ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:13:9-36
 	android:theme
 		ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:18:9-40
 	android:name

@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -99,6 +100,7 @@ public class ColorPickerActivity extends AppCompatActivity
         final EditText mEdtVwColorName = (EditText) promptsView.findViewById(R.id.edTxtVwNewColorName);
         final View mVwColorBack = (View)promptsView.findViewById(R.id.vwColorBackGround);
         final TextView mTxtVwColorCode = (TextView) promptsView.findViewById(R.id.txtVwColorCode);
+        final CheckBox chkBox_cover = (CheckBox) promptsView.findViewById(R.id.chkBoxCover_exist);
 
         mVwColorBack.setBackgroundColor(mColor);
         mTxtVwColorCode.setText(colorPickerResult_hexColor);
@@ -120,20 +122,30 @@ public class ColorPickerActivity extends AppCompatActivity
                     public void onClick(View view) {
                         if ((mEdtVwColorName.getText().toString().trim().length() > 0) && !(mpalettetNameFromSpinner.equals("")))
                         {
-                            BeanColor _PaletteObj = new BeanColor("NULL", mpalettetIDFromSpinner, colorPickerResult_hexColor, mEdtVwColorName.getText().toString(), "");
-                            Long dbColorInsert = myDbHelper.insert_newColor(_PaletteObj);
-                            //Log.d("dbResult", "DBresult:::" + paletteID_pkDB.toString());
-                            Toast.makeText(ColorPickerActivity.this, "Color inserted successfully with row no# : " + dbColorInsert, Toast.LENGTH_SHORT).show();
+                            String _clrName = mEdtVwColorName.getText().toString();
 
-                            if (dbColorInsert == -1)
-                                Toast.makeText(ColorPickerActivity.this, "Something went wrong when saving the color in existing palette!", Toast.LENGTH_SHORT).show();
-                            else
-                            {
-                                Toast.makeText(ColorPickerActivity.this, "Color saved succssfuly!", Toast.LENGTH_SHORT).show();
-                                Long dbUpdateCover = myDbHelper.updateCoverInPalette(mpalettetIDFromSpinner.toString(), "color", dbColorInsert.toString());
+                            if (myDbHelper.checkDuplicateColorName(_clrName)) {
+                                Toast.makeText(ColorPickerActivity.this, "Color Name already exists! Please try another name.", Toast.LENGTH_SHORT).show();
+                            } else {
+                                BeanColor _PaletteObj = new BeanColor("NULL", mpalettetIDFromSpinner, colorPickerResult_hexColor, mEdtVwColorName.getText().toString(), "");
+                                Long dbColorInsert = myDbHelper.insert_newColor(_PaletteObj);
+                                //Log.d("dbResult", "DBresult:::" + paletteID_pkDB.toString());
+                                Toast.makeText(ColorPickerActivity.this, "Color inserted successfully with row no# : " + dbColorInsert, Toast.LENGTH_SHORT).show();
+
+                                if (dbColorInsert == -1)
+                                    Toast.makeText(ColorPickerActivity.this, "Something went wrong when saving the color in existing palette!", Toast.LENGTH_SHORT).show();
+                                else {
+                                    if (chkBox_cover.isChecked()) {
+                                        Toast.makeText(ColorPickerActivity.this, "Color saved succssfuly!", Toast.LENGTH_SHORT).show();
+                                        Long dbUpdateCover = myDbHelper.updateCoverInPalette(mpalettetIDFromSpinner.toString(), "color", dbColorInsert.toString());
+                                    }
+
+                                }
+
+
+                                mAlertDialog.dismiss();
+                                finish();
                             }
-
-                            mAlertDialog.dismiss();
                         }
                         else
                             Toast.makeText(ColorPickerActivity.this, "Please insert color name.", Toast.LENGTH_SHORT).show();

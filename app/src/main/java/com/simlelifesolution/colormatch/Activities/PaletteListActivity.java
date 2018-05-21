@@ -1,13 +1,17 @@
 package com.simlelifesolution.colormatch.Activities;
 
 import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Toast;
 
 import com.simlelifesolution.colormatch.Beans.BeanColor;
@@ -23,7 +27,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
-public class PaletteListActivity extends AppCompatActivity
+public class PaletteListActivity extends AppCompatActivity implements View.OnClickListener
 {
 //region...... variables declaration
     private Toolbar mToolbar;
@@ -33,6 +37,12 @@ public class PaletteListActivity extends AppCompatActivity
     private RecyclerView mRecyclerView;
     private MyRecycleAdapter_PaletteList mAdapter;
     private static final int SPAN_COUNT = 2;
+
+    //... for animated fab_main icon
+    private Boolean isFabOpen = false;
+    private FloatingActionButton fab_main, fab_camera, fab_gallery, fab_colorpicker;
+    private Animation fab_open,fab_close,rotate_forward,rotate_backward;
+
 //endregion
 
     @Override
@@ -50,7 +60,15 @@ public class PaletteListActivity extends AppCompatActivity
         mDbHelper = new DatabaseHelper(this);
         mRecyclerView= (RecyclerView)findViewById(R.id.rcView_paletteList);
 
-       // func_getAllPalettesFromDb();
+        initialise_fab();
+    }
+
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+
+        resetFabs();
     }
 
     @Override
@@ -140,5 +158,96 @@ public class PaletteListActivity extends AppCompatActivity
     }
 
 
+//region........For fab_main icons
+
+    private void initialise_fab(){
+        fab_main = (FloatingActionButton)findViewById(R.id.fabMain);
+        fab_camera = (FloatingActionButton)findViewById(R.id.fabCamera);
+        fab_gallery = (FloatingActionButton)findViewById(R.id.fabGallery);
+        fab_colorpicker = (FloatingActionButton)findViewById(R.id.fabColorPkr);
+
+        fab_open = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fab_open);
+        fab_close = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fab_close);
+        rotate_forward = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.rotate_forward);
+        rotate_backward = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.rotate_backward);
+
+        fab_main.setOnClickListener(this);
+        fab_camera.setOnClickListener(this);
+        fab_gallery.setOnClickListener(this);
+        fab_colorpicker.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+        int id = v.getId();
+        switch (id){
+            case R.id.fabMain:
+                animateFAB();
+
+                break;
+            case R.id.fabCamera:
+                Intent intnt_camera= new Intent(this, ImageUploadActivity.class);
+                intnt_camera.putExtra("btnPressed", 1); //1 for camera
+                startActivity(intnt_camera);
+
+                break;
+            case R.id.fabGallery:
+                Intent intnt_galary = new Intent(this, ImageUploadActivity.class);
+                intnt_galary.putExtra("btnPressed",2); //2 for gallery
+                startActivity(intnt_galary);
+
+                break;
+
+            case R.id.fabColorPkr:
+                Intent colorPkrIntent = new Intent(this, ColorPickerActivity.class);
+                startActivity(colorPkrIntent);
+
+                break;
+        }
+    }
+
+    public void animateFAB(){
+
+        if(isFabOpen){
+
+            fab_main.startAnimation(rotate_backward);
+            fab_camera.startAnimation(fab_close);
+            fab_gallery.startAnimation(fab_close);
+            fab_colorpicker.startAnimation(fab_close);
+            fab_camera.setClickable(false);
+            fab_gallery.setClickable(false);
+            fab_colorpicker.setClickable(false);
+            isFabOpen = false;
+            Log.d("Raj", "close");
+
+        } else {
+
+            fab_main.startAnimation(rotate_forward);
+            fab_camera.startAnimation(fab_open);
+            fab_gallery.startAnimation(fab_open);
+            fab_colorpicker.startAnimation(fab_open);
+            fab_camera.setClickable(true);
+            fab_gallery.setClickable(true);
+            fab_colorpicker.setClickable(true);
+            isFabOpen = true;
+            Log.d("Raj","open");
+
+        }
+    }
+
+    private void resetFabs()
+    {
+        isFabOpen = false;
+
+        fab_main.startAnimation(rotate_backward);
+        fab_camera.startAnimation(fab_close);
+        fab_gallery.startAnimation(fab_close);
+        fab_colorpicker.startAnimation(fab_close);
+        fab_camera.setClickable(false);
+        fab_gallery.setClickable(false);
+        fab_colorpicker.setClickable(false);
+    }
+
+//endregions
 
 }

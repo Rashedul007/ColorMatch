@@ -1,7 +1,6 @@
 package com.simlelifesolution.colormatch.Activities;
 
 import android.app.Activity;
-import android.app.ProgressDialog;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -9,6 +8,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.media.ExifInterface;
 import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.v7.app.AlertDialog;
@@ -32,10 +32,8 @@ import com.simlelifesolution.colormatch.Helpers.MyImageHelper;
 import com.simlelifesolution.colormatch.Helpers.MySpinAdapter_PaletteNames;
 import com.simlelifesolution.colormatch.R;
 
-import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.InputStream;
-import java.net.HttpURLConnection;
 import java.util.ArrayList;
 
 import static android.media.ThumbnailUtils.extractThumbnail;
@@ -53,12 +51,6 @@ public class ImageUploadActivity extends AppCompatActivity {
     String strImgPath = null;
     String strThumbPath = null;
     Cursor mCursor;
-
-    private ProgressDialog pDialog;
-    HttpURLConnection conn = null;
-    BufferedInputStream responseStream;
-    int serverResponseCode = 0;
-    String serverResponseMessage;
 
     private DatabaseHelper myDbHelper;
     Long paletteID_pkDB = -1L;
@@ -261,6 +253,8 @@ public class ImageUploadActivity extends AppCompatActivity {
                                     } else
                                         Toast.makeText(ImageUploadActivity.this, "Something went wrong when creating a new palette!", Toast.LENGTH_SHORT).show();
 
+                                    finish();
+
                                 }
                             }
                         }
@@ -286,7 +280,7 @@ public class ImageUploadActivity extends AppCompatActivity {
 
         final Spinner mSpinnerPaletteName = (Spinner) promptsView.findViewById(R.id.spinner_existingPalette);
         final EditText mEdtVwImageName = (EditText) promptsView.findViewById(R.id.etDialogImgName);
-        final CheckBox mChkBx_existing = (CheckBox) promptsView.findViewById(R.id.chkBoxCover_existing);
+        final CheckBox mChkBx_addAsCover = (CheckBox) promptsView.findViewById(R.id.chkBoxCover_existing);
 
         setup_spinnerItems(mSpinnerPaletteName); //------------------ setUp the spinner for existing paletteList
 
@@ -318,10 +312,12 @@ public class ImageUploadActivity extends AppCompatActivity {
                                     Toast.makeText(ImageUploadActivity.this, "Something went wrong when saving the image in existing palette!", Toast.LENGTH_SHORT).show();
                                 else
                                 {
-                                    if(mChkBx_existing.isChecked()) {
+                                    if(mChkBx_addAsCover.isChecked()) {
                                         Toast.makeText(ImageUploadActivity.this, "Image saved succssfuly!", Toast.LENGTH_SHORT).show();
                                         Long dbUpdateCover = myDbHelper.updateCoverInPalette(pltID_from_Spinner.toString(), "image", dbImgInsertID_exstPlt.toString());
                                     }
+
+                                    finish();
                                 }
 
                                 mAlertDialog.dismiss();
@@ -368,7 +364,7 @@ public class ImageUploadActivity extends AppCompatActivity {
 
     private void func_myCamera(){
         try {
-          // File outputImageFile = func_makeFolderForImage();
+            // File outputImageFile = func_makeFolderForImage();
 
             img_Time_Name = String.valueOf(System.currentTimeMillis());
             File outputImageFile = MyImageHelper.func_makeFolderForImage(ImageUploadActivity.this, "ColorappImgs", "colorappImg_", img_Time_Name, ".png");
@@ -381,7 +377,6 @@ public class ImageUploadActivity extends AppCompatActivity {
                 Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 
                 cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, outputImgUri);
-
                 startActivityForResult(cameraIntent, TAG_CAMERA);
             }
             else{
@@ -393,6 +388,8 @@ public class ImageUploadActivity extends AppCompatActivity {
             Log.e("TAG_LOG_TAKE_PICTURE", errmsg);
             Toast.makeText(ImageUploadActivity.this, errmsg, Toast.LENGTH_LONG).show();
         }
+
+
     }
 
 
@@ -414,9 +411,12 @@ public class ImageUploadActivity extends AppCompatActivity {
         try {
             ContentResolver contentResolver = getContentResolver();
 
-            InputStream inputStream = contentResolver.openInputStream(outputImgUri);
-            Bitmap cameraBitmap = BitmapFactory.decodeStream(inputStream);
+            Bitmap cameraBitmap = MyImageHelper.rotateImageFromURI(this, outputImgUri);
             imgVw_upload.setImageBitmap(cameraBitmap);
+
+ /*            InputStream inputStream = contentResolver.openInputStream(outputImgUri);
+            Bitmap cameraBitmap = BitmapFactory.decodeStream(inputStream);
+            imgVw_upload.setImageBitmap(cameraBitmap);*/
 
     //--------------------------create thumbnail
 
@@ -431,11 +431,119 @@ public class ImageUploadActivity extends AppCompatActivity {
             Log.e("TAG_LOG_TAKE_PICTURE", errmsg);
             Toast.makeText(ImageUploadActivity.this, errmsg, Toast.LENGTH_LONG).show();
         }
+
+
+        try{
+            ExifInterface ei = new ExifInterface(strImgPath);
+
+            String orientString = ei.getAttribute(ExifInterface.TAG_ORIENTATION);
+            Log.d("TEST", "After orientString: " + orientString);
+
+            int orientation = orientString != null ? Integer.parseInt(orientString) : ExifInterface.ORIENTATION_NORMAL;
+            Log.d("TEST", "After orientation: " + orientation);
+
+            int rotationAngle = 0;
+            if (orientation == ExifInterface.ORIENTATION_ROTATE_90) rotationAngle = 90;
+            if (orientation == ExifInterface.ORIENTATION_ROTATE_180) rotationAngle = 180;
+            if (orientation == ExifInterface.ORIENTATION_ROTATE_270) rotationAngle = 270;
+            Log.d("TEST", "After rotationAngle: " + rotationAngle);
+        }
+        catch(Exception ex){}
     }
 
 
 
   //endregion .......................................................................
 
+/*
 
+    public static Bitmap rotateImageFromURI(Context context, Uri selectedImage)
+            throws IOException {
+        int MAX_HEIGHT = 1024;
+        int MAX_WIDTH = 1024;
+
+        // First decode with inJustDecodeBounds=true to check dimensions
+        final BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inJustDecodeBounds = true;
+        InputStream imageStream = context.getContentResolver().openInputStream(selectedImage);
+        BitmapFactory.decodeStream(imageStream, null, options);
+        imageStream.close();
+
+        // Calculate inSampleSize
+        options.inSampleSize = calculateInSampleSize(options, MAX_WIDTH, MAX_HEIGHT);
+
+        // Decode bitmap with inSampleSize set
+        options.inJustDecodeBounds = false;
+        imageStream = context.getContentResolver().openInputStream(selectedImage);
+        Bitmap img = BitmapFactory.decodeStream(imageStream, null, options);
+
+        img = rotateImageIfRequired(context, img, selectedImage);
+        return img;
+    }
+
+    private static int calculateInSampleSize(BitmapFactory.Options options,
+                                             int reqWidth, int reqHeight) {
+        // Raw height and width of image
+        final int height = options.outHeight;
+        final int width = options.outWidth;
+        int inSampleSize = 1;
+
+        if (height > reqHeight || width > reqWidth) {
+
+            // Calculate ratios of height and width to requested height and width
+            final int heightRatio = Math.round((float) height / (float) reqHeight);
+            final int widthRatio = Math.round((float) width / (float) reqWidth);
+
+            // Choose the smallest ratio as inSampleSize value, this will guarantee a final image
+            // with both dimensions larger than or equal to the requested height and width.
+            inSampleSize = heightRatio < widthRatio ? heightRatio : widthRatio;
+
+            // This offers some additional logic in case the image has a strange
+            // aspect ratio. For example, a panorama may have a much larger
+            // width than height. In these cases the total pixels might still
+            // end up being too large to fit comfortably in memory, so we should
+            // be more aggressive with sample down the image (=larger inSampleSize).
+
+            final float totalPixels = width * height;
+
+            // Anything more than 2x the requested pixels we'll sample down further
+            final float totalReqPixelsCap = reqWidth * reqHeight * 2;
+
+            while (totalPixels / (inSampleSize * inSampleSize) > totalReqPixelsCap) {
+                inSampleSize++;
+            }
+        }
+        return inSampleSize;
+    }
+
+    private static Bitmap rotateImageIfRequired(Context context, Bitmap img, Uri selectedImage) throws IOException {
+
+        InputStream input = context.getContentResolver().openInputStream(selectedImage);
+        ExifInterface ei;
+        if (Build.VERSION.SDK_INT > 23)
+            ei = new ExifInterface(input);
+        else
+            ei = new ExifInterface(selectedImage.getPath());
+
+        int orientation = ei.getAttributeInt(ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_NORMAL);
+
+        switch (orientation) {
+            case ExifInterface.ORIENTATION_ROTATE_90:
+                return rotateImage(img, 90);
+            case ExifInterface.ORIENTATION_ROTATE_180:
+                return rotateImage(img, 180);
+            case ExifInterface.ORIENTATION_ROTATE_270:
+                return rotateImage(img, 270);
+            default:
+                return img;
+        }
+    }
+
+    private static Bitmap rotateImage(Bitmap img, int degree) {
+        Matrix matrix = new Matrix();
+        matrix.postRotate(degree);
+        Bitmap rotatedImg = Bitmap.createBitmap(img, 0, 0, img.getWidth(), img.getHeight(), matrix, true);
+        img.recycle();
+        return rotatedImg;
+    }*/
 }

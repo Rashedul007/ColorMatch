@@ -395,14 +395,22 @@ public class DatabaseHelper extends SQLiteOpenHelper
     public void deletePaletteItem(String m_id, String flg)
     {
         SQLiteDatabase db = this.getWritableDatabase();
-        int res=0;
+        int deletedRows=0;
         Log.d("DBDel", "passedID::" + m_id + " flag::"+ flg);
         db.beginTransaction();
         try {
             if(flg.equals("image"))
-                res = db.delete(TABLE_IMAGE, "imageid_pk=?", new String[]{m_id});
+                deletedRows = db.delete(TABLE_IMAGE, "imageid_pk=?", new String[]{m_id});
             else if(flg.equals("color"))
-                res= db.delete(TABLE_COLOR, "colorid_pk=?", new String[]{m_id});
+                deletedRows= db.delete(TABLE_COLOR, "colorid_pk=?", new String[]{m_id});
+
+            ArrayList<String> arrPltIDsForCover = checkIfItemIsCover(flg, m_id);
+
+            if(arrPltIDsForCover.size() > 0)
+            {
+                for(String eachPltID: arrPltIDsForCover)
+                    updateCoverInPalette(eachPltID, "image", "0");
+            }
 
             db.setTransactionSuccessful();
         } catch(Exception ex){
@@ -411,12 +419,26 @@ public class DatabaseHelper extends SQLiteOpenHelper
         finally{
             db.endTransaction();
             db.close();
-            Log.d("DBDel", "deleted row::" + res);
+            Log.d("DBDel", "deleted row::" + deletedRows);
         }
     }
 
 
 //////////////////////////////// checkings
+
+    public boolean checkDuplicatePltName(String newpltName)
+    {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        String[] cols = {KEY_PALETTE_NAME};
+
+        Cursor findEntry = db.query(TABLE_MAIN, cols, "palette_name=?", new String[] { newpltName }, null, null, null);
+
+        if(findEntry.getCount() > 0)
+            return true;
+        else
+            return false;
+    }
 
     public boolean checkDuplicateImgName(String newImgName)
     {
@@ -432,19 +454,44 @@ public class DatabaseHelper extends SQLiteOpenHelper
             return false;
     }
 
-    public boolean checkDuplicatePltName(String newpltName)
+    public boolean checkDuplicateColorName(String newClrName)
     {
         SQLiteDatabase db = this.getReadableDatabase();
 
-        String[] cols = {KEY_PALETTE_NAME};
+        String[] cols = {KEY_COLOR_NAME};
 
-        Cursor findEntry = db.query(TABLE_MAIN, cols, "palette_name=?", new String[] { newpltName }, null, null, null);
+        Cursor findEntry = db.query(TABLE_COLOR, cols, "color_name=?", new String[] { newClrName }, null, null, null);
 
         if(findEntry.getCount() > 0)
             return true;
         else
             return false;
     }
+
+    public ArrayList<String> checkIfItemIsCover(String _flgClrOrImg, String _id)
+    {
+        ArrayList<String> strArrPltIdsWithCover = new ArrayList<>();
+
+        if(!_id.equals("0")) {
+            String myQuery = "SELECT paletteid_pk  from tblmainpalette where coverid_flag='" + _flgClrOrImg + "' and coverid='" + _id + "'";
+
+            SQLiteDatabase db = this.getReadableDatabase();
+            Cursor c = db.rawQuery(myQuery, null);
+
+
+
+            if (c.moveToFirst()) {
+                do {
+                    strArrPltIdsWithCover.add(c.getString(c.getColumnIndex("paletteid_pk")));
+                }
+                while (c.moveToNext());
+            }
+        }
+
+        return strArrPltIdsWithCover;
+
+    }
+
 
     public void getDBVersion_fkCheck()
     {
