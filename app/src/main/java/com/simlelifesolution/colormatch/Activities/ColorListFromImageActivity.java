@@ -1,5 +1,6 @@
 package com.simlelifesolution.colormatch.Activities;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -38,6 +39,7 @@ import java.util.ArrayList;
 public class ColorListFromImageActivity extends AppCompatActivity
 {
 //region...... variables declaration
+    private Context mContext = ColorListFromImageActivity.this;
     private Toolbar mToolbar;
     private ImageView mImageView;
     private RecyclerView mRecyclerView;
@@ -65,6 +67,8 @@ public class ColorListFromImageActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_colorlist_fromimage);
+
+
 
         mImageView = (ImageView)findViewById(R.id.imgVw_colorLstFrmImg);
 
@@ -126,7 +130,7 @@ public class ColorListFromImageActivity extends AppCompatActivity
                     btnClkPickerExisting();
                 } // make dialog and insertcolor to palette
                 else if (mView instanceof ImageView) {
-                    Intent intnt = new Intent(ColorListFromImageActivity.this, ColorMatchingActivity.class);
+                    Intent intnt = new Intent(mContext, ColorMatchingActivity.class);
                     intnt.putExtra("intnt_colorCode", mColor_HexConverted);
                     startActivity(intnt);
                 }
@@ -137,16 +141,16 @@ public class ColorListFromImageActivity extends AppCompatActivity
 
     public void btnClkPickerExisting()
     {
-        AlertDialog.Builder mAlertBuilder = new AlertDialog.Builder(ColorListFromImageActivity.this);
+        AlertDialog.Builder mAlertBuilder = new AlertDialog.Builder(mContext);
 
         LayoutInflater li = LayoutInflater.from(this);
-        View promptsView = li.inflate(R.layout.dailog_add_color_to_existing_plt, null);
+        View promptsView = li.inflate(R.layout.dialog_add_color_to_existing_plt, null);
 
         mAlertBuilder.setPositiveButton("ok", null);
         mAlertBuilder.setNegativeButton("cancel", null);
         mAlertBuilder.setView(promptsView);
 
-        final Spinner mSpinnerPaletteName = (Spinner) promptsView.findViewById(R.id.spinner_existingPalette);
+        final Spinner mSpinnerPaletteName = (Spinner) promptsView.findViewById(R.id.spinner_existingPalette_2);
         mSpinner = mSpinnerPaletteName;
         final EditText mEdtVwColorName = (EditText) promptsView.findViewById(R.id.edTxtVwNewColorName);
         final View mVwColorBack = (View)promptsView.findViewById(R.id.vwColorBackGround);
@@ -172,12 +176,12 @@ public class ColorListFromImageActivity extends AppCompatActivity
                         {
                             BeanColor _PaletteObj = new BeanColor("NULL", mpalettetIDFromSpinner, mColor_HexConverted, mEdtVwColorName.getText().toString(), "");
                             Long dbColorInsert = myDbHelper.insert_newColor(_PaletteObj);
-                            Toast.makeText(ColorListFromImageActivity.this, "Color inserted successfully with row no# : " + dbColorInsert, Toast.LENGTH_SHORT).show();
+                            Toast.makeText(mContext, "Color inserted successfully with row no# : " + dbColorInsert, Toast.LENGTH_SHORT).show();
 
                             mAlertDialog.dismiss();
                         }
                         else
-                            Toast.makeText(ColorListFromImageActivity.this, "Please insert color name.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(mContext, "Please insert color name.", Toast.LENGTH_SHORT).show();
                     }
                 });
             }
@@ -192,7 +196,7 @@ public class ColorListFromImageActivity extends AppCompatActivity
             listPaletteDB.clear();
 
         listPaletteDB = myDbHelper.getPaletteList();
-        mSpinnerAdapter = new MySpinAdapter_PaletteNames(ColorListFromImageActivity.this, android.R.layout.simple_spinner_item, listPaletteDB);
+        mSpinnerAdapter = new MySpinAdapter_PaletteNames(mContext, android.R.layout.simple_spinner_item, listPaletteDB);
         mSpinner.setAdapter(mSpinnerAdapter);
         mSpinner.setSelection(listPaletteDB.size()-1);      // this is so that it auto selects the palette if any new palette created
         mSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -214,7 +218,7 @@ public class ColorListFromImageActivity extends AppCompatActivity
         final AlertDialog.Builder mAlertBuilder = new AlertDialog.Builder(this);
 
         LayoutInflater li = LayoutInflater.from(this);
-        View promptsView = li.inflate(R.layout.dailog_add_color_to_new_plt, null);
+        View promptsView = li.inflate(R.layout.dialog_add_color_to_new_plt, null);
 
         mAlertBuilder.setPositiveButton("ok", null);
         mAlertBuilder.setNegativeButton("cancel", null);
@@ -246,11 +250,11 @@ public class ColorListFromImageActivity extends AppCompatActivity
                                 mAlertDialog.dismiss();
                             }
                             else{
-                                Toast.makeText(ColorListFromImageActivity.this, "Something went wrong when creating a new palette!", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(mContext, "Something went wrong when creating a new palette!", Toast.LENGTH_SHORT).show();
                             }
                         }
                         else
-                            Toast.makeText(ColorListFromImageActivity.this, "Please insert palette name.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(mContext, "Please insert palette name.", Toast.LENGTH_SHORT).show();
                     }
                 });
             }

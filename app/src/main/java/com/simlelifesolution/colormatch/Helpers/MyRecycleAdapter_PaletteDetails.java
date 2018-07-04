@@ -2,21 +2,20 @@ package com.simlelifesolution.colormatch.Helpers;
 
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.ImageView;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.simlelifesolution.colormatch.Activities.CallingCameraActivity;
 import com.simlelifesolution.colormatch.Beans.BeanColor;
 import com.simlelifesolution.colormatch.Beans.BeanImage;
 import com.simlelifesolution.colormatch.Beans.BeanObject;
@@ -32,6 +31,8 @@ public class MyRecycleAdapter_PaletteDetails extends RecyclerView.Adapter<MyRecy
     private ArrayList<BeanObject> mbeanAllObj;
 
     private onRecyclerViewItemClickListener mItemClickListener;
+    private onCoverUpdateListener mCoverUpdateListener;
+
 
     private DatabaseHelper myDbHelper;
 
@@ -45,6 +46,7 @@ public class MyRecycleAdapter_PaletteDetails extends RecyclerView.Adapter<MyRecy
         myDbHelper = new DatabaseHelper(mContext);
     }
 
+//region interface 1
     public void setOnItemClickListener(onRecyclerViewItemClickListener mItemClickListener) {
         this.mItemClickListener = mItemClickListener;
     }
@@ -53,11 +55,22 @@ public class MyRecycleAdapter_PaletteDetails extends RecyclerView.Adapter<MyRecy
         //void onItemClickListener(View view, int position,String flag_clrImg, String clrOrImgID, String clrCd);
         void onItemClickListener(View view, int position,String flag_clrImg, BeanObject mBeanObj);
     }
+//endregion
+
+//region interface for updating cover in details activity
+    public void setCoverUpdateListener(onCoverUpdateListener mUpdateListener) {
+        this.mCoverUpdateListener = mUpdateListener;
+    }
+
+    public interface onCoverUpdateListener {
+        void onCoverUpdate();
+    }
+//endregion
 
 
     public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener
     {
-         Button mDeleteButton, mCameraButton;
+         Button mDeleteButton, mCameraButton, mEyeButton;
          ImageView mImgVw;
          TextView mTxtVw;
 
@@ -66,10 +79,11 @@ public class MyRecycleAdapter_PaletteDetails extends RecyclerView.Adapter<MyRecy
         {
             super(view);
 
-            mDeleteButton = (Button) view.findViewById(R.id.btnDeletePaletteItem);
+           // mDeleteButton = (Button) view.findViewById(R.id.btnDeletePaletteItem);
             mCameraButton  = (Button) view.findViewById(R.id.btnCustomCamera);
             mImgVw = (ImageView) view.findViewById(R.id.imgVw_pltDetails);
             mTxtVw = (TextView) view.findViewById(R.id.title_pltDetails);
+            mEyeButton = (Button)view.findViewById(R.id.btnViewPaletteItem);
 
             mImgVw.setOnClickListener(this);
             mCameraButton.setOnClickListener(this);
@@ -133,7 +147,8 @@ public class MyRecycleAdapter_PaletteDetails extends RecyclerView.Adapter<MyRecy
 
             holder.mTxtVw.setText(_imgObj.getimageName() );
             //holder.mDeleteButton.setTag(_imgObj.getimageId());
-            holder.mDeleteButton.setTag(_imgObj);
+            //holder.mDeleteButton.setTag(_imgObj);
+            holder.mEyeButton.setTag(_imgObj);
 
         }
 //endregion
@@ -148,11 +163,142 @@ public class MyRecycleAdapter_PaletteDetails extends RecyclerView.Adapter<MyRecy
 
             holder.mTxtVw.setText(_clrObj.getColorName());
           //  holder.mDeleteButton.setTag(_clrObj.getColorId());
-            holder.mDeleteButton.setTag(_clrObj);
+           // holder.mDeleteButton.setTag(_clrObj);
+            holder.mEyeButton.setTag(_clrObj);
         }
 //endregion
 
-        holder.mDeleteButton.setOnClickListener(new View.OnClickListener(){
+        holder.mEyeButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                //region...............Delete button ................
+                AlertDialog.Builder mAlertBuilder = new AlertDialog.Builder(mContext);
+
+                LayoutInflater li = LayoutInflater.from(mContext);
+                View promptsView = li.inflate(R.layout.dialog_eye_item, null);
+
+                mAlertBuilder.setPositiveButton("ok", null);
+                mAlertBuilder.setNegativeButton("cancel", null);
+                mAlertBuilder.setView(promptsView);
+
+                final ImageView mEyeImgVw = (ImageView) promptsView.findViewById(R.id.eye_imgVw);
+                final CheckBox mChkBx_cover = (CheckBox) promptsView.findViewById(R.id.eye_chkBoxCover);
+                final CheckBox mChkBx_delete = (CheckBox) promptsView.findViewById(R.id.eye_chkBoxDelete);
+
+//region turn on only one checkbox at a time
+                mChkBx_cover.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if(mChkBx_delete.isChecked())
+                            mChkBx_delete.setChecked(false);      }   });
+
+                mChkBx_delete.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if(mChkBx_cover.isChecked())
+                            mChkBx_cover.setChecked(false);      }   });
+//endregion
+
+//region set imageview background as image or color
+                if(flag_imgOrClr.equals("image")) {
+                    BeanImage clkImgObj = (BeanImage) holder.mEyeButton.getTag();
+
+                    String mainImgPath = clkImgObj.getimagePath() ;
+
+                    Drawable d = Drawable.createFromPath(mainImgPath);
+                    mEyeImgVw.setBackground(d);
+
+                }
+                else if(flag_imgOrClr.equals("color")){
+                    BeanColor clkClrObj = (BeanColor) holder.mEyeButton.getTag();
+
+                    String mCOlorCode = clkClrObj.getColorCode().trim();
+                    mEyeImgVw.setBackgroundColor(Color.parseColor(mCOlorCode));
+                }
+//endregion
+
+                final AlertDialog mAlertDialog = mAlertBuilder.create();
+                mAlertDialog.setOnShowListener(new DialogInterface.OnShowListener() {
+
+                    @Override
+                    public void onShow(DialogInterface dialog) {
+
+                        Button btnDialog_positive = mAlertDialog.getButton(AlertDialog.BUTTON_POSITIVE);
+                        btnDialog_positive.setOnClickListener(new View.OnClickListener() {
+
+                            @Override
+                            public void onClick(View view) {
+                                Long returnResult = -1L;
+
+                                if(mChkBx_cover.isChecked())
+//region update pallete cover in DB
+                                {
+                                    if(flag_imgOrClr.equals("image")) {
+                                        BeanImage clkImgObj = (BeanImage) holder.mEyeButton.getTag();
+                                         returnResult = myDbHelper.updateCoverInPalette(clkImgObj.getPaletteID().toString(), "image", clkImgObj.getimageId());
+                                    }
+                                    else if(flag_imgOrClr.equals("color")) {
+                                        BeanColor clkClrObj = (BeanColor) holder.mEyeButton.getTag();
+                                         returnResult = myDbHelper.updateCoverInPalette(clkClrObj.getPaletteID().toString(), "color", clkClrObj.getColorId());
+                                    }
+
+                                    if(returnResult > -1L)
+                                         mAlertDialog.dismiss();
+                                    else
+                                    {Toast.makeText(mContext, "Sorry can't update cover image.", Toast.LENGTH_SHORT).show();
+                                      mAlertDialog.dismiss();  }
+
+                                      if (mCoverUpdateListener != null)
+                                            mCoverUpdateListener.onCoverUpdate();
+                                }
+//endregion
+                                else if(mChkBx_delete.isChecked())
+//region delete all full & thumb images if flag=image or delete from DB if flg=color
+                                {
+                                    if(flag_imgOrClr.equals("image")) {
+                                        BeanImage clkImgObj = (BeanImage) holder.mEyeButton.getTag();
+                                        myDbHelper.deletePaletteItem(clkImgObj.getimageId().toString(), flag_imgOrClr);
+
+                                        String mainImgPath = clkImgObj.getimagePath() ;
+                                        String thumbPath = clkImgObj.getThumbPath();
+
+                                        if(chkImageExist(mainImgPath))
+                                            MyImageHelper.deleteRecursive(new File(mainImgPath));
+
+                                        if(chkImageExist(thumbPath))
+                                            MyImageHelper.deleteRecursive(new File(thumbPath));
+
+                                    }
+                                    else if(flag_imgOrClr.equals("color")){
+                                        BeanColor clkClrObj = (BeanColor) holder.mEyeButton.getTag();
+                                        myDbHelper.deletePaletteItem(clkClrObj.getColorId().toString(), flag_imgOrClr);
+                                    }
+
+
+                                    mbeanAllObj.remove(position);
+                                    notifyItemRemoved(position);
+                                    notifyItemRangeChanged(position, mbeanAllObj.size());
+                                    notifyDataSetChanged();
+
+                                    mAlertDialog.dismiss();
+                                }
+//endregion
+                            }
+                        });
+                    }
+                });
+                mAlertDialog.show();
+
+
+
+
+
+                //endregion
+            }
+        }); //end of EyeButton
+
+//region oldcode for delete button
+        /*holder.mDeleteButton.setOnClickListener(new View.OnClickListener(){
                     @Override
                     public void onClick(View v) {
                         //region...............Delete button ................
@@ -205,8 +351,9 @@ public class MyRecycleAdapter_PaletteDetails extends RecyclerView.Adapter<MyRecy
 
  //endregion
             }
-        }); //end of deleteButton
+        });*/ //end of deleteButton
 
+//endregion
 
       /*  holder.mCameraButton.setOnClickListener(new View.OnClickListener(){
             @Override

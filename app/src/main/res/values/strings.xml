@@ -4,6 +4,11 @@
     <string name="color_picker_button_chooser">Add To Palette: </string>
 
 
+    <string name="signin">Sign In</string>
+    <string name="image_name"><i>Image Name</i></string>
+    <string name="add_to_new_palette"><i>Add To New Palette</i></string>
+    <string name="add_to_existing_palette"><i>Add To Existing Palette</i></string>
+
     <!--region.................custom camera ..........................-->
     <string name="start_image_capture">Take a New Picture</string>
     <string name="capture_image">Snap it!</string>
@@ -16,6 +21,16 @@
 
     <!-- region................. Common fileds used ...................  -->
     <string name="common_log">LogColorMatch</string>
+
+    <!--endregion-->
+
+    <!-- region ................. Menu items for details list activity .................... -->
+    <string name="share">share</string>
+    <string name="options">customcamera_menu</string>
+    <string name="settings">settings</string>
+    <string name="help">help</string>
+    <string name="Open">open</string>
+    <string name="Close">close</string>
     <!--endregion-->
 
 

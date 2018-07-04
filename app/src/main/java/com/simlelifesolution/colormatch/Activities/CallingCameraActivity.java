@@ -7,16 +7,12 @@ import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import android.Manifest;
 import android.content.DialogInterface;
-import android.content.SharedPreferences;
 import android.support.v7.app.AlertDialog;
 
-import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
-import java.io.OutputStream;
 import java.util.ArrayList;
 
 import android.content.Intent;
@@ -25,7 +21,6 @@ import android.graphics.BitmapFactory;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -45,7 +40,7 @@ import com.simlelifesolution.colormatch.R;
 public class CallingCameraActivity extends AppCompatActivity
 {
 //region.....variables & ClickListeners
-    Context mContext;
+    Context  mContext = CallingCameraActivity.this;
     String getIntent_flag_ImgOrClr, getIntent_pltID, getIntent_pltName, getIntent_imgPath_OR_clrCode;
 
     private static final int TAKE_PICTURE_REQUEST_B = 100;
@@ -96,7 +91,7 @@ public class CallingCameraActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calling_camera);
-        mContext = CallingCameraActivity.this;
+
 
         mCameraImageView = (ImageView) findViewById(R.id.camera_image_view);
         mSaveImageButton_new = (Button) findViewById(R.id.save_image_new_button);
@@ -220,7 +215,7 @@ public class CallingCameraActivity extends AppCompatActivity
         AlertDialog.Builder mAlertBuilder = new AlertDialog.Builder(this);
 
         LayoutInflater li = LayoutInflater.from(this);
-        View promptsView = li.inflate(R.layout.dailog_new_palette, null);
+        View promptsView = li.inflate(R.layout.dialog_new_palette, null);
 
         mAlertBuilder.setPositiveButton("ok", null);
         mAlertBuilder.setNegativeButton("cancel", null);
@@ -311,7 +306,7 @@ public class CallingCameraActivity extends AppCompatActivity
         mAlertBuilder.setNegativeButton("cancel", null);
         mAlertBuilder.setView(promptsView);
 
-        final Spinner mSpinnerPaletteName = (Spinner) promptsView.findViewById(R.id.spinner_existingPalette);
+        final Spinner mSpinnerPaletteName = (Spinner) promptsView.findViewById(R.id.spinner_existingPalette_2);
         final EditText mEdtVwImageName = (EditText) promptsView.findViewById(R.id.etDialogImgName);
         final CheckBox mChkBx_existing = (CheckBox) promptsView.findViewById(R.id.chkBoxCover_existing);
 

@@ -1,5 +1,6 @@
 package com.simlelifesolution.colormatch.Activities;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
@@ -13,6 +14,8 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -40,6 +43,7 @@ import android.view.ViewGroup.LayoutParams;
 public class PaletteDetailsActivity extends AppCompatActivity
 {
 //region...... variables declaration
+    private Context mContext = PaletteDetailsActivity.this;
     private Toolbar mToolbar;
 
     ImageView mImgViewCover;
@@ -62,6 +66,7 @@ public class PaletteDetailsActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
 
+
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
         android.support.v7.app.ActionBar actionBar = getSupportActionBar();
@@ -78,21 +83,20 @@ public class PaletteDetailsActivity extends AppCompatActivity
              intent_pltName = extras.getString("xtra_pltName_fromListClk");
             actionBar.setTitle(intent_pltName);
 
-            intent_CoverFlag = extras.getString("xtra_pltCoverFlag_fromListClk");
-            intent_CoverID = extras.getString("xtra_pltCoverID_fromListClk");
+            ArrayList<String> cover_arr = mDbHelper.getCoverFromID(intent_pltID);
 
-            if(intent_CoverFlag.equals("color"))
+            // //( CoverID, Flag, Name, Path/code ) ////
+
+            if(cover_arr.get(1).equals("image"))
                 {
-                   BeanColor _clrObj =  mDbHelper.getColorFromColorID(intent_CoverID);
-                    mImgViewCover.setBackgroundColor(Color.parseColor(_clrObj.getColorCode()));
+                    if(cover_arr.get(0).equals("0"))
+                        mImgViewCover.setBackgroundResource(R.mipmap.icon_no_image);
+                    else
+                        mImgViewCover.setBackground(Drawable.createFromPath(cover_arr.get(3)));
                 }
-            else if(intent_CoverFlag.equals("image"))
+            else if(cover_arr.get(1).equals("color"))
                 {
-                    if(!intent_CoverID.equals("0"))
-                    { BeanImage _imgObj = mDbHelper.getImageFromImageID(intent_CoverID);
-                     mImgViewCover.setBackground(Drawable.createFromPath(_imgObj.getimagePath()));}
-                     else
-                         mImgViewCover.setBackgroundResource(R.mipmap.icon_no_image);
+                    mImgViewCover.setBackgroundColor(Color.parseColor(cover_arr.get(3)));
                 }
         }
     }
@@ -120,7 +124,6 @@ public class PaletteDetailsActivity extends AppCompatActivity
         BeanMain mDbPltObj = mDbHelper.getPaletteObjFromID(intent_pltID);
         ArrayList<BeanImage> mDbImgList = mDbHelper.getImageListFromPaletteID(intent_pltID, 0);
         ArrayList<BeanColor> mDbClrList = mDbHelper.getColorListFromPaletteID(intent_pltID, 0);
-
 
 //++++++++++++++++++++++++++++++++++++
 
@@ -156,15 +159,15 @@ public class PaletteDetailsActivity extends AppCompatActivity
             @Override
             public void onItemClickListener(View view, int position, String flagClrImg, BeanObject mBeanObj)
             {
-//                Toast.makeText(PaletteDetailsActivity.this,"Palette clicked at position:: " + position +"---flag::" + flagClrImg +"---id::" + clrOrImgID, Toast.LENGTH_SHORT).show();
+//                Toast.makeText(mContext,"Palette clicked at position:: " + position +"---flag::" + flagClrImg +"---id::" + clrOrImgID, Toast.LENGTH_SHORT).show();
 //region.... if image
                 if(flagClrImg.equals("image"))
-                {// Toast.makeText(PaletteDetailsActivity.this,"This is a image....Need to work on it", Toast.LENGTH_SHORT).show();
+                {// Toast.makeText(mContext,"This is a image....Need to work on it", Toast.LENGTH_SHORT).show();
                     BeanImage mImgObj = (BeanImage) mBeanObj.getAnyObjLst();
 
 //region.... if instance of Button - for maera button
                     if(view instanceof Button) {
-                        Intent intntCameraAct = new Intent(PaletteDetailsActivity.this, CallingCameraActivity.class);
+                        Intent intntCameraAct = new Intent(mContext, CallingCameraActivity.class);
                             intntCameraAct.putExtra("xtra_inside_plt_ID", intent_pltID);
                             intntCameraAct.putExtra("xtra_inside_plt_name", intent_pltName);
                             intntCameraAct.putExtra("xtra_img_path", mImgObj.getimagePath());
@@ -180,7 +183,7 @@ public class PaletteDetailsActivity extends AppCompatActivity
                             Bitmap mImgBitmap = MyImageHelper.getBitmapFromPath(mImgObj.getimagePath());
                             ArrayList<String> mColorsInImgArr = new MyColorHelper().getDominantColorFromImage(mImgBitmap);
 
-                            Intent intnt = new Intent(PaletteDetailsActivity.this, ColorListFromImageActivity.class);
+                            Intent intnt = new Intent(mContext, ColorListFromImageActivity.class);
                             intnt.putStringArrayListExtra("xtra_colorList", mColorsInImgArr);
                             intnt.putExtra("xtra_inside_plt_ID", intent_pltID);
                             intnt.putExtra("xtra_inside_plt_name", intent_pltName);
@@ -189,7 +192,7 @@ public class PaletteDetailsActivity extends AppCompatActivity
                             startActivity(intnt);
                         } catch (Exception ex) {
                             Log.e(getResources().getString(R.string.common_log), "errs:: " + ex.toString());
-                            Toast.makeText(PaletteDetailsActivity.this, "There is an error, please contact the support team!", Toast.LENGTH_SHORT);
+                            Toast.makeText(mContext, "There is an error, please contact the support team!", Toast.LENGTH_SHORT);
                         }
                     }
 //endregion
@@ -204,7 +207,7 @@ public class PaletteDetailsActivity extends AppCompatActivity
                         BeanColor mClrObj = (BeanColor) mBeanObj.getAnyObjLst();
 
                         if(view instanceof Button) {
-                            Intent intntCameraAct = new Intent(PaletteDetailsActivity.this, CallingCameraActivity.class);
+                            Intent intntCameraAct = new Intent(mContext, CallingCameraActivity.class);
                                 intntCameraAct.putExtra("xtra_inside_plt_ID", intent_pltID);
                                 intntCameraAct.putExtra("xtra_inside_plt_name", intent_pltName);
                                 intntCameraAct.putExtra("xtra_colorCode", mClrObj.getColorCode());
@@ -213,7 +216,7 @@ public class PaletteDetailsActivity extends AppCompatActivity
                         }
 //region.... if instance of imageview
                         else if(view instanceof ImageView) {
-                        Intent intent = new Intent(PaletteDetailsActivity.this, ColorMatchingActivity.class);
+                        Intent intent = new Intent(mContext, ColorMatchingActivity.class);
                         intent.putExtra("intnt_colorCode", mClrObj.getColorCode());
                         startActivity(intent);
                     }
@@ -221,6 +224,15 @@ public class PaletteDetailsActivity extends AppCompatActivity
                     }
                 }
 //endregion
+            }
+        });
+
+
+        mAdapter.setCoverUpdateListener(new MyRecycleAdapter_PaletteDetails.onCoverUpdateListener() {
+            @Override
+            public void onCoverUpdate() {
+                finish();
+                startActivity(getIntent());
             }
         });
     }
@@ -277,4 +289,22 @@ public class PaletteDetailsActivity extends AppCompatActivity
         return true;
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.toolbar_menu, menu);
+          return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        int id = item.getItemId();
+        if(id == R.id.menu_item_share){
+            Toast.makeText(mContext, "Share clicked", Toast.LENGTH_SHORT).show();
+        }
+        if(id == R.id.menu_item_customcamera){
+            Toast.makeText(mContext, "menu camera clicked", Toast.LENGTH_SHORT).show();
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }

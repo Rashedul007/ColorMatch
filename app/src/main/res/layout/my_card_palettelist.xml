@@ -16,31 +16,30 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <LinearLayout
-                android:id="@+id/lnractions"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="right"
-                android:background="@drawable/customborder">
-
-                <Button
-                    android:id="@+id/btnDeletePalette"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_gravity="center_horizontal|right|end"
-                    android:background="@drawable/ic_delete"/>
-
-            </LinearLayout>
-
             <ImageView
                 android:id="@+id/coverImageView"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/album_cover_height"
                 android:background="?attr/selectableItemBackgroundBorderless"
-                android:layout_below="@id/lnractions"
                 android:clickable="true"
                 android:scaleType="fitXY"/>
+
+            <Button
+                android:id="@+id/btnDeletePalette"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/ic_delete"
+                android:layout_alignLeft="@id/coverImageView"
+
+                />
+            <Button
+                android:id="@+id/btnSharePalette"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/ic_share"
+                android:layout_alignRight="@id/coverImageView"
+                />
+
 
             <LinearLayout
                 android:id="@+id/lnrColorholder"
@@ -48,10 +47,8 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/coverImageView"
                 android:orientation="horizontal"
-                android:background="@drawable/customborder"
-                >
+                android:background="@drawable/customborder" />
 
-            </LinearLayout>
 
             <TextView
                 android:id="@+id/title"
@@ -62,6 +59,7 @@
                 android:paddingRight="@dimen/album_title_padding"
                 android:paddingTop="@dimen/album_title_padding"
                 android:textColor="@color/album_title"
+                android:textStyle="bold"
                 android:textSize="@dimen/album_title"
                 android:text="myColors"
                 android:gravity="center"/>

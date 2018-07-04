@@ -24,14 +24,23 @@
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:clickable="true"
                 android:scaleType="fitXY"
-                android:layout_margin="10dp"/>
+                android:layout_margin="5dp"/>
+
+            <!--<Button
+                android:id="@+id/btnDeletePaletteItem"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center_horizontal|left|clip_horizontal"
+                android:background="@drawable/ic_delete"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"/>-->
 
             <Button
-                android:id="@+id/btnDeletePaletteItem"
+                android:id="@+id/btnViewPaletteItem"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_gravity="center_horizontal|left|end"
-                android:background="@drawable/ic_delete"
+                android:background="@drawable/ic_eye"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentRight="true"/>
 
@@ -40,7 +49,7 @@
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_gravity="center_horizontal|right|end"
-                android:background="@drawable/cameraicon"
+                android:background="@drawable/icfab_camera"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentLeft="true"/>
 
@@ -53,7 +62,8 @@
                 android:textColor="@color/album_title"
                 android:textSize="@dimen/album_title"
                 android:text="myColors"
-                android:gravity="center"/>
+                android:textStyle="bold"
+                android:gravity="center" />
 
 
         </RelativeLayout>

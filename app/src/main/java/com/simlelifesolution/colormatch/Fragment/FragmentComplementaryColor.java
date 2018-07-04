@@ -2,10 +2,8 @@ package com.simlelifesolution.colormatch.Fragment;
 
 
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.Color;
-import android.net.ConnectivityManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -25,7 +23,6 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.simlelifesolution.colormatch.Activities.ColorMatchingActivity;
 import com.simlelifesolution.colormatch.Beans.BeanColor;
 import com.simlelifesolution.colormatch.Beans.BeanMain;
 import com.simlelifesolution.colormatch.Beans.BeanSimilarColor;
@@ -294,13 +291,13 @@ public class FragmentComplementaryColor extends Fragment
         AlertDialog.Builder mAlertBuilder = new AlertDialog.Builder(getActivity());
 
         LayoutInflater li = LayoutInflater.from(getActivity());
-        View promptsView = li.inflate(R.layout.dailog_add_color_to_existing_plt, null);
+        View promptsView = li.inflate(R.layout.dialog_add_color_to_existing_plt, null);
 
         mAlertBuilder.setPositiveButton("ok", null);
         mAlertBuilder.setNegativeButton("cancel", null);
         mAlertBuilder.setView(promptsView);
 
-        final Spinner mSpinnerPaletteName = (Spinner) promptsView.findViewById(R.id.spinner_existingPalette);
+        final Spinner mSpinnerPaletteName = (Spinner) promptsView.findViewById(R.id.spinner_existingPalette_2);
         mSpinner = mSpinnerPaletteName;
         final EditText mEdtVwColorName = (EditText) promptsView.findViewById(R.id.edTxtVwNewColorName);
         final View mVwColorBack = (View)promptsView.findViewById(R.id.vwColorBackGround);

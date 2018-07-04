@@ -23,6 +23,7 @@ import com.simlelifesolution.colormatch.Beans.BeanObject;
 import com.simlelifesolution.colormatch.Beans.BeanObjectList;
 import com.simlelifesolution.colormatch.R;
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -143,7 +144,7 @@ public class MyRecycleAdapter_PaletteList extends RecyclerView.Adapter<MyRecycle
                     }
                 };
 
-                AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
+                AlertDialog.Builder builder = new AlertDialog.Builder(mContext, R.style.MyDialogTheme);
                 builder.setMessage("Are you sure you want to delete the palette?").setPositiveButton("Yes", dialogClickListener)
                         .setNegativeButton("No", dialogClickListener).show();
 //endregion
@@ -152,8 +153,23 @@ public class MyRecycleAdapter_PaletteList extends RecyclerView.Adapter<MyRecycle
 
         holder.lnrLayout.removeAllViewsInLayout();
 
-        if (beanClass.get_paletteObj().getCoverID_flag().equals("image") && beanClass.get_paletteObj().getCoverID().toString().equals("0"))
+     /*   if (beanClass.get_paletteObj().getCoverID_flag().equals("image") && beanClass.get_paletteObj().getCoverID().toString().equals("0"))
             holder.mCoverImgVw.setBackgroundResource(R.mipmap.icon_no_image);
+        else{*/
+            ArrayList<String> cover_arr = myDbHelper.getCoverFromID(beanClass.get_paletteObj().getPaletteID().toString());
+
+            if(cover_arr.get(1).equals("image"))
+            {
+                if(cover_arr.get(0).equals("0"))
+                    holder.mCoverImgVw.setBackgroundResource(R.mipmap.icon_no_image);
+                else
+                    holder.mCoverImgVw.setBackground(Drawable.createFromPath(cover_arr.get(3)));
+            }
+            else if(cover_arr.get(1).equals("color"))
+            {
+                holder.mCoverImgVw.setBackgroundColor(Color.parseColor(cover_arr.get(3)));
+            }
+       // }
 
 //region.... For Loop through  each obj & dynamically make views horizontally -for images & colors
         for(BeanObject mObj: beanClass.get_imgOrClrObjLst())
@@ -179,13 +195,15 @@ public class MyRecycleAdapter_PaletteList extends RecyclerView.Adapter<MyRecycle
                    _imgVw.setLayoutParams(lnr);
 
                    holder.lnrLayout.addView(_imgVw);
-                     if (beanClass.get_paletteObj().getCoverID().toString().equals("0"))
+
+
+                     /*if (beanClass.get_paletteObj().getCoverID().toString().equals("0"))
                           holder.mCoverImgVw.setBackgroundResource(R.mipmap.icon_no_image);
                    else if( (beanClass.get_paletteObj().getCoverID().toString()).equals(imgObj.getimageId().toString()) )
                     {
                         Drawable cvrImg = Drawable.createFromPath(imgObj.getimagePath());
                         holder.mCoverImgVw.setBackground(cvrImg);
-                    }
+                    }*/
 
 
                 }
@@ -209,10 +227,10 @@ public class MyRecycleAdapter_PaletteList extends RecyclerView.Adapter<MyRecycle
 
                 holder.lnrLayout.addView(_Vw);
 
-                if( (beanClass.get_paletteObj().getCoverID().toString()).equals(clrObj.getColorId().toString()) )
+                /*if( (beanClass.get_paletteObj().getCoverID().toString()).equals(clrObj.getColorId().toString()) )
                 {
                     holder.mCoverImgVw.setBackgroundColor(Color.parseColor(mCOlorCode));
-                }
+                }*/
 
                 Log.d("LogRecycler","BeanID:: "+beanClass.get_paletteObj().getPaletteID() + "BeanName:: "+beanClass.get_paletteObj().getPaletteName() +
                         "ColorID:: "+ clrObj.getColorId()  +"colorCode:: "+ mCOlorCode + "\n" );

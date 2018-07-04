@@ -6,10 +6,31 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <!--<item name="android:buttonStyle">@style/ButtonColor</item>-->
+        <!--<item name="android:textColor">@color/textcolor</item>-->
+        <!--<item name="android:windowBackground">@drawable/gradiantbg_twodimension</item>-->
 
-        <item name="android:windowBackground">@color/windowbackgroundcolor</item>
-        <item name="android:textColor">@color/textcolor</item>
+     <!--for toolbar-->
+        <item name="android:textColorSecondary">@color/colorAccent</item>
+        <item name="android:textColorPrimary">@color/color_white</item>
+        <item name="actionMenuTextColor">@color/color_white</item>
 
     </style>
+
+
+    <style name="AppTheme.Transparent" parent="AppTheme">
+        <item name="android:windowBackground">@drawable/gradiantbg_twodimension</item>
+        <item name="windowActionBarOverlay">false</item>
+    </style>
+
+    <style name="MyDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:background">@color/windowbackgroundcolor</item>
+    </style>
+
+ <!--   <style name="ButtonColor" parent="@android:style/Widget.Button">
+        <item name="android:textColor">@color/color_white</item>
+
+    </style>
+-->
 
 </resources>

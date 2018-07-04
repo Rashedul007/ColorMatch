@@ -1,5 +1,6 @@
 package com.simlelifesolution.colormatch.Activities;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
@@ -12,7 +13,6 @@ import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.Toast;
 
 import com.simlelifesolution.colormatch.Beans.BeanColor;
 import com.simlelifesolution.colormatch.Beans.BeanImage;
@@ -30,6 +30,7 @@ import java.util.Comparator;
 public class PaletteListActivity extends AppCompatActivity implements View.OnClickListener
 {
 //region...... variables declaration
+private Context mContext = PaletteListActivity.this;
     private Toolbar mToolbar;
 
     private DatabaseHelper mDbHelper;
@@ -49,13 +50,13 @@ public class PaletteListActivity extends AppCompatActivity implements View.OnCli
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_color_palette_list);
+        setContentView(R.layout.activity_palette_list);
 
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
         android.support.v7.app.ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setTitle("My Palette List");
+        actionBar.setTitle("Palette List");
 
         mDbHelper = new DatabaseHelper(this);
         mRecyclerView= (RecyclerView)findViewById(R.id.rcView_paletteList);
@@ -138,13 +139,13 @@ public class PaletteListActivity extends AppCompatActivity implements View.OnCli
             @Override
             public void onItemClickListener(View view, int position, String pltID, String pltNm, String cvr_flag, String cvr_ID)
             {
-                   // Toast.makeText(PaletteListActivity.this,"Palette clicked at position:: " + position +"---paletteid::" + pltID_from_Spinner, Toast.LENGTH_SHORT).show();
+                   // Toast.makeText(mContext,"Palette clicked at position:: " + position +"---paletteid::" + pltID_from_Spinner, Toast.LENGTH_SHORT).show();
 
-                Intent intent_DetailsAct = new Intent(PaletteListActivity.this, PaletteDetailsActivity.class);
+                Intent intent_DetailsAct = new Intent(mContext, PaletteDetailsActivity.class);
                     intent_DetailsAct.putExtra("xtra_pltID_fromListClk", pltID);
                     intent_DetailsAct.putExtra("xtra_pltName_fromListClk", pltNm);
-                    intent_DetailsAct.putExtra("xtra_pltCoverFlag_fromListClk", cvr_flag);
-                    intent_DetailsAct.putExtra("xtra_pltCoverID_fromListClk", cvr_ID);
+                /*    intent_DetailsAct.putExtra("xtra_pltCoverFlag_fromListClk", cvr_flag);
+                    intent_DetailsAct.putExtra("xtra_pltCoverID_fromListClk", cvr_ID);*/
                 startActivity(intent_DetailsAct);
             }
         });
@@ -186,13 +187,13 @@ public class PaletteListActivity extends AppCompatActivity implements View.OnCli
 
                 break;
             case R.id.fabCamera:
-                Intent intnt_camera= new Intent(this, ImageUploadActivity.class);
+                Intent intnt_camera= new Intent(this, ImagePickerActivity.class);
                 intnt_camera.putExtra("btnPressed", 1); //1 for camera
                 startActivity(intnt_camera);
 
                 break;
             case R.id.fabGallery:
-                Intent intnt_galary = new Intent(this, ImageUploadActivity.class);
+                Intent intnt_galary = new Intent(this, ImagePickerActivity.class);
                 intnt_galary.putExtra("btnPressed",2); //2 for gallery
                 startActivity(intnt_galary);
 

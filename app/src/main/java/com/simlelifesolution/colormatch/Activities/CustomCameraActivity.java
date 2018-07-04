@@ -40,7 +40,7 @@ public class CustomCameraActivity extends AppCompatActivity implements PictureCa
 {
 
  //region... variables & clickListeners
-
+private Context   mContext = CustomCameraActivity.this;
     String getIntent_flag_ImgOrClr, getIntent_pltID, getIntent_pltName, getIntent_imgPath_OR_clrCode;
 
     private Toolbar mToolbar;
@@ -95,6 +95,8 @@ public class CustomCameraActivity extends AppCompatActivity implements PictureCa
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_custom_camera);
+
+
 
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
@@ -165,7 +167,7 @@ public class CustomCameraActivity extends AppCompatActivity implements PictureCa
                     mCamera.startPreview();
                 }
             } catch (Exception e) {
-                Toast.makeText(CustomCameraActivity.this, "Unable to open camera.", Toast.LENGTH_LONG)
+                Toast.makeText(mContext, "Unable to open camera.", Toast.LENGTH_LONG)
                         .show();
             }
         }
@@ -215,7 +217,7 @@ public class CustomCameraActivity extends AppCompatActivity implements PictureCa
                     mCamera.startPreview();
                 }
             } catch (Exception e) {
-                Toast.makeText(CustomCameraActivity.this, "Unable to start camera preview.", Toast.LENGTH_LONG).show();
+                Toast.makeText(mContext, "Unable to start camera preview.", Toast.LENGTH_LONG).show();
             }
         }
     }

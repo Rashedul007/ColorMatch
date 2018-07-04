@@ -4,6 +4,10 @@
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\color\\abc_primary_text_disable_only_material_light.xml"
     },
     {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_palette_list.xml.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\layout\\activity_palette_list.xml"
+    },
+    {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_icfab_camera.png.flat",
         "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\icfab_camera.png"
     },
@@ -16,16 +20,32 @@
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable-xxxhdpi-v4\\abc_btn_check_to_on_mtrl_015.png"
     },
     {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_eye.png.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_eye.png"
+    },
+    {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_ic_star_half_black_48dp.png.flat",
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable-hdpi-v4\\abc_ic_star_half_black_48dp.png"
+    },
+    {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_splash2.png.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\drawable-xxhdpi\\splash2.png"
     },
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_text_select_handle_right_mtrl_dark.png.flat",
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable-mdpi-v4\\abc_text_select_handle_right_mtrl_dark.png"
     },
     {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_eye.png.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_eye.png"
+    },
+    {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_ic_commit_search_api_mtrl_alpha.png.flat",
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable-hdpi-v4\\abc_ic_commit_search_api_mtrl_alpha.png"
+    },
+    {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\menu_toolbar_menu.xml.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\menu\\toolbar_menu.xml"
     },
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_hint_foreground_material_light.xml.flat",
@@ -34,6 +54,10 @@
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_tab_indicator_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable-xxxhdpi-v4\\abc_tab_indicator_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable_mycustom_btn_round.xml.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\drawable\\mycustom_btn_round.xml"
     },
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_btn_check_to_on_mtrl_015.png.flat",
@@ -64,6 +88,10 @@
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable-xxhdpi-v4\\abc_scrubber_control_off_mtrl_alpha.png"
     },
     {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_key.png.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_key.png"
+    },
+    {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_plus_sign.png.flat",
         "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_plus_sign.png"
     },
@@ -74,6 +102,10 @@
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_textfield_default_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable-xxhdpi-v4\\abc_textfield_default_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_person.png.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_person.png"
     },
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\layout_design_navigation_item_subheader.xml.flat",
@@ -94,10 +126,6 @@
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_icon_no_image.png.flat",
         "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\mipmap-mdpi\\icon_no_image.png"
-    },
-    {
-        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_galleryicon.png.flat",
-        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\mipmap-hdpi\\galleryicon.png"
     },
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-mdpi-v17_abc_ic_menu_cut_mtrl_alpha.png.flat",
@@ -124,6 +152,10 @@
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable-mdpi-v4\\abc_ic_star_half_black_16dp.png"
     },
     {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_uninstall.png.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\drawable-hdpi\\ic_uninstall.png"
+    },
+    {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21_abc_btn_colored_material.xml.flat",
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable-v21\\abc_btn_colored_material.xml"
     },
@@ -148,6 +180,10 @@
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable\\abc_ic_clear_material.xml"
     },
     {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_subscribe.png.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\drawable-xhdpi\\ic_subscribe.png"
+    },
+    {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable-hdpi-v4\\abc_ic_menu_copy_mtrl_am_alpha.png"
     },
@@ -162,6 +198,10 @@
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_textfield_default_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable-xhdpi-v4\\abc_textfield_default_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_key.xml.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_key.xml"
     },
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_text_select_handle_left_mtrl_dark.png.flat",
@@ -192,10 +232,6 @@
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\design-25.2.0.aar\\ec3ba639c6475a4b95eb643a1895183d\\res\\drawable-anydpi-v21\\design_ic_visibility_off.xml"
     },
     {
-        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_image_upload.xml.flat",
-        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\layout\\activity_image_upload.xml"
-    },
-    {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_screen_toolbar.xml.flat",
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\layout\\abc_screen_toolbar.xml"
     },
@@ -206,6 +242,10 @@
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_btn_radio_to_on_mtrl_015.png.flat",
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable-xhdpi-v4\\abc_btn_radio_to_on_mtrl_015.png"
+    },
+    {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_custom_username.xml.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\drawable\\ic_custom_username.xml"
     },
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_scrubber_track_mtrl_alpha.9.png.flat",
@@ -234,10 +274,6 @@
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_list_pressed_holo_light.9.png.flat",
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable-xxhdpi-v4\\abc_list_pressed_holo_light.9.png"
-    },
-    {
-        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_galleryicon.png.flat",
-        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\mipmap-xxhdpi\\galleryicon.png"
     },
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-mdpi-v17_abc_spinner_mtrl_am_alpha.9.png.flat",
@@ -274,6 +310,10 @@
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_done.png.flat",
         "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\drawable\\ic_done.png"
+    },
+    {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_permission.png.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\drawable-xxhdpi\\ic_permission.png"
     },
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_cab_background_top_mtrl_alpha.9.png.flat",
@@ -348,8 +388,24 @@
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\color\\abc_tint_spinner.xml"
     },
     {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_key.png.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_key.png"
+    },
+    {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_key.png.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_key.png"
+    },
+    {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_colorpicker.png.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\mipmap-xhdpi\\ic_colorpicker.png"
+    },
+    {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ab_share_pack_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable-mdpi-v4\\abc_ab_share_pack_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_logo.png.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\mipmap-hdpi\\logo.png"
     },
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
@@ -368,6 +424,10 @@
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\color\\abc_primary_text_disable_only_material_dark.xml"
     },
     {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_subscribe.png.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\drawable-mdpi\\ic_subscribe.png"
+    },
+    {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_btn_switch_to_on_mtrl_00001.9.png.flat",
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable-xxxhdpi-v4\\abc_btn_switch_to_on_mtrl_00001.9.png"
     },
@@ -376,8 +436,16 @@
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\layout-v11\\notification_template_big_media_custom.xml"
     },
     {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_key.png.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_key.png"
+    },
+    {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_btn_switch_to_on_mtrl_00012.9.png.flat",
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable-xxxhdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png"
+    },
+    {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_share.png.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\drawable-mdpi\\ic_share.png"
     },
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_textfield_activated_mtrl_alpha.9.png.flat",
@@ -402,6 +470,10 @@
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_text_select_handle_left_mtrl_dark.png.flat",
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable-xhdpi-v4\\abc_text_select_handle_left_mtrl_dark.png"
+    },
+    {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_storage.png.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\drawable-xxhdpi\\ic_storage.png"
     },
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_action_bar_up_container.xml.flat",
@@ -430,10 +502,6 @@
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_ic_menu_paste_mtrl_am_alpha.png.flat",
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable-hdpi-v4\\abc_ic_menu_paste_mtrl_am_alpha.png"
-    },
-    {
-        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_cameraicon.png.flat",
-        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\mipmap-xhdpi\\cameraicon.png"
     },
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_textfield_search_default_mtrl_alpha.9.png.flat",
@@ -484,8 +552,8 @@
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\layout-v16\\notification_template_custom_big.xml"
     },
     {
-        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_cameraicon.png.flat",
-        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\mipmap-hdpi\\cameraicon.png"
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\layout_dialog_add_color_to_existing_plt.xml.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\layout\\dialog_add_color_to_existing_plt.xml"
     },
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-hdpi-v17_abc_ic_menu_cut_mtrl_alpha.png.flat",
@@ -494,6 +562,10 @@
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\anim_abc_popup_enter.xml.flat",
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\anim\\abc_popup_enter.xml"
+    },
+    {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_colorpicker.png.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\mipmap-hdpi\\ic_colorpicker.png"
     },
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ico_plus.png.flat",
@@ -522,10 +594,6 @@
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_lines_media.xml.flat",
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\layout\\notification_template_lines_media.xml"
-    },
-    {
-        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_cameraicon.png.flat",
-        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\mipmap-mdpi\\cameraicon.png"
     },
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21_avd_hide_password.xml.flat",
@@ -600,10 +668,6 @@
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable-xhdpi-v4\\notify_panel_notification_icon_bg.png"
     },
     {
-        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_cameraicon.png.flat",
-        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\mipmap-xxxhdpi\\cameraicon.png"
-    },
-    {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_spinner_textfield_background_material.xml.flat",
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable\\abc_spinner_textfield_background_material.xml"
     },
@@ -620,6 +684,10 @@
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\design-25.2.0.aar\\ec3ba639c6475a4b95eb643a1895183d\\res\\layout\\design_bottom_navigation_item.xml"
     },
     {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_eye.png.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_eye.png"
+    },
+    {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21_design_password_eye.xml.flat",
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\design-25.2.0.aar\\ec3ba639c6475a4b95eb643a1895183d\\res\\drawable-v21\\design_password_eye.xml"
     },
@@ -632,6 +700,10 @@
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\layout-v21\\notification_template_icon_group.xml"
     },
     {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_login.xml.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\layout\\activity_login.xml"
+    },
+    {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_action_menu_item_layout.xml.flat",
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\layout\\abc_action_menu_item_layout.xml"
     },
@@ -642,6 +714,10 @@
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_list_menu_item_icon.xml.flat",
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\layout\\abc_list_menu_item_icon.xml"
+    },
+    {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_gallery.png.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_gallery.png"
     },
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_text_select_handle_left_mtrl_light.png.flat",
@@ -684,6 +760,10 @@
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable-mdpi-v4\\abc_ic_menu_share_mtrl_alpha.png"
     },
     {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_person.png.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_person.png"
+    },
+    {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_btn_radio_to_on_mtrl_015.png.flat",
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable-xxxhdpi-v4\\abc_btn_radio_to_on_mtrl_015.png"
     },
@@ -700,8 +780,12 @@
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable-mdpi-v4\\abc_cab_background_top_mtrl_alpha.9.png"
     },
     {
-        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable_galleryicon.png.flat",
-        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\drawable\\galleryicon.png"
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_uninstall.png.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\drawable-xhdpi\\ic_uninstall.png"
+    },
+    {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_logo.png.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\mipmap-xhdpi\\logo.png"
     },
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\anim_design_snackbar_out.xml.flat",
@@ -726,6 +810,10 @@
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_list_pressed_holo_light.9.png.flat",
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable-mdpi-v4\\abc_list_pressed_holo_light.9.png"
+    },
+    {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_input_add.png.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\mipmap-xhdpi\\ic_input_add.png"
     },
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_design_ic_visibility.png.flat",
@@ -758,6 +846,10 @@
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\layout_dialog_existingpalette.xml.flat",
         "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\layout\\dialog_existingpalette.xml"
+    },
+    {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_person.xml.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_person.xml"
     },
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_colorlist_fromimage.xml.flat",
@@ -800,12 +892,20 @@
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable-xxhdpi-v4\\abc_ab_share_pack_mtrl_alpha.9.png"
     },
     {
-        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_galleryicon.png.flat",
-        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\mipmap-xxxhdpi\\galleryicon.png"
-    },
-    {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\color-v23_abc_color_highlight_material.xml.flat",
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\color-v23\\abc_color_highlight_material.xml"
+    },
+    {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_subscribe.png.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\drawable-hdpi\\ic_subscribe.png"
+    },
+    {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_colorpicker.png.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_colorpicker.png"
+    },
+    {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable_mycustom_button_square.xml.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\drawable\\mycustom_button_square.xml"
     },
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_spinner_mtrl_am_alpha.9.png.flat",
@@ -818,6 +918,10 @@
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_textfield_activated_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable-xxhdpi-v4\\abc_textfield_activated_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_logo.png.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\mipmap-mdpi\\logo.png"
     },
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_delete.png.flat",
@@ -836,6 +940,10 @@
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable-hdpi-v4\\abc_textfield_search_activated_mtrl_alpha.9.png"
     },
     {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_storage.png.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\drawable-hdpi\\ic_storage.png"
+    },
+    {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\anim_abc_slide_out_top.xml.flat",
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\anim\\abc_slide_out_top.xml"
     },
@@ -850,6 +958,14 @@
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_text_select_handle_middle_mtrl_light.png.flat",
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable-mdpi-v4\\abc_text_select_handle_middle_mtrl_light.png"
+    },
+    {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_image_picker.xml.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\layout\\activity_image_picker.xml"
+    },
+    {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable_gradiantbg_twodimension.xml.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\drawable\\gradiantbg_twodimension.xml"
     },
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ic_menu_selectall_mtrl_alpha.png.flat",
@@ -884,6 +1000,14 @@
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable\\notification_bg_low.xml"
     },
     {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable_custom_edittext_bg.xml.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\drawable\\custom_edittext_bg.xml"
+    },
+    {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_gallery.png.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_gallery.png"
+    },
+    {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_btn_switch_to_on_mtrl_00012.9.png.flat",
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable-hdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png"
     },
@@ -892,16 +1016,16 @@
         "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\layout\\activity_custom_camera.xml"
     },
     {
-        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_galleryicon.png.flat",
-        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\mipmap-xhdpi\\galleryicon.png"
-    },
-    {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_list_focused_holo.9.png.flat",
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable-xhdpi-v4\\abc_list_focused_holo.9.png"
     },
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\anim_design_bottom_sheet_slide_out.xml.flat",
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\design-25.2.0.aar\\ec3ba639c6475a4b95eb643a1895183d\\res\\anim\\design_bottom_sheet_slide_out.xml"
+    },
+    {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_gallery.png.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\mipmap-mdpi\\ic_gallery.png"
     },
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_list_black_24dp.png.flat",
@@ -920,8 +1044,16 @@
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable-hdpi-v4\\abc_list_longpressed_holo.9.png"
     },
     {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_eye.png.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_eye.png"
+    },
+    {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_activity_chooser_view.xml.flat",
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\layout\\abc_activity_chooser_view.xml"
+    },
+    {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_person.png.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_person.png"
     },
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_star_black_36dp.png.flat",
@@ -964,8 +1096,8 @@
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable-xhdpi-v4\\abc_ic_star_black_16dp.png"
     },
     {
-        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\layout_dailog_add_color_to_existing_plt.xml.flat",
-        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\layout\\dailog_add_color_to_existing_plt.xml"
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_camera.png.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\mipmap-hdpi\\ic_camera.png"
     },
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_ic_commit_search_api_mtrl_alpha.png.flat",
@@ -1004,12 +1136,20 @@
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable-xxhdpi-v4\\abc_ic_star_half_black_36dp.png"
     },
     {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_palette.png.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\mipmap-mdpi\\ic_palette.png"
+    },
+    {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_popup_background_mtrl_mult.9.png.flat",
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable-xhdpi-v4\\abc_popup_background_mtrl_mult.9.png"
     },
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_list_focused_holo.9.png.flat",
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable-xxhdpi-v4\\abc_list_focused_holo.9.png"
+    },
+    {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_share.png.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\drawable-hdpi\\ic_share.png"
     },
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_seekbar_thumb_material.xml.flat",
@@ -1032,6 +1172,10 @@
         "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\layout\\activity_main.xml"
     },
     {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_palette.png.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_palette.png"
+    },
+    {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\layout_design_navigation_item.xml.flat",
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\design-25.2.0.aar\\ec3ba639c6475a4b95eb643a1895183d\\res\\layout\\design_navigation_item.xml"
     },
@@ -1044,16 +1188,16 @@
         "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\icfab_gallery.png"
     },
     {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_gallery.png.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\mipmap-xhdpi\\ic_gallery.png"
+    },
+    {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\animator-v21_design_appbar_state_list_animator.xml.flat",
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\design-25.2.0.aar\\ec3ba639c6475a4b95eb643a1895183d\\res\\animator-v21\\design_appbar_state_list_animator.xml"
     },
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11_notification_template_big_media_narrow.xml.flat",
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\layout-v11\\notification_template_big_media_narrow.xml"
-    },
-    {
-        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_paletteicon.png.flat",
-        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\mipmap-xxxhdpi\\paletteicon.png"
     },
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_scrubber_control_to_pressed_mtrl_005.png.flat",
@@ -1076,6 +1220,10 @@
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable-xxhdpi-v4\\abc_menu_hardkey_panel_mtrl_mult.9.png"
     },
     {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\menu_navigation_menu.xml.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\menu\\navigation_menu.xml"
+    },
+    {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_icfab_colorpicker.png.flat",
         "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\icfab_colorpicker.png"
     },
@@ -1092,6 +1240,10 @@
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable\\abc_btn_borderless_material.xml"
     },
     {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_camera.png.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\mipmap-xhdpi\\ic_camera.png"
+    },
+    {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_design_ic_visibility_off.png.flat",
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\design-25.2.0.aar\\ec3ba639c6475a4b95eb643a1895183d\\res\\drawable-hdpi-v4\\design_ic_visibility_off.png"
     },
@@ -1102,6 +1254,10 @@
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_list_black_24dp.png.flat",
         "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_list_black_24dp.png"
+    },
+    {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\layout_nav_header.xml.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\layout\\nav_header.xml"
     },
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_switch_track_mtrl_alpha.9.png.flat",
@@ -1128,6 +1284,10 @@
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\layout\\abc_popup_menu_item_layout.xml"
     },
     {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_eye.xml.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_eye.xml"
+    },
+    {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable_btn.xml.flat",
         "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\drawable\\btn.xml"
     },
@@ -1150,6 +1310,10 @@
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_activity_chooser_view_list_item.xml.flat",
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\layout\\abc_activity_chooser_view_list_item.xml"
+    },
+    {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_logo.png.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\mipmap-xxhdpi\\logo.png"
     },
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_ic_go_search_api_material.xml.flat",
@@ -1176,8 +1340,16 @@
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable-xxhdpi-v4\\abc_text_select_handle_left_mtrl_light.png"
     },
     {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\layout_dialog_new_palette.xml.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\layout\\dialog_new_palette.xml"
+    },
+    {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_design_ic_visibility_off.png.flat",
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\design-25.2.0.aar\\ec3ba639c6475a4b95eb643a1895183d\\res\\drawable-mdpi-v4\\design_ic_visibility_off.png"
+    },
+    {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_person.png.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_person.png"
     },
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_ic_star_half_black_48dp.png.flat",
@@ -1256,6 +1428,10 @@
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable-xhdpi-v4\\notification_bg_normal_pressed.9.png"
     },
     {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_palette.png.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\mipmap-xhdpi\\ic_palette.png"
+    },
+    {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable_design_password_eye.xml.flat",
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\design-25.2.0.aar\\ec3ba639c6475a4b95eb643a1895183d\\res\\drawable\\design_password_eye.xml"
     },
@@ -1284,10 +1460,6 @@
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable-xxhdpi-v4\\abc_text_select_handle_middle_mtrl_dark.png"
     },
     {
-        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_paletteicon.png.flat",
-        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\mipmap-xxhdpi\\paletteicon.png"
-    },
-    {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_ic_star_black_48dp.png.flat",
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable-xhdpi-v4\\abc_ic_star_black_48dp.png"
     },
@@ -1298,6 +1470,10 @@
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_ic_star_black_36dp.png.flat",
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable-xhdpi-v4\\abc_ic_star_black_36dp.png"
+    },
+    {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_person.png.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_person.png"
     },
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_ic_star_half_black_36dp.png.flat",
@@ -1356,6 +1532,10 @@
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable-ldrtl-xxhdpi-v17\\abc_ic_menu_cut_mtrl_alpha.png"
     },
     {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_person.png.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_person.png"
+    },
+    {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\color-v23_abc_btn_colored_text_material.xml.flat",
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\color-v23\\abc_btn_colored_text_material.xml"
     },
@@ -1372,16 +1552,20 @@
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable-mdpi-v4\\abc_btn_radio_to_on_mtrl_000.png"
     },
     {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_bground.jpg.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\drawable-xxhdpi\\bground.jpg"
+    },
+    {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_ic_menu_share_mtrl_alpha.png.flat",
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable-hdpi-v4\\abc_ic_menu_share_mtrl_alpha.png"
     },
     {
-        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\layout_dailog_input_imagename.xml.flat",
-        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\layout\\dailog_input_imagename.xml"
-    },
-    {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\layout_design_navigation_menu.xml.flat",
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\design-25.2.0.aar\\ec3ba639c6475a4b95eb643a1895183d\\res\\layout\\design_navigation_menu.xml"
+    },
+    {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_palette.png.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_palette.png"
     },
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_btn_switch_to_on_mtrl_00001.9.png.flat",
@@ -1412,6 +1596,10 @@
         "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\drawable\\btn_hover.xml"
     },
     {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_input_add.png.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_input_add.png"
+    },
+    {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_notification_bg_low_normal.9.png.flat",
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable-xhdpi-v4\\notification_bg_low_normal.9.png"
     },
@@ -1440,20 +1628,12 @@
         "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\icfab_camera.png"
     },
     {
-        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_color_palette_list.xml.flat",
-        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\layout\\activity_color_palette_list.xml"
-    },
-    {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-xhdpi-v17_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable-ldrtl-xhdpi-v17\\abc_ic_menu_copy_mtrl_am_alpha.png"
     },
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11_notification_template_big_media.xml.flat",
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\layout-v11\\notification_template_big_media.xml"
-    },
-    {
-        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_paletteicon.png.flat",
-        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\mipmap-xhdpi\\paletteicon.png"
     },
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_ic_menu_selectall_mtrl_alpha.png.flat",
@@ -1468,12 +1648,20 @@
         "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\mipmap-xhdpi\\ico_plus.png"
     },
     {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_input_add.png.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\mipmap-mdpi\\ic_input_add.png"
+    },
+    {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
         "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
     },
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_star_black_48dp.png.flat",
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable-xxxhdpi-v4\\abc_ic_star_black_48dp.png"
+    },
+    {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_subscribe.png.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\drawable-xxhdpi\\ic_subscribe.png"
     },
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_text_select_handle_left_mtrl_light.png.flat",
@@ -1492,8 +1680,16 @@
         "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\icfab_gallery.png"
     },
     {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_uninstall.png.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\drawable-xxhdpi\\ic_uninstall.png"
+    },
+    {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable_slim_spinner_normal.9.png.flat",
         "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\drawable\\slim_spinner_normal.9.png"
+    },
+    {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\layout_dialog_input_imagename.xml.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\layout\\dialog_input_imagename.xml"
     },
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\anim_rotate_forward.xml.flat",
@@ -1552,6 +1748,10 @@
         "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\drawable\\customborder.xml"
     },
     {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_uninstall.png.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\drawable-mdpi\\ic_uninstall.png"
+    },
+    {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_scrubber_control_off_mtrl_alpha.png.flat",
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable-mdpi-v4\\abc_scrubber_control_off_mtrl_alpha.png"
     },
@@ -1570,6 +1770,10 @@
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\layout_my_card_colormatch.xml.flat",
         "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\layout\\my_card_colormatch.xml"
+    },
+    {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_input_add.png.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\mipmap-hdpi\\ic_input_add.png"
     },
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable_design_fab_background.xml.flat",
@@ -1592,6 +1796,10 @@
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable-xxhdpi-v4\\abc_ic_star_black_48dp.png"
     },
     {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_share.png.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\drawable-xxhdpi\\ic_share.png"
+    },
+    {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_tint_btn_checkable.xml.flat",
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\color\\abc_tint_btn_checkable.xml"
     },
@@ -1608,6 +1816,10 @@
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\color\\switch_thumb_material_dark.xml"
     },
     {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_permission.png.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\drawable-mdpi\\ic_permission.png"
+    },
+    {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable_cameraicon.png.flat",
         "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\drawable\\cameraicon.png"
     },
@@ -1622,14 +1834,6 @@
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21_notification_action_tombstone.xml.flat",
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\layout-v21\\notification_action_tombstone.xml"
-    },
-    {
-        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_cameraicon.png.flat",
-        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\mipmap-xxhdpi\\cameraicon.png"
-    },
-    {
-        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_paletteicon.png.flat",
-        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\mipmap-hdpi\\paletteicon.png"
     },
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_colorpicker.png.flat",
@@ -1670,10 +1874,6 @@
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_notification_bg_normal.9.png.flat",
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable-hdpi-v4\\notification_bg_normal.9.png"
-    },
-    {
-        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_galleryicon.png.flat",
-        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\mipmap-mdpi\\galleryicon.png"
     },
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\layout_design_layout_snackbar.xml.flat",
@@ -1736,6 +1936,10 @@
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\layout\\abc_alert_dialog_title_material.xml"
     },
     {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_colorpicker.png.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_colorpicker.png"
+    },
+    {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_tint_seek_thumb.xml.flat",
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\color\\abc_tint_seek_thumb.xml"
     },
@@ -1748,6 +1952,10 @@
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable-hdpi-v4\\abc_ic_menu_selectall_mtrl_alpha.png"
     },
     {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_eye.png.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_eye.png"
+    },
+    {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_menu_selectall_mtrl_alpha.png.flat",
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable-xxhdpi-v4\\abc_ic_menu_selectall_mtrl_alpha.png"
     },
@@ -1756,12 +1964,12 @@
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable-xxhdpi-v4\\abc_scrubber_control_to_pressed_mtrl_000.png"
     },
     {
-        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_message.png.flat",
-        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\drawable\\ic_message.png"
-    },
-    {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_complementarycolor.xml.flat",
         "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\layout\\fragment_complementarycolor.xml"
+    },
+    {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_message.png.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\drawable\\ic_message.png"
     },
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\layout_popup_image.xml.flat",
@@ -1836,6 +2044,10 @@
         "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\icfab_colorpicker.png"
     },
     {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\layout_dialog_eye_item.xml.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\layout\\dialog_eye_item.xml"
+    },
+    {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_add_op.xml.flat",
         "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_add_op.xml"
     },
@@ -1888,12 +2100,12 @@
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable-hdpi-v4\\abc_ic_star_half_black_16dp.png"
     },
     {
-        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\anim_abc_fade_in.xml.flat",
-        "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\anim\\abc_fade_in.xml"
-    },
-    {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable_btn_blue.xml.flat",
         "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\drawable\\btn_blue.xml"
+    },
+    {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\anim_abc_fade_in.xml.flat",
+        "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\anim\\abc_fade_in.xml"
     },
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\layout_design_layout_tab_icon.xml.flat",
@@ -1944,6 +2156,10 @@
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable-xhdpi-v4\\abc_list_pressed_holo_light.9.png"
     },
     {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_storage.png.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\drawable-mdpi\\ic_storage.png"
+    },
+    {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_ratingbar_material.xml.flat",
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable\\abc_ratingbar_material.xml"
     },
@@ -1972,6 +2188,10 @@
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\color\\abc_search_url_text.xml"
     },
     {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_storage.png.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\drawable-xhdpi\\ic_storage.png"
+    },
+    {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable_design_bottom_navigation_item_background.xml.flat",
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\design-25.2.0.aar\\ec3ba639c6475a4b95eb643a1895183d\\res\\drawable\\design_bottom_navigation_item_background.xml"
     },
@@ -1988,12 +2208,20 @@
         "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\xml\\shared_file_paths.xml"
     },
     {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_custom_password.xml.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\drawable\\ic_custom_password.xml"
+    },
+    {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_scrubber_control_to_pressed_mtrl_005.png.flat",
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable-mdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png"
     },
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_add_op.png.flat",
         "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_add_op.png"
+    },
+    {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_eye.png.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_eye.png"
     },
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable_navigation_empty_icon.xml.flat",
@@ -2006,6 +2234,10 @@
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_add_op.png.flat",
         "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_add_op.png"
+    },
+    {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_camera.png.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_camera.png"
     },
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_list_selector_disabled_holo_dark.9.png.flat",
@@ -2060,12 +2292,20 @@
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable-xxxhdpi-v4\\abc_ic_star_half_black_48dp.png"
     },
     {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_gallery.png.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\mipmap-hdpi\\ic_gallery.png"
+    },
+    {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_list_divider_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable-xhdpi-v4\\abc_list_divider_mtrl_alpha.9.png"
     },
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\color-v23_abc_tint_switch_track.xml.flat",
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\color-v23\\abc_tint_switch_track.xml"
+    },
+    {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_colorpicker.png.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\mipmap-mdpi\\ic_colorpicker.png"
     },
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11_notification_template_big_media_narrow_custom.xml.flat",
@@ -2084,6 +2324,10 @@
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable-xhdpi-v4\\abc_list_selector_disabled_holo_light.9.png"
     },
     {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\layout_dialog_add_color_to_new_plt.xml.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\layout\\dialog_add_color_to_new_plt.xml"
+    },
+    {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-hdpi-v17_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable-ldrtl-hdpi-v17\\abc_ic_menu_copy_mtrl_am_alpha.png"
     },
@@ -2092,12 +2336,12 @@
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable-xxhdpi-v4\\abc_ic_menu_copy_mtrl_am_alpha.png"
     },
     {
-        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable_custom_btn.xml.flat",
-        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\drawable\\custom_btn.xml"
-    },
-    {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ico_plus.png.flat",
         "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\mipmap-hdpi\\ico_plus.png"
+    },
+    {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_key.png.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_key.png"
     },
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_dialog_title_material.xml.flat",
@@ -2110,6 +2354,10 @@
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_scrubber_control_to_pressed_mtrl_005.png.flat",
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable-hdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png"
+    },
+    {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_input_add.png.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_input_add.png"
     },
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_btn_radio_to_on_mtrl_015.png.flat",
@@ -2136,24 +2384,28 @@
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable-xxhdpi-v4\\abc_btn_check_to_on_mtrl_000.png"
     },
     {
-        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_paletteicon.png.flat",
-        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\mipmap-mdpi\\paletteicon.png"
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_permission.png.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\drawable-xhdpi\\ic_permission.png"
     },
     {
-        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_notify_panel_notification_icon_bg.png.flat",
-        "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable-mdpi-v4\\notify_panel_notification_icon_bg.png"
-    },
-    {
-        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_btn_radio_to_on_mtrl_000.png.flat",
-        "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable-xxhdpi-v4\\abc_btn_radio_to_on_mtrl_000.png"
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_ic_star_black_36dp.png.flat",
+        "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable-hdpi-v4\\abc_ic_star_black_36dp.png"
     },
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_hint_foreground_material_dark.xml.flat",
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\color\\abc_hint_foreground_material_dark.xml"
     },
     {
-        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_ic_star_black_36dp.png.flat",
-        "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable-hdpi-v4\\abc_ic_star_black_36dp.png"
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_btn_radio_to_on_mtrl_000.png.flat",
+        "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable-xxhdpi-v4\\abc_btn_radio_to_on_mtrl_000.png"
+    },
+    {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_notify_panel_notification_icon_bg.png.flat",
+        "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable-mdpi-v4\\notify_panel_notification_icon_bg.png"
+    },
+    {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_key.png.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_key.png"
     },
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_alert_dialog_material.xml.flat",
@@ -2164,12 +2416,24 @@
         "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\layout\\activity_color_matching.xml"
     },
     {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_logo.png.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\mipmap-xxxhdpi\\logo.png"
+    },
+    {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_list_black_24dp.png.flat",
         "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_list_black_24dp.png"
     },
     {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_share.png.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\drawable-xhdpi\\ic_share.png"
+    },
+    {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_design_ic_visibility_off.png.flat",
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\design-25.2.0.aar\\ec3ba639c6475a4b95eb643a1895183d\\res\\drawable-xxhdpi-v4\\design_ic_visibility_off.png"
+    },
+    {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_palette.png.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\mipmap-hdpi\\ic_palette.png"
     },
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_screen_simple_overlay_action_mode.xml.flat",
@@ -2186,6 +2450,10 @@
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_switch_track_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable-mdpi-v4\\abc_switch_track_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_camera.png.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\mipmap-mdpi\\ic_camera.png"
     },
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_list_selector_disabled_holo_dark.9.png.flat",
@@ -2208,12 +2476,16 @@
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable-xxxhdpi-v4\\abc_ic_menu_copy_mtrl_am_alpha.png"
     },
     {
-        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\layout_dailog_add_color_to_new_plt.xml.flat",
-        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\layout\\dailog_add_color_to_new_plt.xml"
-    },
-    {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_design_ic_visibility.png.flat",
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\design-25.2.0.aar\\ec3ba639c6475a4b95eb643a1895183d\\res\\drawable-mdpi-v4\\design_ic_visibility.png"
+    },
+    {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_camera.png.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_camera.png"
+    },
+    {
+        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_permission.png.flat",
+        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\drawable-hdpi\\ic_permission.png"
     },
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_icfab_gallery.xml.flat",
@@ -2222,10 +2494,6 @@
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_list_longpressed_holo.9.png.flat",
         "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\a15b23bb4246ae6c7bb03ff4cce6bf47\\res\\drawable-mdpi-v4\\abc_list_longpressed_holo.9.png"
-    },
-    {
-        "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\layout_dailog_new_palette.xml.flat",
-        "source": "C:\\AndroidStudioProjects\\ColorMatch\\app\\src\\main\\res\\layout\\dailog_new_palette.xml"
     },
     {
         "merged": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_notification_bg_normal_pressed.9.png.flat",

@@ -1,5 +1,6 @@
 package com.simlelifesolution.colormatch.Activities;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
@@ -29,6 +30,7 @@ import java.util.ArrayList;
 public class ColorPickerActivity extends AppCompatActivity
 {
 //region...... variables declaration
+    private Context   mContext = ColorPickerActivity.this;
     private MyGradientView mTop;
     private MyGradientView mBottom;
     private TextView mTextView;
@@ -51,6 +53,8 @@ public class ColorPickerActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         View view = View.inflate(this, R.layout.activity_color_picker, null);
         setContentView(view);
+
+
 
         myDbHelper = new DatabaseHelper(this);
         listPaletteDB = new ArrayList<BeanMain>();
@@ -86,16 +90,16 @@ public class ColorPickerActivity extends AppCompatActivity
 
     public void btnClkPickerExisting(View v)
     {
-        AlertDialog.Builder mAlertBuilder = new AlertDialog.Builder(ColorPickerActivity.this);
+        AlertDialog.Builder mAlertBuilder = new AlertDialog.Builder(mContext);
 
         LayoutInflater li = LayoutInflater.from(this);
-        View promptsView = li.inflate(R.layout.dailog_add_color_to_existing_plt, null);
+        View promptsView = li.inflate(R.layout.dialog_add_color_to_existing_plt, null);
 
         mAlertBuilder.setPositiveButton("ok", null);
         mAlertBuilder.setNegativeButton("cancel", null);
         mAlertBuilder.setView(promptsView);
 
-        final Spinner mSpinnerPaletteName = (Spinner) promptsView.findViewById(R.id.spinner_existingPalette);
+        final Spinner mSpinnerPaletteName = (Spinner) promptsView.findViewById(R.id.spinner_existingPalette_2);
             mSpinner = mSpinnerPaletteName;
         final EditText mEdtVwColorName = (EditText) promptsView.findViewById(R.id.edTxtVwNewColorName);
         final View mVwColorBack = (View)promptsView.findViewById(R.id.vwColorBackGround);
@@ -125,18 +129,18 @@ public class ColorPickerActivity extends AppCompatActivity
                             String _clrName = mEdtVwColorName.getText().toString();
 
                             if (myDbHelper.checkDuplicateColorName(_clrName)) {
-                                Toast.makeText(ColorPickerActivity.this, "Color Name already exists! Please try another name.", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(mContext, "Color Name already exists! Please try another name.", Toast.LENGTH_SHORT).show();
                             } else {
                                 BeanColor _PaletteObj = new BeanColor("NULL", mpalettetIDFromSpinner, colorPickerResult_hexColor, mEdtVwColorName.getText().toString(), "");
                                 Long dbColorInsert = myDbHelper.insert_newColor(_PaletteObj);
                                 //Log.d("dbResult", "DBresult:::" + paletteID_pkDB.toString());
-                                Toast.makeText(ColorPickerActivity.this, "Color inserted successfully with row no# : " + dbColorInsert, Toast.LENGTH_SHORT).show();
+                                Toast.makeText(mContext, "Color inserted successfully with row no# : " + dbColorInsert, Toast.LENGTH_SHORT).show();
 
                                 if (dbColorInsert == -1)
-                                    Toast.makeText(ColorPickerActivity.this, "Something went wrong when saving the color in existing palette!", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(mContext, "Something went wrong when saving the color in existing palette!", Toast.LENGTH_SHORT).show();
                                 else {
                                     if (chkBox_cover.isChecked()) {
-                                        Toast.makeText(ColorPickerActivity.this, "Color saved succssfuly!", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(mContext, "Color saved succssfuly!", Toast.LENGTH_SHORT).show();
                                         Long dbUpdateCover = myDbHelper.updateCoverInPalette(mpalettetIDFromSpinner.toString(), "color", dbColorInsert.toString());
                                     }
 
@@ -148,7 +152,7 @@ public class ColorPickerActivity extends AppCompatActivity
                             }
                         }
                         else
-                            Toast.makeText(ColorPickerActivity.this, "Please insert color name.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(mContext, "Please insert color name.", Toast.LENGTH_SHORT).show();
                     }
                 });
             }
@@ -166,7 +170,7 @@ public class ColorPickerActivity extends AppCompatActivity
         // BeanMain _paletteObj = new BeanMain();
 
 
-        mSpinnerAdapter = new MySpinAdapter_PaletteNames(ColorPickerActivity.this, android.R.layout.simple_spinner_item, listPaletteDB);
+        mSpinnerAdapter = new MySpinAdapter_PaletteNames(mContext, android.R.layout.simple_spinner_item, listPaletteDB);
         //mySpinner = (Spinner) findViewById(R.id.countrySpinner);
         mSpinner.setAdapter(mSpinnerAdapter);
 
@@ -182,7 +186,6 @@ public class ColorPickerActivity extends AppCompatActivity
 
                 mpalettetNameFromSpinner = _paletteObj.getPaletteName().toString();
                 mpalettetIDFromSpinner = _paletteObj.getPaletteID();
-                //Toast.makeText(ColorPickerActivity.this, ""+ _paletteObj.getPaletteID() + "---" + _paletteObj.getPaletteName(), Toast.LENGTH_SHORT).show();
                 //Log.d("dbResult", mpalettetNameFromSpinner + mpalettetIDFromSpinner);
 
             }
@@ -197,7 +200,7 @@ public class ColorPickerActivity extends AppCompatActivity
         final AlertDialog.Builder mAlertBuilder = new AlertDialog.Builder(this);
 
         LayoutInflater li = LayoutInflater.from(this);
-        View promptsView = li.inflate(R.layout.dailog_add_color_to_new_plt, null);
+        View promptsView = li.inflate(R.layout.dialog_add_color_to_new_plt, null);
 
         mAlertBuilder.setPositiveButton("ok", null);
         mAlertBuilder.setNegativeButton("cancel", null);
@@ -220,7 +223,7 @@ public class ColorPickerActivity extends AppCompatActivity
                         {
                             String _pltName = (mEdtVwNewPaletteName.getText().toString());
 
-                            BeanMain _PaletteObj =  new BeanMain("NULL", _pltName, "color", "0", "");
+                            BeanMain _PaletteObj =  new BeanMain("NULL", _pltName, "image", "0", "");
                             long  paletteID_pkDB = myDbHelper.createNewPalette(_PaletteObj);
                             // Log.d("dbResult", "DBresult:::" + paletteID_pkDB.toString());
 
@@ -232,11 +235,11 @@ public class ColorPickerActivity extends AppCompatActivity
 
                             }
                             else{
-                                Toast.makeText(ColorPickerActivity.this, "Something went wrong when creating a new palette!", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(mContext, "Something went wrong when creating a new palette!", Toast.LENGTH_SHORT).show();
                             }
                         }
                         else
-                            Toast.makeText(ColorPickerActivity.this, "Please insert palette name.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(mContext, "Please insert palette name.", Toast.LENGTH_SHORT).show();
                     }
                 });
             }

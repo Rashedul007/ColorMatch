@@ -55,7 +55,11 @@
             android:layout_height="wrap_content"
             android:text="Ok"
             android:onClick="btnClkPickerExisting"
-            android:layout_gravity="right"/>
+            android:layout_gravity="right"
+            android:paddingLeft="50dp"
+            android:paddingRight="50dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/mycustom_button_square"/>
 
     </LinearLayout>
 </ScrollView>

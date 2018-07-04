@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    tools:context=".Activities.LoginActivity">
+
+    <EditText
+        android:id="@+id/edt_loginid"
+        android:hint="username"
+        android:textColorHint="@color/color_edhint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_edittext_bg"
+        android:drawablePadding="10dp"
+        android:textColor="@color/textcolor"
+        android:drawableLeft="@drawable/ic_custom_username"/>
+
+    <EditText
+        android:id="@+id/edt_loginpass"
+        android:hint="password"
+        android:textColorHint="@color/color_edhint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/custom_edittext_bg"
+        android:drawablePadding="10dp"
+        android:textColor="@color/textcolor"
+        android:drawableLeft="@drawable/ic_custom_password"/>
+
+    <Button
+        android:id="@+id/btn_login"
+        android:text="@string/signin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="150dp"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/color_white"
+        android:background="@drawable/mycustom_button_square"/>
+
+</LinearLayout>
