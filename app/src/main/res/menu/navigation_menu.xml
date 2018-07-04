@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="Settings">
+        <menu>
+            <item android:id="@+id/mn_subscribe"
+                android:icon="@drawable/ic_subscribe"
+                android:title="Subscribe/Unsubscribe"/>
+            <item android:id="@+id/mn_permissions"
+                android:icon="@drawable/ic_permission"
+                android:title="Permissions"/>
+            <item android:id="@+id/mn_options"
+                android:icon="@drawable/ic_storage"
+                android:title="Storage options"/>
+            <item android:id="@+id/mn_uninstall"
+                android:icon="@drawable/ic_uninstall"
+                android:title="Uninstall"/>
+        </menu>
+    </item>
+
+
+    <group>
+        <item android:id="@+id/mn_about"
+            android:icon="@android:drawable/picture_frame"
+            android:title="About" />
+        <item android:id="@+id/mn_support"
+            android:icon="@android:drawable/picture_frame"
+            android:title="Support" />
+        <item android:id="@+id/mn_webpage"
+            android:icon="@android:drawable/picture_frame"
+            android:title="Webpage" />
+    </group>
+
+
+
+</menu>
