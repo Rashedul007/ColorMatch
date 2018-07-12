@@ -47,6 +47,7 @@ public class ImagePickerActivity extends AppCompatActivity {
     Button uploadButton, corpButton, addToNewPalleteButton;
 
     private final int TAG_CAMERA = 1;
+    private final int TAG_CAMERA_NEW = 12;
     private final int TAG_GALLERY = 2;
 
     String strImgPath = null;
@@ -67,6 +68,10 @@ public class ImagePickerActivity extends AppCompatActivity {
      EditText mEdtVwPltName_new;
      Spinner mSpinnerPaletteName_exist;
     //endregion
+
+ //------------- for new camera2
+    private Bitmap mCameraBitmap;
+ //--------
 
 
     @Override
@@ -97,8 +102,16 @@ public class ImagePickerActivity extends AppCompatActivity {
             Log.d("uploadFile_3", String.valueOf(extra_btnPressed));
         }
 
-        if (extra_btnPressed == 1)
-            func_myCamera();
+        if (extra_btnPressed == 1) {
+            if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.LOLLIPOP)
+                func_myCamera();
+            else {
+                    Intent cam2Intent = new Intent();
+                   // cam2Intent.setClass(mContext, Camera2Activity.class);
+                    cam2Intent.setClass(mContext, Camera2Activity_new.class);
+                    startActivityForResult(cam2Intent, TAG_CAMERA_NEW);
+            }
+        }
         else if (extra_btnPressed == 2)
                    startActivityForResult(new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI), TAG_GALLERY);
     }
@@ -113,7 +126,11 @@ public class ImagePickerActivity extends AppCompatActivity {
                 onSelectFromGalleryResult(data);
             else if (requestCode == TAG_CAMERA)
                 func_onCaptureImageResult();
-              //  onCaptureImageResult(data);
+            else if (requestCode == TAG_CAMERA_NEW) {
+                //func_onCaptureImageResult_new(data);
+                func_onCaptureImageResult_new(data);
+            }
+
         } else if(resultCode == Activity.RESULT_CANCELED){
            if (requestCode == TAG_CAMERA){
 
@@ -122,6 +139,7 @@ public class ImagePickerActivity extends AppCompatActivity {
            this.finish();
         }
     }
+
 
     private void onSelectFromGalleryResult(Intent data) {
         Bitmap bitmap_gallery = null;
@@ -391,6 +409,8 @@ public class ImagePickerActivity extends AppCompatActivity {
     }
 
 
+
+
     private void func_delFile(Uri uri)
     {
         File fdelete = new File(uri.getPath());
@@ -449,5 +469,47 @@ public class ImagePickerActivity extends AppCompatActivity {
         catch(Exception ex){}
     }
 
+
+
+    private void func_onCaptureImageResult_new(Intent intntData)
+    {
+        try {
+            strImgPath = intntData.getStringExtra("strImgpathFromCam2");
+            img_Time_Name = intntData.getStringExtra("strImgTimeNameCam2");
+            outputImgUri =  Uri.parse(intntData.getStringExtra("strImgUriCam2"));
+
+            Log.d("log_came2", "from intent:  "+strImgPath + "\t" + img_Time_Name);
+
+            mCameraBitmap = MyImageHelper.rotateImageFromURI(this, outputImgUri);
+
+          //  mCameraBitmap = BitmapFactory.decodeFile(strImgPath);
+
+            imgVw_upload.setImageBitmap(mCameraBitmap);
+
+
+
+            InputStream thumbInputStream = MyImageHelper.func_createThumbs_ReturnInStream(mCameraBitmap);  /////////////////makes the smallest thumnail
+            Bitmap thumbBitmap = BitmapFactory.decodeStream(thumbInputStream);
+
+            strThumbPath = MyImageHelper.func_giveBitmap_aFileName(mContext, thumbBitmap, img_Time_Name);
+
+        }catch(Exception ex){
+            String errmsg = "inside onActivityResult:: \t"+ex;
+            Log.e("TAG_LOG_TAKE_PICTURE", errmsg);
+            Toast.makeText(mContext, errmsg, Toast.LENGTH_LONG).show();
+        }
+    }
+
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+
+        if (mCameraBitmap != null && !mCameraBitmap.isRecycled()) {
+            imgVw_upload.setImageBitmap(null);
+            mCameraBitmap.recycle();
+            mCameraBitmap = null;
+        }
+    }
 
 }

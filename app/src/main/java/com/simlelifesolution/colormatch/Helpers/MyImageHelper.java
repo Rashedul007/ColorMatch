@@ -108,7 +108,7 @@ public class MyImageHelper {
 
         if (mThumbBitmap != null) {
             bos = new ByteArrayOutputStream();
-            mThumbBitmap.compress(Bitmap.CompressFormat.JPEG, 50, bos);
+            mThumbBitmap.compress(Bitmap.CompressFormat.JPEG, 70, bos);
             //return new ByteArrayInputStream(bos.toByteArray());
         }
 

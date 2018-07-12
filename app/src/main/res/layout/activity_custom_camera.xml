@@ -71,7 +71,8 @@
             android:id="@+id/capture_image_button"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:text="@string/capture_image" />
+            android:text="@string/capture_image"
+            android:background="@color/colorAccent"/>
 
         <Button
             android:id="@+id/done_button"

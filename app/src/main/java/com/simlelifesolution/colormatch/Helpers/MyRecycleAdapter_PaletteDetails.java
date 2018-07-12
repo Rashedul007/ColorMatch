@@ -2,10 +2,13 @@ package com.simlelifesolution.colormatch.Helpers;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -204,9 +207,14 @@ public class MyRecycleAdapter_PaletteDetails extends RecyclerView.Adapter<MyRecy
                     BeanImage clkImgObj = (BeanImage) holder.mEyeButton.getTag();
 
                     String mainImgPath = clkImgObj.getimagePath() ;
+                    try{
+                        Bitmap cameraBitmap = MyImageHelper.rotateImageFromURI(mContext,  Uri.fromFile(new File(mainImgPath)));
 
-                    Drawable d = Drawable.createFromPath(mainImgPath);
-                    mEyeImgVw.setBackground(d);
+                    mEyeImgVw.setImageBitmap(cameraBitmap);
+                    mEyeImgVw.setScaleType(ImageView.ScaleType.FIT_XY);
+                    }
+                    catch(Exception ex)
+                    { Log.d("ErrLog", "" + ex);}
 
                 }
                 else if(flag_imgOrClr.equals("color")){

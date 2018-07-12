@@ -17,6 +17,7 @@
             android:layout_height="wrap_content"
             android:padding="5dp"
             android:background="@drawable/custom_edittext_bg"
+            android:textColor="@color/color_black"
             android:drawablePadding="10dp" >
 
         <requestFocus />

@@ -358,9 +358,10 @@ public class DatabaseHelper extends SQLiteOpenHelper
                     return_arr.add("image");
                     return_arr.add("");
                     return_arr.add("");
+                    return_arr.add("");
                 }
             else {
-                Cursor cursor_img = db.query(TABLE_IMAGE, new String[]{KEY_IMAGEID_PK, KEY_IMAGE_PATH, KEY_IMAGE_NAME},
+                Cursor cursor_img = db.query(TABLE_IMAGE, new String[]{KEY_IMAGEID_PK, KEY_IMAGE_PATH, KEY_IMAGE_NAME, KEY_THUMB_PATH},
                         KEY_IMAGEID_PK + "=?", new String[]{mCoverID},
                         null, null, null, null);
 
@@ -371,6 +372,7 @@ public class DatabaseHelper extends SQLiteOpenHelper
                 return_arr.add("image");
                 return_arr.add(String.valueOf(cursor_img.getString(cursor_img.getColumnIndex(KEY_IMAGE_NAME))));
                 return_arr.add(String.valueOf(cursor_img.getString(cursor_img.getColumnIndex(KEY_IMAGE_PATH))));
+                return_arr.add(String.valueOf(cursor_img.getString(cursor_img.getColumnIndex(KEY_THUMB_PATH))));
             }
 
         }
@@ -389,6 +391,7 @@ public class DatabaseHelper extends SQLiteOpenHelper
             return_arr.add("color");
             return_arr.add(String.valueOf(cursor_clr.getString(cursor_clr.getColumnIndex(KEY_COLOR_NAME))));
             return_arr.add(String.valueOf(cursor_clr.getString(cursor_clr.getColumnIndex(KEY_COLOR_CODE))));
+            return_arr.add("");
         }
         return return_arr;
 

@@ -26,6 +26,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -43,13 +44,15 @@ public class CallingCameraActivity extends AppCompatActivity
     Context  mContext = CallingCameraActivity.this;
     String getIntent_flag_ImgOrClr, getIntent_pltID, getIntent_pltName, getIntent_imgPath_OR_clrCode;
 
-    private static final int TAKE_PICTURE_REQUEST_B = 100;
+    private static final int TAG_CAMERA_OLD = 100;
+    private static final int TAG_CAMERA_NEW = 12;
 
     private ImageView mCameraImageView;
     private Bitmap mCameraBitmap;
-    private Button mSaveImageButton_new, mSaveImageButton_existing;
+    private Button mSaveImageButton_new;
 
     static String img_Time_Name, strImgPath, strThumbPath, strTempImgPath;
+    private Uri outputImgUri;
 
     private DatabaseHelper myDbHelper;
     Long paletteID_pkDB = -1L;
@@ -62,6 +65,13 @@ public class CallingCameraActivity extends AppCompatActivity
 
     private ProgressDialog pDialog;
 
+    // for dialog view
+    EditText mEdtVwPltName_new;
+    Spinner mSpinnerPaletteName_exist;
+    //endregion
+
+    private static String flag_which_camera = "old" ;
+
 
     public void btnOnClick(View view){
         switch (view.getId())
@@ -71,21 +81,17 @@ public class CallingCameraActivity extends AppCompatActivity
                 break;
 
             case R.id.save_image_new_button:
-                    call_asyncForImageSave("new");
+                    if(flag_which_camera.equals("old"))
+                        call_asyncForImageSave();
+                    else if(flag_which_camera.equals("new"))
+                        addImageToNewPlt();
                 break;
-
-            case R.id.save_image_existing_button:
-                    call_asyncForImageSave("exist");
-                break;
-
             default:
                 break;
         }
     }
 
-
 //endregion
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,14 +101,10 @@ public class CallingCameraActivity extends AppCompatActivity
 
         mCameraImageView = (ImageView) findViewById(R.id.camera_image_view);
         mSaveImageButton_new = (Button) findViewById(R.id.save_image_new_button);
-        mSaveImageButton_existing = (Button) findViewById(R.id.save_image_existing_button);
 
         mSaveImageButton_new.setEnabled(false);
-        mSaveImageButton_existing.setEnabled(false);
 
-        // getIntent_flag_ImgOrClr, getIntent_pltID, getIntent_pltName, getIntent_imgPath_OR_clrCode;
         Bundle extras = getIntent().getExtras();
-
         if (extras != null) {
             getIntent_flag_ImgOrClr = extras.getString("xtra_flag_imgOrClr");
 
@@ -113,14 +115,14 @@ public class CallingCameraActivity extends AppCompatActivity
                 getIntent_imgPath_OR_clrCode =  extras.getString("xtra_img_path");
             else if(getIntent_flag_ImgOrClr.equals("color"))
                 getIntent_imgPath_OR_clrCode =   extras.getString("xtra_colorCode");
+
+            startImageCapture();
+
         }
 
         myDbHelper = new DatabaseHelper(this);
     }
 
-    /**
-     * Dispatch onPause() to fragments.
-     */
     @Override
     protected void onStop() {
         super.onStop();
@@ -133,78 +135,90 @@ public class CallingCameraActivity extends AppCompatActivity
     }
 
 
-
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == TAKE_PICTURE_REQUEST_B) {
-            if (resultCode == RESULT_OK) {
-                // Recycle the previous bitmap.
-              /*  if (mCameraBitmap != null && !mCameraBitmap.isRecycled()) {
-                    mCameraBitmap.recycle();
-                    mCameraBitmap = null;
-                }*/
-                /*Bundle extras = data.getExtras();
-                byte[] cameraData = extras.getByteArray(CustomCameraActivity.EXTRA_CAMERA_DATA);*/
+            if (resultCode == RESULT_OK)
+            {
+                if (requestCode == TAG_CAMERA_OLD)
+                {   flag_which_camera = "old";
 
-                byte[] cameraData = App.getInstance().getCapturedPhotoData();
-                App.getInstance().setCapturedPhotoData(null);
+                    byte[] cameraData = App.getInstance().getCapturedPhotoData();
+                    App.getInstance().setCapturedPhotoData(null);
 
-                if (cameraData != null) {
-                    mCameraBitmap = BitmapFactory.decodeByteArray(cameraData, 0, cameraData.length);
+                    if (cameraData != null) {
+                        mCameraBitmap = BitmapFactory.decodeByteArray(cameraData, 0, cameraData.length);
 
-                    mCameraImageView.setImageBitmap(mCameraBitmap);
+                        mCameraImageView.setImageBitmap(mCameraBitmap);
+                        mSaveImageButton_new.setEnabled(true);           }
+                }
+                else if(requestCode == TAG_CAMERA_NEW) {
+                    flag_which_camera = "new";
                     mSaveImageButton_new.setEnabled(true);
-                    mSaveImageButton_existing.setEnabled(true);
-                    ////////////// to rotate image//////
-                  /*  img_Time_Name = String.valueOf(System.currentTimeMillis());
-                    File tempFile = MyImageHelper.func_makeFolderForImage(mContext, "TempFolder", "temp_", "customCameraImage", ".png");
-                    strTempImgPath = tempFile.getAbsolutePath();
 
-                    if (tempFile != null)
-                        new AsyncSaveTempImage(strTempImgPath).execute(tempFile);*/
+                    //func_onCaptureImageResult_new(data);
 
-
-
-
+                    func_onCaptureImageResult_new(data);
                 }
 
             } else {
                 mCameraBitmap = null;
                 mSaveImageButton_new.setEnabled(false);
-                mSaveImageButton_existing.setEnabled(false);
             }
-        }
+
     }
 
-
-    private void call_asyncForImageSave(String str)
-    {
-        img_Time_Name = String.valueOf(System.currentTimeMillis());
-        File outputImageFile = MyImageHelper.func_makeFolderForImage(mContext, "ColorappImgs", "colorappImg_", img_Time_Name, ".png");
-
-        strImgPath = outputImageFile.getAbsolutePath();
-
-        if (outputImageFile != null)
-            new AsyncSaveImage(str).execute(outputImageFile);
-        else
-            Toast.makeText(CallingCameraActivity.this, "Unable to open file for saving image.", Toast.LENGTH_LONG).show();
-    }
 
     private void startImageCapture() {
-        //startActivityForResult(new Intent(MediaStore.ACTION_IMAGE_CAPTURE), TAKE_PICTURE_REQUEST_B);
+        //startActivityForResult(new Intent(MediaStore.ACTION_IMAGE_CAPTURE), TAG_CAMERA_OLD);
 
-        Intent custIntent = new Intent(CallingCameraActivity.this, CustomCameraActivity.class);
+        Intent custIntent = new Intent();
             custIntent.putExtra("xtra_inside_plt_ID", getIntent_pltID);
             custIntent.putExtra("xtra_inside_plt_name", getIntent_pltName);
             custIntent.putExtra("xtra_imgPth_or_colorCode", getIntent_imgPath_OR_clrCode);
             custIntent.putExtra("xtra_flag_imgOrClr", getIntent_flag_ImgOrClr);
 
-        //startActivityForResult(new Intent(CallingCameraActivity.this, CustomCameraActivity.class), TAKE_PICTURE_REQUEST_B);
-        startActivityForResult(custIntent, TAKE_PICTURE_REQUEST_B);
+        //startActivityForResult(new Intent(CallingCameraActivity.this, CustomCameraActivity.class), TAG_CAMERA_OLD);
+        if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.LOLLIPOP)
+            {  custIntent.setClass(mContext,CustomCameraActivity.class);
+                startActivityForResult(custIntent, TAG_CAMERA_OLD);}
+        else
+            {
+                //custIntent.setClass(mContext,CustomCamera2Activity__old.class);
+                custIntent.setClass(mContext,Camera2Activity_new.class);
+                startActivityForResult(custIntent, TAG_CAMERA_NEW);
+
+            }
     }
 
 
+
+    private void func_onCaptureImageResult_new(Intent intntData)
+    {
+        try {
+            strImgPath = intntData.getStringExtra("strImgpathFromCam2");
+            img_Time_Name = intntData.getStringExtra("strImgTimeNameCam2");
+            outputImgUri =  Uri.parse(intntData.getStringExtra("strImgUriCam2"));
+            Log.d("log_came2", "from intent:  "+strImgPath + "\t" + img_Time_Name);
+
+            mCameraBitmap = MyImageHelper.rotateImageFromURI(this, outputImgUri);
+
+//            Bitmap cameraBitmap = MyImageHelper.rotateImageFromURI(this, outputImgUri);
+
+            mCameraImageView.setImageBitmap(mCameraBitmap);
+
+                //--------------------------create thumbnail
+
+                InputStream thumbInputStream = MyImageHelper.func_createThumbs_ReturnInStream(mCameraBitmap);  /////////////////makes the smallest thumnail
+                Bitmap thumbBitmap = BitmapFactory.decodeStream(thumbInputStream);
+
+                strThumbPath = MyImageHelper.func_giveBitmap_aFileName(mContext, thumbBitmap, img_Time_Name);
+           // }
+        }catch(Exception ex){
+            String errmsg = "inside onActivityResult:: \t"+ex;
+            Log.e("TAG_LOG_TAKE_PICTURE", errmsg);
+            Toast.makeText(mContext, errmsg, Toast.LENGTH_LONG).show();
+        }
+    }
 
 //region*****************************save images in DB
 
@@ -221,9 +235,15 @@ public class CallingCameraActivity extends AppCompatActivity
         mAlertBuilder.setNegativeButton("cancel", null);
         mAlertBuilder.setView(promptsView);
 
-        final EditText mEdtVwPltName = (EditText) promptsView.findViewById(R.id.editTextDialogUserInput);
+        mEdtVwPltName_new = (EditText) promptsView.findViewById(R.id.editTextDialogUserInput);
         final EditText mEdtVwImageName = (EditText) promptsView.findViewById(R.id.etDialogImgName);
         final CheckBox mChkBx = (CheckBox) promptsView.findViewById(R.id.chkBoxCover);
+        final RadioButton mRadioExist = (RadioButton) promptsView.findViewById(R.id.rdBtn_Existing);
+        final RadioButton mRadioNew = (RadioButton) promptsView.findViewById(R.id.rdBtn_New);
+
+        mSpinnerPaletteName_exist = (Spinner) promptsView.findViewById(R.id.spinner_existingPalette);
+
+        setup_spinnerItems(mSpinnerPaletteName_exist); //------------------ setUp the spinner for existing paletteList
 
         final AlertDialog mAlertDialog = mAlertBuilder.create();
         mAlertDialog.setOnShowListener(new DialogInterface.OnShowListener() {
@@ -231,59 +251,21 @@ public class CallingCameraActivity extends AppCompatActivity
             @Override
             public void onShow(DialogInterface dialog) {
 
-                Button b = mAlertDialog.getButton(AlertDialog.BUTTON_POSITIVE);
-                b.setOnClickListener(new View.OnClickListener() {
+                Button btnDialog_positive = mAlertDialog.getButton(AlertDialog.BUTTON_POSITIVE);
+                btnDialog_positive.setOnClickListener(new View.OnClickListener() {
 
                     @Override
                     public void onClick(View view) {
-                        if ((mEdtVwPltName.getText().toString().trim().length() > 0) && (mEdtVwImageName.getText().toString().trim().length() > 0))
-                        {
-                            String _pltName = mEdtVwPltName.getText().toString();
-                            String _imgName = mEdtVwImageName.getText().toString();
+                        int returnResult = 0;
+                        if (mRadioExist.isChecked())
+                            returnResult = func_addImageToExistingPlt(mEdtVwImageName,  mChkBx );
 
-                            if(myDbHelper.checkDuplicatePltName(_pltName))
-                            {
-                                Toast.makeText(mContext, "Palette Name already exists! Please try another name.", Toast.LENGTH_SHORT).show();
-                            }
-                            else {
-                                if (myDbHelper.checkDuplicateImgName(_imgName)) {
-                                    Toast.makeText(mContext, "Image Name already exists! Please try another name.", Toast.LENGTH_SHORT).show();
-                                } else {
-                                    BeanMain _PaletteObj = new BeanMain("NULL", _pltName, "image", "0", "");
-                                    paletteID_pkDB = myDbHelper.createNewPalette(_PaletteObj);
+                        else if (mRadioNew.isChecked())
+                            returnResult = func_addImageToNewPlt(mEdtVwImageName,  mChkBx );
 
-                                    if (paletteID_pkDB != -1)   //new palette created successfully
-                                    {
-                                        Toast.makeText(mContext, "New Palette created succssfuly!\n Please wait for storing the image. ", Toast.LENGTH_SHORT).show();
-
-                                        //pltID_from_Spinner = String.valueOf(paletteID_pkDB);
-
-                                        BeanImage _imgObj = new BeanImage("", String.valueOf(paletteID_pkDB), strImgPath, strThumbPath, _imgName, "");
-                                        dbImgInsertID_exstPlt = myDbHelper.insert_newImage(_imgObj);
-
-                                        Log.d("dbResult_explt", "Image Created DBresult:::" + dbImgInsertID_exstPlt.toString() + " pltID_from_Spinner: " + _imgObj.getPaletteID().toString());
-
-                                        if (dbImgInsertID_exstPlt == -1)
-                                            Toast.makeText(mContext, "Something went wrong when saving the image in existing palette!", Toast.LENGTH_SHORT).show();
-                                        else {
-                                            if(mChkBx.isChecked()) {
-                                                Toast.makeText(mContext, "Image saved succssfuly!", Toast.LENGTH_SHORT).show();
-                                                Long dbUpdateCover = myDbHelper.updateCoverInPalette(paletteID_pkDB.toString(), "image", dbImgInsertID_exstPlt.toString());
-                                            }
-
-                                        }
-
-                                        mAlertDialog.dismiss();
-                                    } else
-                                        Toast.makeText(mContext, "Something went wrong when creating a new palette!", Toast.LENGTH_SHORT).show();
-
-                                }
-                                finish();
-                            }
-
-                        }
-                        else    // either PaletteName or ImageName was not given
-                            Toast.makeText(mContext, "Please check the Palette & Image Name!", Toast.LENGTH_SHORT).show();
+                        if(returnResult == 1)
+                        {  mAlertDialog.dismiss();
+                            finish();}
                     }
                 });
             }
@@ -293,78 +275,106 @@ public class CallingCameraActivity extends AppCompatActivity
            // return dbImgInsertID_exstPlt;
     }
 
-    private void addImageToExistingPlt()
+
+    private int func_addImageToNewPlt(EditText mEdtVwImageName,  CheckBox mChkBx )
     {
-        dbImgInsertID_exstPlt = -1L;
+        if ((mEdtVwPltName_new.getText().toString().trim().length() > 0) && (mEdtVwImageName.getText().toString().trim().length() > 0)) {
+            String _pltName = mEdtVwPltName_new.getText().toString();
+            String _imgName = mEdtVwImageName.getText().toString();
 
-        AlertDialog.Builder mAlertBuilder = new AlertDialog.Builder(this);
+            if (myDbHelper.checkDuplicatePltName(_pltName)) {
+                Toast.makeText(mContext, "Palette Name already exists! Please try another name.", Toast.LENGTH_SHORT).show();
+            } else {
+                if (myDbHelper.checkDuplicateImgName(_imgName)) {
+                    Toast.makeText(mContext, "Image Name already exists! Please try another name.", Toast.LENGTH_SHORT).show();
+                } else {
+                    BeanMain _PaletteObj = new BeanMain("NULL", _pltName, "image", "0", "");
+                    paletteID_pkDB = myDbHelper.createNewPalette(_PaletteObj);
 
-        LayoutInflater li = LayoutInflater.from(this);
-        View promptsView = li.inflate(R.layout.dialog_existingpalette, null);
+                    if (paletteID_pkDB != -1)   //new palette created successfully
+                    {
+                        Toast.makeText(mContext, "New Palette created succssfuly!\n Please wait for storing the image. ", Toast.LENGTH_SHORT).show();
 
-        mAlertBuilder.setPositiveButton("ok", null);
-        mAlertBuilder.setNegativeButton("cancel", null);
-        mAlertBuilder.setView(promptsView);
+                        pltID_from_Spinner = String.valueOf(paletteID_pkDB);
 
-        final Spinner mSpinnerPaletteName = (Spinner) promptsView.findViewById(R.id.spinner_existingPalette_2);
-        final EditText mEdtVwImageName = (EditText) promptsView.findViewById(R.id.etDialogImgName);
-        final CheckBox mChkBx_existing = (CheckBox) promptsView.findViewById(R.id.chkBoxCover_existing);
+                        BeanImage _imgObj = new BeanImage("", pltID_from_Spinner, strImgPath, strThumbPath, _imgName, "");
+                        Long dbImgInsertID = myDbHelper.insert_newImage(_imgObj);
 
-        setup_spinnerItems(mSpinnerPaletteName); //------------------ setUp the spinner for existing paletteList
+                        Log.d("dbResult_explt", "Image Created DBresult:::" + dbImgInsertID.toString() + " pltID_from_Spinner: " + _imgObj.getPaletteID().toString());
 
-
-        final AlertDialog mAlertDialog = mAlertBuilder.create();
-        mAlertDialog.setOnShowListener(new DialogInterface.OnShowListener() {
-
-            @Override
-            public void onShow(DialogInterface dialog) {
-
-                Button b = mAlertDialog.getButton(AlertDialog.BUTTON_POSITIVE);
-                b.setOnClickListener(new View.OnClickListener() {
-
-                    @Override
-                    public void onClick(View view) {
-                        if ((mEdtVwImageName.getText().toString().trim().length() > 0)  && !(pltName_from_Spinner.equals("")))
-                        {
-                            String _imgName = mEdtVwImageName.getText().toString();
-
-                            if (myDbHelper.checkDuplicateImgName(_imgName)) {
-                                Toast.makeText(mContext, "Image Name already exists! Please try another name.", Toast.LENGTH_SHORT).show();
-                            } else {
-                                BeanImage _imgObj = new BeanImage("", pltID_from_Spinner, strImgPath, strThumbPath, _imgName, "");
-                                dbImgInsertID_exstPlt = myDbHelper.insert_newImage(_imgObj);
-
-                                Log.d("dbResult_explt", "Image Created DBresult:::" + dbImgInsertID_exstPlt.toString() + " pltID_from_Spinner: " + _imgObj.getPaletteID().toString());
-
-                                if (dbImgInsertID_exstPlt == -1)
-                                    Toast.makeText(mContext, "Something went wrong when saving the image in existing palette!", Toast.LENGTH_SHORT).show();
-                                else
-                                {
-                                    if(mChkBx_existing.isChecked()) {
-                                        Toast.makeText(mContext, "Image saved succssfuly!", Toast.LENGTH_SHORT).show();
-                                        Long dbUpdateCover = myDbHelper.updateCoverInPalette(pltID_from_Spinner.toString(), "image", dbImgInsertID_exstPlt.toString());
-                                    }
-                                }
-
-                                mAlertDialog.dismiss();
-
-                                finish();
+                        if (dbImgInsertID == -1)
+                            Toast.makeText(mContext, "Something went wrong when saving the image in existing palette!", Toast.LENGTH_SHORT).show();
+                        else {
+                            if (mChkBx.isChecked()) {
+                                Toast.makeText(mContext, "Image saved succssfuly!", Toast.LENGTH_SHORT).show();
+                                Long dbUpdateCover = myDbHelper.updateCoverInPalette(paletteID_pkDB.toString(), "image", dbImgInsertID.toString());
                             }
-
+                            return 1;
                         }
-                        else
-                            Toast.makeText(mContext, "Please insert image name!", Toast.LENGTH_SHORT).show();
-                    }
-                });
+                    } else
+                        Toast.makeText(mContext, "Something went wrong when creating a new palette!", Toast.LENGTH_SHORT).show();
+                }
             }
-        });
-        mAlertDialog.show();
+        } else    // either PaletteName or ImageName was not given
+            Toast.makeText(mContext, "Please check the Palette & Image Name!", Toast.LENGTH_SHORT).show();
 
-
-
-        //return dbImgInsertID_exstPlt;
-
+        return 0;
     }
+
+
+    private int func_addImageToExistingPlt(EditText mEdtVwImageName,  CheckBox mChkBx_addAsCover )
+    {
+        if ((mEdtVwImageName.getText().toString().trim().length() > 0)  && !(pltName_from_Spinner.equals("")))
+        {
+            String _imgName = mEdtVwImageName.getText().toString();
+
+            if (myDbHelper.checkDuplicateImgName(_imgName)) {
+                Toast.makeText(mContext, "Image Name already exists! Please try another name.", Toast.LENGTH_SHORT).show();
+            } else {
+                BeanImage _imgObj = new BeanImage("", pltID_from_Spinner, strImgPath, strThumbPath, _imgName, "");
+                Long dbImgInsertID_exstPlt = myDbHelper.insert_newImage(_imgObj);
+
+                Log.d("dbResult_explt", "Image Created DBresult:::" + dbImgInsertID_exstPlt.toString() + " pltID_from_Spinner: " + _imgObj.getPaletteID().toString());
+
+                if (dbImgInsertID_exstPlt == -1)
+                    Toast.makeText(mContext, "Something went wrong when saving the image in existing palette!", Toast.LENGTH_SHORT).show();
+                else
+                {
+                    if(mChkBx_addAsCover.isChecked()) {
+                        Toast.makeText(mContext, "Image saved succssfuly!", Toast.LENGTH_SHORT).show();
+                        Long dbUpdateCover = myDbHelper.updateCoverInPalette(pltID_from_Spinner.toString(), "image", dbImgInsertID_exstPlt.toString());
+                    }
+                    return 1;
+                }
+            }
+        }
+        else
+            Toast.makeText(mContext, "Please insert image name!", Toast.LENGTH_SHORT).show();
+
+        return 0;
+    }
+
+
+    public String onRadioButtonClicked(View view) {
+        // Is the button now checked?
+        boolean checked = ((RadioButton) view).isChecked();
+
+        switch(view.getId()) {
+            case R.id.rdBtn_Existing:
+                if (checked)
+                    mEdtVwPltName_new.setVisibility(View.GONE);
+                mEdtVwPltName_new.setText(null);
+                mSpinnerPaletteName_exist.setVisibility(View.VISIBLE);
+                break;
+            case R.id.rdBtn_New:
+                if (checked)
+                    mEdtVwPltName_new.setVisibility(View.VISIBLE);
+                mSpinnerPaletteName_exist.setVisibility(View.GONE);
+                break;
+
+        }return null;
+    }
+
 
     private void setup_spinnerItems(Spinner mSpn)
     {
@@ -394,17 +404,27 @@ public class CallingCameraActivity extends AppCompatActivity
 
 //endregion
 
-//*********************************** asyntask for saving in palette
+
+//region *********************************** asyntask for saving in palette --- for OLD camera
+    private void call_asyncForImageSave()
+    {
+        img_Time_Name = String.valueOf(System.currentTimeMillis());
+        File outputImageFile = MyImageHelper.func_makeFolderForImage(mContext, "ColorappImgs", "colorappImg_", img_Time_Name, ".png");
+
+        strImgPath = outputImageFile.getAbsolutePath();
+
+        if (outputImageFile != null)
+            new AsyncSaveImage().execute(outputImageFile);
+        else
+            Toast.makeText(CallingCameraActivity.this, "Unable to open file for saving image.", Toast.LENGTH_LONG).show();
+    }
+
     private class AsyncSaveImage extends AsyncTask<File, Void, Boolean>
     {
         Boolean flag_success = false;
         String flag_ExistingOrNew = "";
        // Long flag_saveToDB = -1L;
 
-        public AsyncSaveImage(String flag_ExistOrNew)
-            {  super();
-                flag_ExistingOrNew = flag_ExistOrNew; //send either exist or new
-            }
 
         @Override
         protected Boolean doInBackground(File... paramsFile)
@@ -444,16 +464,9 @@ public class CallingCameraActivity extends AppCompatActivity
             Log.d("Log_Async", "resultFlag:: "+ resultFlag);
 
             if(resultFlag)
-            {
-                if(flag_ExistingOrNew.equals("exist"))
-                    addImageToExistingPlt();
-                else if(flag_ExistingOrNew.equals("new"))
-                    addImageToNewPlt();
-            }
+                addImageToNewPlt();
 
             pDialog.dismiss();
-
-
         }
 
 
@@ -468,73 +481,7 @@ public class CallingCameraActivity extends AppCompatActivity
             pDialog.show();
         }
     }//asyncTask End
+//endregion
 
-
-    //*********************************** asyntask for saving temp file
-    private class AsyncSaveTempImage extends AsyncTask<File, Void, Boolean>
-    {
-        Boolean flag_success = false;
-        String tmpImgPth= "";
-
-        public AsyncSaveTempImage(String imgPthh)
-            {            tmpImgPth = imgPthh ;       }
-
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-
-            pDialog = new ProgressDialog(mContext);
-            pDialog.setMessage("Please wait...");
-            pDialog.setCancelable(true);
-            pDialog.show();
-        }
-
-
-        @Override
-        protected Boolean doInBackground(File... paramsFile)
-        {
-            try {
-                if (mCameraBitmap != null) {
-                    FileOutputStream outStream = null;
-                    try {
-                        outStream = new FileOutputStream(paramsFile[0]);
-                        if (!mCameraBitmap.compress(Bitmap.CompressFormat.PNG, 100, outStream)) {
-                            Toast.makeText(mContext, "Something went wrong, please try again!", Toast.LENGTH_LONG).show();
-                            flag_success = false;
-                        } else
-                            flag_success = true;
-
-                        outStream.close();
-                    } catch (Exception e) {
-                        flag_success = false;
-                    }
-                }
-            } catch (Exception e) {   e.printStackTrace();   }
-
-            return flag_success;
-        }
-
-
-        @Override
-        protected void onPostExecute(Boolean resultFlag) {
-
-            pDialog.dismiss();
-            if(resultFlag == true)
-            {
-                //mCameraImageView.setImageBitmap(mCameraBitmap);
-                try {
-                    Uri tempImgUri = Uri.fromFile(new File(tmpImgPth));
-                    Bitmap cameraBitmap = MyImageHelper.rotateImageFromURI(CallingCameraActivity.this, tempImgUri);
-                    mCameraImageView.setImageBitmap(cameraBitmap);
-                }     catch(Exception ex){}
-                mSaveImageButton_new.setEnabled(true);
-                mSaveImageButton_existing.setEnabled(true);
-
-            }
-        }
-
-
-
-    }//asyncTask End
 
 }

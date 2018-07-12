@@ -163,7 +163,7 @@ public class MyRecycleAdapter_PaletteList extends RecyclerView.Adapter<MyRecycle
                 if(cover_arr.get(0).equals("0"))
                     holder.mCoverImgVw.setBackgroundResource(R.mipmap.icon_no_image);
                 else
-                    holder.mCoverImgVw.setBackground(Drawable.createFromPath(cover_arr.get(3)));
+                    holder.mCoverImgVw.setBackground(Drawable.createFromPath(cover_arr.get(4)));
             }
             else if(cover_arr.get(1).equals("color"))
             {
