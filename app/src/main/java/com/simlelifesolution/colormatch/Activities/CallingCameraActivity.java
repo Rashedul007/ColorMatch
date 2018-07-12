@@ -184,7 +184,7 @@ public class CallingCameraActivity extends AppCompatActivity
         else
             {
                 //custIntent.setClass(mContext,CustomCamera2Activity__old.class);
-                custIntent.setClass(mContext,Camera2Activity_new.class);
+                custIntent.setClass(mContext,Camera2Activity.class);
                 startActivityForResult(custIntent, TAG_CAMERA_NEW);
 
             }

@@ -13,9 +13,6 @@
     <string name="start_image_capture">Take a New Picture</string>
     <string name="capture_image">Snap it!</string>
     <string name="save_image_new">Save To New Palette</string>
-    <string name="save_image_existing">Save To Existing Palette</string>
-    <string name="recapture_image">Retake Picture</string>
-    <string name="capturing_image">Taking New Picture</string>
     <string name="done">Done</string>
     <!--endregion-->
 

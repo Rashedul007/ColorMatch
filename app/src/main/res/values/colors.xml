@@ -16,9 +16,6 @@
     <color name="colorFABgallery">#E040FB</color>
     <color name="colorFABcolorpicker">#2BC4EC</color>
 
-    <color name="color_toolbarback">#2BC4EC</color>
-
-
     <color name="color_white">#ffffff</color>
     <color name="color_black">#000000</color>
 </resources>

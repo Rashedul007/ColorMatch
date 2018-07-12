@@ -11,10 +11,10 @@ INJECTED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.x
 	android:name
 		ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:70:13-67
 manifest
-ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:2:1-110:12
-INJECTED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:2:1-110:12
-INJECTED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:2:1-110:12
-INJECTED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:2:1-110:12
+ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:2:1-98:12
+INJECTED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:2:1-98:12
+INJECTED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:2:1-98:12
+INJECTED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:2:1-98:12
 MERGED from [com.android.support:design:25.2.0] C:\Users\rhsha\.gradle\caches\transforms-1\files-1.1\design-25.2.0.aar\ff77f0678aa1093fc976547e004f0023\AndroidManifest.xml:17:1-27:12
 MERGED from [com.android.support:appcompat-v7:25.2.0] C:\Users\rhsha\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.2.0.aar\726abc0cb7f65464ee220f3b3d137819\AndroidManifest.xml:17:1-27:12
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\rhsha\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\92cc85a7375cc61dccec83cfe6ca3302\AndroidManifest.xml:2:1-11:12
@@ -30,20 +30,20 @@ MERGED from [com.android.support:support-core-ui:25.2.0] C:\Users\rhsha\.gradle\
 MERGED from [com.android.support:support-core-utils:25.2.0] C:\Users\rhsha\.gradle\caches\transforms-1\files-1.1\support-core-utils-25.2.0.aar\5e3fc951f769a2b0aefbbca3dd6fe3b8\AndroidManifest.xml:17:1-27:12
 MERGED from [com.android.support:support-media-compat:25.2.0] C:\Users\rhsha\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.2.0.aar\b822907abb7e8821cdf1d76a121a34b4\AndroidManifest.xml:17:1-27:12
 MERGED from [com.android.support:support-compat:25.2.0] C:\Users\rhsha\.gradle\caches\transforms-1\files-1.1\support-compat-25.2.0.aar\96be55d4fb5b81805ee22da00a62bfd2\AndroidManifest.xml:17:1-27:12
-INJECTED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:2:1-110:12
-INJECTED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:2:1-110:12
-INJECTED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:2:1-110:12
+INJECTED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:2:1-98:12
+INJECTED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:2:1-98:12
+INJECTED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:2:1-98:12
 	package
 		ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:3:5-47
 		INJECTED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml
 		INJECTED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml
-		ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:2:1-110:12
+		ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:2:1-98:12
 		INJECTED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml
-		ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:2:1-110:12
+		ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:2:1-98:12
 		INJECTED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:2:11-69
@@ -76,7 +76,7 @@ ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:
 	android:name
 		ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:13:19-67
 application
-ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:16:5-108:19
+ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:16:5-96:19
 MERGED from [com.android.support:design:25.2.0] C:\Users\rhsha\.gradle\caches\transforms-1\files-1.1\design-25.2.0.aar\ff77f0678aa1093fc976547e004f0023\AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:design:25.2.0] C:\Users\rhsha\.gradle\caches\transforms-1\files-1.1\design-25.2.0.aar\ff77f0678aa1093fc976547e004f0023\AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:appcompat-v7:25.2.0] C:\Users\rhsha\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.2.0.aar\726abc0cb7f65464ee220f3b3d137819\AndroidManifest.xml:25:5-20
@@ -178,19 +178,11 @@ ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:
 	android:name
 		ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:84:19-67
 activity#com.simlelifesolution.colormatch.Activities.Camera2Activity
-ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:90:9-94:20
+ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:90:9-95:20
+	android:noHistory
+		ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:91:13-37
 	android:name
 		ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:90:19-61
-activity#com.simlelifesolution.colormatch.Activities.CustomCamera2Activity__old
-ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:96:9-100:20
-	android:name
-		ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:96:19-72
-activity#com.simlelifesolution.colormatch.Activities.Camera2Activity_new
-ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:102:9-107:20
-	android:noHistory
-		ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:103:13-37
-	android:name
-		ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:102:19-65
 uses-sdk
 INJECTED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml

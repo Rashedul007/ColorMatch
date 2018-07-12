@@ -87,19 +87,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".Activities.Camera2Activity">
-            <intent-filter>
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-
-        <activity android:name=".Activities.CustomCamera2Activity__old">
-            <intent-filter>
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-
-        <activity android:name=".Activities.Camera2Activity_new"
+        <activity android:name=".Activities.Camera2Activity"
             android:noHistory="true">
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />

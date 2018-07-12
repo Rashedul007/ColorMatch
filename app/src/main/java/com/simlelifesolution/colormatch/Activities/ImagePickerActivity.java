@@ -108,7 +108,7 @@ public class ImagePickerActivity extends AppCompatActivity {
             else {
                     Intent cam2Intent = new Intent();
                    // cam2Intent.setClass(mContext, Camera2Activity.class);
-                    cam2Intent.setClass(mContext, Camera2Activity_new.class);
+                    cam2Intent.setClass(mContext, Camera2Activity.class);
                     startActivityForResult(cam2Intent, TAG_CAMERA_NEW);
             }
         }

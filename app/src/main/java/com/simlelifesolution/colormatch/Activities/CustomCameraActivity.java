@@ -77,10 +77,6 @@ private Context   mContext = CustomCameraActivity.this;
         @Override
         public void onClick(View v) {
             if (mCameraData != null) {
-                /*Intent intent = new Intent();
-                intent.putExtra(EXTRA_CAMERA_DATA, mCameraData);
-                setResult(RESULT_OK, intent);*/
-
                 App.getInstance().setCapturedPhotoData(mCameraData);
                 setResult(RESULT_OK, new Intent());
             } else {
