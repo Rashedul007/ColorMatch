@@ -4,7 +4,7 @@
             "outputFile": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-land\\values-land.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\design-25.2.0.aar\\ff77f0678aa1093fc976547e004f0023\\res\\values-land\\values-land.xml",
+                    "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\design-25.2.0.aar\\5ca89c63d2b510ea2a64e82c053bae2d\\res\\values-land\\values-land.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\726abc0cb7f65464ee220f3b3d137819\\res\\values-land\\values-land.xml",
+                    "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\8d4df000e874312d7e3fb7c81d37b3a9\\res\\values-land\\values-land.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",

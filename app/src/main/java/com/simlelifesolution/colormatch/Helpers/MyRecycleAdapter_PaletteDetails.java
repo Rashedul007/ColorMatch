@@ -95,9 +95,10 @@ public class MyRecycleAdapter_PaletteDetails extends RecyclerView.Adapter<MyRecy
 
         @Override
         public void onClick(View v) {
-            String clrcod="0";
+            String clrcod = "0";
 
-            if (mItemClickListener != null) {
+            if (mItemClickListener != null)
+            {
                 str_id_clicked="";
 
                 BeanObject  _beanObj = mbeanAllObj.get(getAdapterPosition());

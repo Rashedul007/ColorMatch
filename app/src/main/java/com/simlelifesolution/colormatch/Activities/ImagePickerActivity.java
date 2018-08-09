@@ -187,7 +187,7 @@ public class ImagePickerActivity extends AppCompatActivity {
                 if ((strImgPath == null) || (strThumbPath == null))
                     Toast.makeText(this, "Please select an image first!", Toast.LENGTH_SHORT).show();
                 else {
-                    addImageToNewPlt();
+                    addImageToPlt();
                 }
                 break;
 
@@ -197,12 +197,12 @@ public class ImagePickerActivity extends AppCompatActivity {
 
     }
 
-    private void addImageToNewPlt()
+    private void addImageToPlt()
     {
         AlertDialog.Builder mAlertBuilder = new AlertDialog.Builder(this);
 
         LayoutInflater li = LayoutInflater.from(this);
-        View promptsView = li.inflate(R.layout.dialog_new_palette, null);
+        View promptsView = li.inflate(R.layout.dialog_saveimage_topalette, null);
 
         mAlertBuilder.setPositiveButton("ok", null);
         mAlertBuilder.setNegativeButton("cancel", null);
@@ -238,6 +238,13 @@ public class ImagePickerActivity extends AppCompatActivity {
 
                         if(returnResult == 1)
                            {  mAlertDialog.dismiss();
+
+                               Intent intent_DetailsAct = new Intent(mContext, PaletteDetailsActivity.class);
+                               intent_DetailsAct.putExtra("xtra_pltID_fromListClk", pltID_from_Spinner);
+                               intent_DetailsAct.putExtra("xtra_pltName_fromListClk", pltName_from_Spinner);
+
+                               startActivity(intent_DetailsAct);
+
                               finish();}
                     }
                 });
@@ -262,11 +269,17 @@ public class ImagePickerActivity extends AppCompatActivity {
                     BeanMain _PaletteObj = new BeanMain("NULL", _pltName, "image", "0", "");
                     paletteID_pkDB = myDbHelper.createNewPalette(_PaletteObj);
 
+
                     if (paletteID_pkDB != -1)   //new palette created successfully
                     {
                         Toast.makeText(mContext, "New Palette created succssfuly!\n Please wait for storing the image. ", Toast.LENGTH_SHORT).show();
 
                         pltID_from_Spinner = String.valueOf(paletteID_pkDB);
+
+                        BeanMain _mainObj = myDbHelper.getPaletteObjFromID(paletteID_pkDB.toString());
+                        pltName_from_Spinner = _mainObj.getPaletteName();
+
+
 
                         BeanImage _imgObj = new BeanImage("", pltID_from_Spinner, strImgPath, strThumbPath, _imgName, "");
                         Long dbImgInsertID = myDbHelper.insert_newImage(_imgObj);

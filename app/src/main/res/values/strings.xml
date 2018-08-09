@@ -5,7 +5,7 @@
 
 
     <string name="signin">Sign In</string>
-    <string name="image_name"><i>Image Name</i></string>
+    <string name="image_name"><i>Save as</i></string>
     <string name="add_to_new_palette"><i>Add To New Palette</i></string>
     <string name="add_to_existing_palette"><i>Add To Existing Palette</i></string>
 
@@ -30,10 +30,14 @@
     <string name="Close">close</string>
     <!--endregion-->
 
-<!--region .....................for camera2 fragment............................................ -->
+    <!--region .....................for camera2 fragment............................................ -->
     <string name="request_permission">This sample needs camera permission.</string>
     <string name="camera_error">This device doesn\'t support Camera2 API.</string>
-<!--endregion-->
+    <!--endregion-->
+
+    <!--region .....................for navigation drawer items............................................ -->
+    <string name="submit">Submit</string>
+    <!--endregion-->
 
 
 </resources>

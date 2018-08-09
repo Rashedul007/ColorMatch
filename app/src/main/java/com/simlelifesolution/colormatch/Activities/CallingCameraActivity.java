@@ -84,7 +84,7 @@ public class CallingCameraActivity extends AppCompatActivity
                     if(flag_which_camera.equals("old"))
                         call_asyncForImageSave();
                     else if(flag_which_camera.equals("new"))
-                        addImageToNewPlt();
+                        addImageToPlt();
                 break;
             default:
                 break;
@@ -149,13 +149,19 @@ public class CallingCameraActivity extends AppCompatActivity
                         mCameraBitmap = BitmapFactory.decodeByteArray(cameraData, 0, cameraData.length);
 
                         mCameraImageView.setImageBitmap(mCameraBitmap);
-                        mSaveImageButton_new.setEnabled(true);           }
+                        mSaveImageButton_new.setEnabled(true);
+
+                        //--------------------------create thumbnail
+
+                        InputStream thumbInputStream = MyImageHelper.func_createThumbs_ReturnInStream(mCameraBitmap);  /////////////////makes the smallest thumnail
+                        Bitmap thumbBitmap = BitmapFactory.decodeStream(thumbInputStream);
+
+                        strThumbPath = MyImageHelper.func_giveBitmap_aFileName(mContext, thumbBitmap, img_Time_Name);
+                    }
                 }
                 else if(requestCode == TAG_CAMERA_NEW) {
                     flag_which_camera = "new";
                     mSaveImageButton_new.setEnabled(true);
-
-                    //func_onCaptureImageResult_new(data);
 
                     func_onCaptureImageResult_new(data);
                 }
@@ -168,26 +174,19 @@ public class CallingCameraActivity extends AppCompatActivity
     }
 
 
-    private void startImageCapture() {
-        //startActivityForResult(new Intent(MediaStore.ACTION_IMAGE_CAPTURE), TAG_CAMERA_OLD);
-
-        Intent custIntent = new Intent();
+    private void startImageCapture()
+    {    Intent custIntent = new Intent();
             custIntent.putExtra("xtra_inside_plt_ID", getIntent_pltID);
             custIntent.putExtra("xtra_inside_plt_name", getIntent_pltName);
             custIntent.putExtra("xtra_imgPth_or_colorCode", getIntent_imgPath_OR_clrCode);
             custIntent.putExtra("xtra_flag_imgOrClr", getIntent_flag_ImgOrClr);
 
-        //startActivityForResult(new Intent(CallingCameraActivity.this, CustomCameraActivity.class), TAG_CAMERA_OLD);
         if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.LOLLIPOP)
             {  custIntent.setClass(mContext,CustomCameraActivity.class);
-                startActivityForResult(custIntent, TAG_CAMERA_OLD);}
+                startActivityForResult(custIntent, TAG_CAMERA_OLD);  }
         else
-            {
-                //custIntent.setClass(mContext,CustomCamera2Activity__old.class);
-                custIntent.setClass(mContext,Camera2Activity.class);
-                startActivityForResult(custIntent, TAG_CAMERA_NEW);
-
-            }
+            {   custIntent.setClass(mContext,Camera2Activity.class);
+                startActivityForResult(custIntent, TAG_CAMERA_NEW);  }
     }
 
 
@@ -222,14 +221,14 @@ public class CallingCameraActivity extends AppCompatActivity
 
 //region*****************************save images in DB
 
-    private void addImageToNewPlt()
+    private void addImageToPlt()
     {
         dbImgInsertID_exstPlt = -1L;
 
         AlertDialog.Builder mAlertBuilder = new AlertDialog.Builder(this);
 
         LayoutInflater li = LayoutInflater.from(this);
-        View promptsView = li.inflate(R.layout.dialog_new_palette, null);
+        View promptsView = li.inflate(R.layout.dialog_saveimage_topalette, null);
 
         mAlertBuilder.setPositiveButton("ok", null);
         mAlertBuilder.setNegativeButton("cancel", null);
@@ -464,7 +463,7 @@ public class CallingCameraActivity extends AppCompatActivity
             Log.d("Log_Async", "resultFlag:: "+ resultFlag);
 
             if(resultFlag)
-                addImageToNewPlt();
+                addImageToPlt();
 
             pDialog.dismiss();
         }

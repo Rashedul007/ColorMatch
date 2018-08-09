@@ -4,7 +4,7 @@
             "outputFile": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v23\\values-v23.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\cardview-v7-25.2.0.aar\\aab80167288b901957ca0887a42c2235\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\cardview-v7-25.2.0.aar\\78a71aca6b464674b46827f4a853eda2\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\726abc0cb7f65464ee220f3b3d137819\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\8d4df000e874312d7e3fb7c81d37b3a9\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,19,32,33,34,35,36",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4",

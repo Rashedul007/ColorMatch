@@ -54,7 +54,7 @@ public class MyRecycleAdapter_PaletteList extends RecyclerView.Adapter<MyRecycle
 
     public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener
     {
-        Button mDeleteButton;
+        Button mDeleteButton , mShareButton;
          ImageView mCoverImgVw;
          LinearLayout lnrLayout;
          TextView mTxtVw;
@@ -65,6 +65,8 @@ public class MyRecycleAdapter_PaletteList extends RecyclerView.Adapter<MyRecycle
             super(view);
 
             mDeleteButton = (Button) view.findViewById(R.id.btnDeletePalette);
+            mShareButton = (Button) view.findViewById(R.id.btnSharePalette);
+
             mCoverImgVw = (ImageView) view.findViewById(R.id.coverImageView);
             mTxtVw = (TextView) view.findViewById(R.id.title);
 
@@ -72,11 +74,13 @@ public class MyRecycleAdapter_PaletteList extends RecyclerView.Adapter<MyRecycle
 
             mCoverImgVw.setOnClickListener(this);
             lnrLayout.setOnClickListener(this);
+            mShareButton.setOnClickListener(this);
         }
 
         @Override
         public void onClick(View v) {
-            if (mItemClickListener != null) {
+            if (mItemClickListener != null)
+            {
                 mItemClickListener.onItemClickListener(v, getAdapterPosition(), beanClassList_s.get(getAdapterPosition()).get_paletteObj().getPaletteID(), beanClassList_s.get(getAdapterPosition()).get_paletteObj().getPaletteName(),
                         beanClassList_s.get(getAdapterPosition()).get_paletteObj().getCoverID_flag(),beanClassList_s.get(getAdapterPosition()).get_paletteObj().getCoverID());
             }
@@ -150,6 +154,7 @@ public class MyRecycleAdapter_PaletteList extends RecyclerView.Adapter<MyRecycle
 //endregion
             }
         });
+
 
         holder.lnrLayout.removeAllViewsInLayout();
 

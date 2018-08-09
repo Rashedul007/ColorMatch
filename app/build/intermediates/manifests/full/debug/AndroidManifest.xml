@@ -12,6 +12,7 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
 
     <uses-feature android:name="android.hardware.camera2.full" />
     <uses-feature android:name="android.hardware.camera" />
@@ -97,6 +98,9 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity android:name="com.simlelifesolution.colormatch.Activities.About" />
+        <activity android:name="com.simlelifesolution.colormatch.Activities.Support" />
+        <activity android:name="com.simlelifesolution.colormatch.Activities.SharingActivity" />
     </application>
 
 </manifest>

@@ -27,11 +27,13 @@ import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.graphics.ImageFormat;
 import android.graphics.Matrix;
 import android.graphics.Point;
 import android.graphics.RectF;
 import android.graphics.SurfaceTexture;
+import android.graphics.drawable.Drawable;
 import android.hardware.camera2.CameraAccessException;
 import android.hardware.camera2.CameraCaptureSession;
 import android.hardware.camera2.CameraCharacteristics;
@@ -51,18 +53,23 @@ import android.os.Handler;
 import android.os.HandlerThread;
 import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
+import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.view.GravityCompat;
 import android.util.Log;
 import android.util.Size;
 import android.util.SparseIntArray;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Surface;
 import android.view.TextureView;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.Toast;
 
 import com.simlelifesolution.colormatch.Helpers.AutoFitTextureView;
@@ -87,13 +94,17 @@ import static android.app.Activity.RESULT_OK;
 
 
 @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
-public class Camera2Fragment extends Fragment   implements View.OnClickListener, ActivityCompat.OnRequestPermissionsResultCallback
+public class Camera2Fragment extends Fragment implements View.OnClickListener, ActivityCompat.OnRequestPermissionsResultCallback
 {
     static String img_Time_Name = "" ;
     String strImgPath = null;
     private File outputImageFile;
     private Uri outputImgUri;
     String getIntent_flag_ImgOrClr, getIntent_pltID, getIntent_pltName, getIntent_imgPath_OR_clrCode;
+
+    ZoomableImageView mImgVwZoom;
+    FrameLayout mFrmLayout;
+    FloatingActionButton mBtnTakePic;
 
     /**
      * Conversion from screen rotation to JPEG orientation.
@@ -452,14 +463,17 @@ public class Camera2Fragment extends Fragment   implements View.OnClickListener,
 
     @Override
     public void onViewCreated(final View view, Bundle savedInstanceState) {
-        view.findViewById(R.id.picture).setOnClickListener(this);
+        mBtnTakePic = (FloatingActionButton) view.findViewById(R.id.takepic_button);
+        mBtnTakePic.setOnClickListener(this);
         // view.findViewById(R.id.info).setOnClickListener(this);
-        mTextureView = (AutoFitTextureView) view.findViewById(R.id.texture);
+        mTextureView = (AutoFitTextureView) view.findViewById(R.id.textureVw);
 
+        mFrmLayout = (FrameLayout)view.findViewById(R.id.lyout_colorvwOnCamera);
 
-        ZoomableImageView touch = (ZoomableImageView)view.findViewById(R.id.zoomimgvw);
-        Bitmap bitmap = BitmapFactory.decodeResource(this.getResources(),  R.drawable.splash2);
-        touch.setImageBitmap(bitmap);
+        mImgVwZoom = (ZoomableImageView)view.findViewById(R.id.zoomimgvw);
+
+        getIntent_setlayoutNimage();
+
     }
 
     @Override
@@ -944,7 +958,7 @@ public class Camera2Fragment extends Fragment   implements View.OnClickListener,
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.picture: {
+            case R.id.takepic_button: {
                 takePicture();
                 break;
             }
@@ -1090,4 +1104,40 @@ public class Camera2Fragment extends Fragment   implements View.OnClickListener,
         }
     }
 
+    private void getIntent_setlayoutNimage()
+    {
+        Bundle extras = getActivity().getIntent().getExtras();
+        if (extras != null) {
+            getIntent_pltID = extras.getString("xtra_inside_plt_ID");
+
+            getIntent_pltName = extras.getString("xtra_inside_plt_name");
+            getIntent_imgPath_OR_clrCode = extras.getString("xtra_imgPth_or_colorCode");
+            getIntent_flag_ImgOrClr = extras.getString("xtra_flag_imgOrClr");
+
+            if(getIntent_flag_ImgOrClr.equals("image"))
+            {
+                // Drawable d = Drawable.createFromPath(getIntent_imgPath_OR_clrCode);
+                Bitmap mBtmap = BitmapFactory.decodeFile(getIntent_imgPath_OR_clrCode);
+                mImgVwZoom.setImageBitmap(mBtmap);
+            }
+            else if(getIntent_flag_ImgOrClr.equals("color"))
+            {
+                String mCOlorCode = getIntent_imgPath_OR_clrCode.trim();
+                mImgVwZoom.setVisibility(View.GONE);
+                mFrmLayout.setBackgroundColor(Color.parseColor(mCOlorCode));
+
+                //  mBtnTakePic.setGravity(Gravity.CENTER | Gravity.BOTTOM);
+
+                FrameLayout.LayoutParams lp = (FrameLayout.LayoutParams) mBtnTakePic.getLayoutParams();
+                lp.gravity = Gravity.CENTER;
+                mBtnTakePic.setLayoutParams(lp);
+            }
+        }
+        else
+        {    FrameLayout.LayoutParams lp = (FrameLayout.LayoutParams) mBtnTakePic.getLayoutParams();
+            lp.gravity = Gravity.CENTER;
+            mBtnTakePic.setLayoutParams(lp);}
+
+
+    }
 }

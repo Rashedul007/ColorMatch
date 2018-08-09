@@ -10,7 +10,7 @@
 
 
     <com.simlelifesolution.colormatch.Helpers.AutoFitTextureView
-        android:id="@+id/texture"
+        android:id="@+id/textureVw"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_gravity="center"
@@ -29,7 +29,7 @@
                 android:layout_height="match_parent"/>
 
             <android.support.design.widget.FloatingActionButton
-            android:id="@+id/picture"
+            android:id="@+id/takepic_button"
             android:layout_width="56dp"
             android:layout_height="56dp"
             android:src="@drawable/ic_cam3"/>

@@ -86,7 +86,12 @@ public class MyRecycleAdapter_ColorMatching extends RecyclerView.Adapter<MyRecyc
     public void onBindViewHolder(final MyViewHolder holder, final int position)
     {
       final   BeanSimilarColor  beanClass = beanClassList_s.get(position);
-        String colrCode = "#"+ beanClass.getColorHexCode();
+
+        String colrCode;
+        if(beanClass.getColorHexCode().charAt(0)!= '#')
+            colrCode = "#"+ beanClass.getColorHexCode();
+        else colrCode = beanClass.getColorHexCode();
+
 
         holder.mTxtVw.setText(beanClass.getColorType() );
 

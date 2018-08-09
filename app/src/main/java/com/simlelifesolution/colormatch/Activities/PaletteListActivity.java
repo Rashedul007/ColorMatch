@@ -1,5 +1,6 @@
 package com.simlelifesolution.colormatch.Activities;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
@@ -9,11 +10,20 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.telephony.SmsManager;
 import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
+import android.widget.Toast;
 
+import com.android.volley.DefaultRetryPolicy;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 import com.simlelifesolution.colormatch.Beans.BeanColor;
 import com.simlelifesolution.colormatch.Beans.BeanImage;
 import com.simlelifesolution.colormatch.Beans.BeanMain;
@@ -21,7 +31,12 @@ import com.simlelifesolution.colormatch.Beans.BeanObject;
 import com.simlelifesolution.colormatch.Beans.BeanObjectList;
 import com.simlelifesolution.colormatch.Helpers.DatabaseHelper;
 import com.simlelifesolution.colormatch.Helpers.MyRecycleAdapter_PaletteList;
+import com.simlelifesolution.colormatch.Helpers.MyVariables;
 import com.simlelifesolution.colormatch.R;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -44,6 +59,7 @@ private Context mContext = PaletteListActivity.this;
     private FloatingActionButton fab_main, fab_camera, fab_gallery, fab_colorpicker;
     private Animation fab_open,fab_close,rotate_forward,rotate_backward;
 
+
 //endregion
 
     @Override
@@ -58,10 +74,18 @@ private Context mContext = PaletteListActivity.this;
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setTitle("Palette List");
 
+        initialize();
+    }
+
+    private void initialize()
+    {
         mDbHelper = new DatabaseHelper(this);
         mRecyclerView= (RecyclerView)findViewById(R.id.rcView_paletteList);
 
         initialise_fab();
+
+
+
     }
 
 
@@ -139,13 +163,18 @@ private Context mContext = PaletteListActivity.this;
             @Override
             public void onItemClickListener(View view, int position, String pltID, String pltNm, String cvr_flag, String cvr_ID)
             {
-                   // Toast.makeText(mContext,"Palette clicked at position:: " + position +"---paletteid::" + pltID_from_Spinner, Toast.LENGTH_SHORT).show();
+                // Toast.makeText(mContext,"Palette clicked at position:: " + position +"---paletteid::" + pltID_from_Spinner, Toast.LENGTH_SHORT).show();
 
                 Intent intent_DetailsAct = new Intent(mContext, PaletteDetailsActivity.class);
-                    intent_DetailsAct.putExtra("xtra_pltID_fromListClk", pltID);
-                    intent_DetailsAct.putExtra("xtra_pltName_fromListClk", pltNm);
+                intent_DetailsAct.putExtra("xtra_pltID_fromListClk", pltID);
+                intent_DetailsAct.putExtra("xtra_pltName_fromListClk", pltNm);
                 /*    intent_DetailsAct.putExtra("xtra_pltCoverFlag_fromListClk", cvr_flag);
                     intent_DetailsAct.putExtra("xtra_pltCoverID_fromListClk", cvr_ID);*/
+
+                if(view instanceof Button) // share button in actionbar/optionMenu
+                    intent_DetailsAct.putExtra("xtra_isShareFromPltLst", "yes");
+
+
                 startActivity(intent_DetailsAct);
             }
         });
@@ -250,5 +279,7 @@ private Context mContext = PaletteListActivity.this;
     }
 
 //endregions
+
+
 
 }

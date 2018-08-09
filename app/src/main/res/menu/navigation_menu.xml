@@ -12,8 +12,8 @@
                 android:icon="@drawable/ic_storage"
                 android:title="Storage options"/>
             <item android:id="@+id/mn_uninstall"
-                android:icon="@drawable/ic_uninstall"
-                android:title="Uninstall"/>
+                android:icon="@drawable/ic_exit"
+                android:title="Exit"/>
         </menu>
     </item>
 

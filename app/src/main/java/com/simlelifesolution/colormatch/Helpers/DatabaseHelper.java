@@ -334,6 +334,9 @@ public class DatabaseHelper extends SQLiteOpenHelper
 
     public ArrayList<String> getCoverFromID(String pltID)
     {
+        // // return_arr >>> ( CoverID, Flag, Name, Path/code ) ////
+
+
         SQLiteDatabase db = this.getReadableDatabase();
 
         ArrayList<String> return_arr = new ArrayList<>(); //( CoverID, Flag, Name, Path/code )
@@ -360,6 +363,72 @@ public class DatabaseHelper extends SQLiteOpenHelper
                     return_arr.add("");
                     return_arr.add("");
                 }
+            else {
+                Cursor cursor_img = db.query(TABLE_IMAGE, new String[]{KEY_IMAGEID_PK, KEY_IMAGE_PATH, KEY_IMAGE_NAME, KEY_THUMB_PATH},
+                        KEY_IMAGEID_PK + "=?", new String[]{mCoverID},
+                        null, null, null, null);
+
+                if (cursor_img != null)
+                    cursor_img.moveToFirst();
+
+                return_arr.add(mCoverID);
+                return_arr.add("image");
+                return_arr.add(String.valueOf(cursor_img.getString(cursor_img.getColumnIndex(KEY_IMAGE_NAME))));
+                return_arr.add(String.valueOf(cursor_img.getString(cursor_img.getColumnIndex(KEY_IMAGE_PATH))));
+                return_arr.add(String.valueOf(cursor_img.getString(cursor_img.getColumnIndex(KEY_THUMB_PATH))));
+            }
+
+        }
+        else if(mCoverFlag.equals("color"))
+        {
+            return_arr.clear();
+
+            Cursor cursor_clr = db.query(TABLE_COLOR, new String[]{KEY_COLORID_PK, KEY_COLOR_CODE, KEY_COLOR_NAME },
+                    KEY_COLORID_PK + "=?", new String[]{mCoverID},
+                    null, null, null, null);
+
+            if (cursor_clr != null)
+                cursor_clr.moveToFirst();
+
+            return_arr.add(mCoverID);
+            return_arr.add("color");
+            return_arr.add(String.valueOf(cursor_clr.getString(cursor_clr.getColumnIndex(KEY_COLOR_NAME))));
+            return_arr.add(String.valueOf(cursor_clr.getString(cursor_clr.getColumnIndex(KEY_COLOR_CODE))));
+            return_arr.add("");
+        }
+        return return_arr;
+
+    }
+
+
+    public ArrayList<String> getCoverObjFromID(String pltID)
+    {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        ArrayList<String> return_arr = new ArrayList<>(); //( CoverID, Flag, Name, Path/code )
+
+        Cursor c = db.query(TABLE_MAIN, new String[]{KEY_PALETTE_NAME, KEY_COVERID_FLAG, KEY_COVERID},
+                KEY_MAIN_ID_PK + "=?", new String[]{String.valueOf(pltID)},
+                null, null, null, null);
+
+        if (c != null)
+            c.moveToFirst();
+
+        String mCoverID = c.getString(c.getColumnIndex(KEY_COVERID));
+        String mCoverFlag = c.getString(c.getColumnIndex(KEY_COVERID_FLAG));
+
+
+        if(mCoverFlag.equals("image"))
+        {
+            return_arr.clear();
+            if(mCoverID.equals("0"))
+            {
+                return_arr.add(mCoverID);
+                return_arr.add("image");
+                return_arr.add("");
+                return_arr.add("");
+                return_arr.add("");
+            }
             else {
                 Cursor cursor_img = db.query(TABLE_IMAGE, new String[]{KEY_IMAGEID_PK, KEY_IMAGE_PATH, KEY_IMAGE_NAME, KEY_THUMB_PATH},
                         KEY_IMAGEID_PK + "=?", new String[]{mCoverID},

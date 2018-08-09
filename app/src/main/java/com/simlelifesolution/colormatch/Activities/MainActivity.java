@@ -18,6 +18,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.text.Html;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -44,7 +45,7 @@ public class MainActivity extends AppCompatActivity
 
     private static int btnPressType = 0 ;
 
-    String[] permissionsRequired = new String[]{Manifest.permission.CAMERA, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE};
+    String[] permissionsRequired = new String[]{    Manifest.permission.CAMERA, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE , Manifest.permission.SEND_SMS  };
 
     private boolean sentToSettings = false;
     private SharedPreferences permissionStatus;
@@ -92,7 +93,7 @@ public class MainActivity extends AppCompatActivity
                 switch(id)
                 {
                     case R.id.mn_subscribe:
-                        Toast.makeText(mContext, "SUsbscribe",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(mContext, "Susbscribe",Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.mn_permissions:
                         func_navItem_permission();
@@ -101,17 +102,17 @@ public class MainActivity extends AppCompatActivity
                         Toast.makeText(mContext, "Options",Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.mn_uninstall:
-                        func_navItem_uninstall();
+                        func_navItem_exit();
                         break;
 
                     case R.id.mn_about:
                         func_navItem_about();
                         break;
                     case R.id.mn_support:
-                        Toast.makeText(mContext, "Support",Toast.LENGTH_SHORT).show();
+                        func_navItem_support();
                         break;
                     case R.id.mn_webpage:
-                        Toast.makeText(mContext, "Webpage",Toast.LENGTH_SHORT).show();
+                        func_navItem_website();
                         break;
                     default:
                         break;
@@ -170,17 +171,21 @@ public class MainActivity extends AppCompatActivity
         /* for single permission
         if (ActivityCompat.checkSelfPermission(mContext, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
             if (ActivityCompat.shouldShowRequestPermissionRationale(mContext, Manifest.permission.CAMERA))*/
-        if(ActivityCompat.checkSelfPermission(mContext, permissionsRequired[0]) != PackageManager.PERMISSION_GRANTED
+        if( ActivityCompat.checkSelfPermission(mContext, permissionsRequired[0]) != PackageManager.PERMISSION_GRANTED
                 || ActivityCompat.checkSelfPermission(mContext, permissionsRequired[1]) != PackageManager.PERMISSION_GRANTED
-                || ActivityCompat.checkSelfPermission(mContext, permissionsRequired[2]) != PackageManager.PERMISSION_GRANTED){
-            if(ActivityCompat.shouldShowRequestPermissionRationale(mActivity,permissionsRequired[0])
+                || ActivityCompat.checkSelfPermission(mContext, permissionsRequired[2]) != PackageManager.PERMISSION_GRANTED
+                || ActivityCompat.checkSelfPermission(mContext, permissionsRequired[3]) != PackageManager.PERMISSION_GRANTED    )
+        {
+            if( ActivityCompat.shouldShowRequestPermissionRationale(mActivity,permissionsRequired[0])
                     || ActivityCompat.shouldShowRequestPermissionRationale(mActivity,permissionsRequired[1])
-                    || ActivityCompat.shouldShowRequestPermissionRationale(mActivity,permissionsRequired[2]))
+                    || ActivityCompat.shouldShowRequestPermissionRationale(mActivity,permissionsRequired[2])
+                    || ActivityCompat.shouldShowRequestPermissionRationale(mActivity,permissionsRequired[3])    )
             {
                 //Show Information about why you need the permission
                 AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
-                builder.setTitle("Retional: Need multiple Permission");
-                builder.setMessage("This app needs camera & storage permission.");
+                builder.setTitle(Html.fromHtml("<font color='#3F51B5'>Need multiple Permission</font>"));
+                builder.setMessage(Html.fromHtml("<font color='#b6b4b4'>This app needs camera, storage & sms permission .</font>"));
+
                 builder.setPositiveButton("Grant", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -204,8 +209,8 @@ public class MainActivity extends AppCompatActivity
                 //Previously Permission Request was cancelled with 'Dont Ask Again'- which results in shouldShowRequestPermissionRationale=false and requestPermissions method will do just nothing. So we need to remember whether we ave priorly requested for permission or not, even after the app restarts
                 // Redirect to Settings after showing Information about why you need the permission
                 AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
-                builder.setTitle("sharedPref: Need Storage Permission");
-                builder.setMessage("This app needs storage permission.");
+                builder.setTitle(Html.fromHtml("<font color='#3F51B5'>Some permissions required</font>"));
+                builder.setMessage(Html.fromHtml("<font color='#b6b4b4'>This app needs some permissions</font>"));
                 builder.setPositiveButton("Grant", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -234,7 +239,7 @@ public class MainActivity extends AppCompatActivity
             SharedPreferences.Editor editor = permissionStatus.edit();
             editor.putBoolean(permissionsRequired[0],true);
             editor.commit();
-            Log.d("Log_pref", String.valueOf(permissionStatus.getBoolean(Manifest.permission.CAMERA,false)));
+           // Log.d("Log_pref", String.valueOf(permissionStatus.getBoolean(Manifest.permission.CAMERA,false)));
 
 
         } else {
@@ -279,11 +284,12 @@ public class MainActivity extends AppCompatActivity
             }
             else if(ActivityCompat.shouldShowRequestPermissionRationale(mActivity,permissionsRequired[0])
                     || ActivityCompat.shouldShowRequestPermissionRationale(mActivity,permissionsRequired[1])
-                    || ActivityCompat.shouldShowRequestPermissionRationale(mActivity,permissionsRequired[2])){
+                    || ActivityCompat.shouldShowRequestPermissionRationale(mActivity,permissionsRequired[2])
+                    || ActivityCompat.shouldShowRequestPermissionRationale(mActivity,permissionsRequired[3])    ){
                // txtPermissions.setText("Permissions Required");
                 AlertDialog.Builder builder = new AlertDialog.Builder(mActivity);
-                builder.setTitle("Need Multiple Permissions");
-                builder.setMessage("This app needs Camera and Location permissions.");
+                builder.setTitle(Html.fromHtml("<font color='#3F51B5'>Need Multiple Permissions</font>"));
+                builder.setMessage(Html.fromHtml("<font color='#b6b4b4'>This app needs Camera and Location permissions.</font>"));
                 builder.setPositiveButton("Grant", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -327,10 +333,25 @@ public class MainActivity extends AppCompatActivity
 
  private void func_navItem_about()
  {
-     Toast.makeText(mContext, "ABout",Toast.LENGTH_SHORT).show();
+    // Toast.makeText(mContext, "ABout",Toast.LENGTH_SHORT).show();
+     Intent abtIntent = new Intent(mContext, About.class);
+     startActivity(abtIntent);
  }
 
-private void func_navItem_uninstall()
+private void func_navItem_support()
+{
+    Intent sprtIntent = new Intent(mContext, Support.class);
+    startActivity(sprtIntent);
+}
+
+private void func_navItem_website()
+ {
+     Uri uri = Uri.parse("http://www.google.com");
+     Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+     startActivity(intent);
+    }
+
+private void func_navItem_exit()
     {
        /* Intent detailsIntent = new Intent();
        // detailsIntent.setClassName("com.android.settings", "com.android.settings.InstalledAppDetails");
@@ -340,6 +361,13 @@ private void func_navItem_uninstall()
         //detailsIntent.putExtra("pkg", "com.simlelifesolution.colormatch.Activities");
 
         startActivity(detailsIntent);*/
+
+        finishAffinity();
+/*
+        int pid = android.os.Process.myPid();
+        android.os.Process.killProcess(pid);*/
+
+        System.exit(0);
 
     }
 

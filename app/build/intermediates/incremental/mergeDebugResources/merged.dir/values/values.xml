@@ -720,7 +720,7 @@
     <string name="common_log">LogColorMatch</string>
     <string name="done">Done</string>
     <string name="help">help</string>
-    <string name="image_name"><i>Image Name</i></string>
+    <string name="image_name"><i>Save as</i></string>
     <string name="options">customcamera_menu</string>
     <string name="password_toggle_content_description">Toggle password visibility</string>
     <string name="path_password_eye" translatable="false">M12,4.5C7,4.5 2.73,7.61 1,12c1.73,4.39 6,7.5 11,7.5s9.27,-3.11 11,-7.5c-1.73,-4.39 -6,-7.5 -11,-7.5zM12,17c-2.76,0 -5,-2.24 -5,-5s2.24,-5 5,-5 5,2.24 5,5 -2.24,5 -5,5zM12,9c-1.66,0 -3,1.34 -3,3s1.34,3 3,3 3,-1.34 3,-3 -1.34,-3 -3,-3z</string>
@@ -735,6 +735,7 @@
     <string name="signin">Sign In</string>
     <string name="start_image_capture">Take a New Picture</string>
     <string name="status_bar_notification_info_overflow">999+</string>
+    <string name="submit">Submit</string>
     <string name="upload_url">http://simple-life-solutions.com/ceye/getcolours.php</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>

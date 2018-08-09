@@ -3,6 +3,7 @@ package com.simlelifesolution.colormatch.Fragment;
 
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -17,12 +18,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.simlelifesolution.colormatch.Activities.PaletteDetailsActivity;
 import com.simlelifesolution.colormatch.Beans.BeanColor;
 import com.simlelifesolution.colormatch.Beans.BeanMain;
 import com.simlelifesolution.colormatch.Beans.BeanSimilarColor;
@@ -77,14 +81,18 @@ public class FragmentSimilarColor extends Fragment
 
     String mColor_HexConverted;
     int mColor = 0;
-    private Spinner mSpinner;
-    MySpinAdapter_PaletteNames mSpinnerAdapter;
     ArrayList<BeanMain> listPaletteDB ;
     private DatabaseHelper myDbHelper ;
     public String mpalettetNameFromSpinner ="";
     public String mpalettetIDFromSpinner ="";
 
-    //====================================
+ //-----for dialog view
+    EditText mEdtVwPltName_new;
+    Spinner mSpinnerPaletteName_exist;
+    MySpinAdapter_PaletteNames adapter_Spinner;
+
+    Long paletteID_pkDB = -1L;
+
 //endregion
 
     public FragmentSimilarColor() {
@@ -132,15 +140,12 @@ public class FragmentSimilarColor extends Fragment
 
                 if (mView instanceof Button) {
                     mColor = Color.parseColor(mColor_HexConverted);
-                    btnClkPickerExisting();
-                   // Toast.makeText(getActivity(), "Button clk", Toast.LENGTH_SHORT).show();
 
+                    addColorToPlt(mColor);
                 } // make dialog and insertcolor to palette
                 else if (mView instanceof ImageView) {
                     Toast.makeText(getActivity(), "Color Code: " + mColor_HexConverted, Toast.LENGTH_SHORT).show();
-                   /* Intent intnt = new Intent(ColorListFromImageActivity.this, ColorMatchingActivity.class);
-                    intnt.putExtra("intnt_colorCode", mColor_HexConverted);
-                    startActivity(intnt);*/
+
                 }
             }
         });
@@ -307,49 +312,82 @@ public class FragmentSimilarColor extends Fragment
     }
 
 
-    public void btnClkPickerExisting()
+
+//------------- add Color to palette
+
+    private void addColorToPlt(int clr)
     {
         AlertDialog.Builder mAlertBuilder = new AlertDialog.Builder(getActivity());
 
         LayoutInflater li = LayoutInflater.from(getActivity());
-        View promptsView = li.inflate(R.layout.dialog_add_color_to_existing_plt, null);
+        View promptsView = li.inflate(R.layout.dialog_savecolor_topalette, null);
 
         mAlertBuilder.setPositiveButton("ok", null);
         mAlertBuilder.setNegativeButton("cancel", null);
         mAlertBuilder.setView(promptsView);
 
-        final Spinner mSpinnerPaletteName = (Spinner) promptsView.findViewById(R.id.spinner_existingPalette_2);
-        mSpinner = mSpinnerPaletteName;
-        final EditText mEdtVwColorName = (EditText) promptsView.findViewById(R.id.edTxtVwNewColorName);
-        final View mVwColorBack = (View)promptsView.findViewById(R.id.vwColorBackGround);
+        mEdtVwPltName_new = (EditText) promptsView.findViewById(R.id.editTextDialogUserInput);
+        final View mVwColorBg = (View) promptsView.findViewById(R.id.vwColorBackGround);
         final TextView mTxtVwColorCode = (TextView) promptsView.findViewById(R.id.txtVwColorCode);
+        final EditText mEdtVwColorName = (EditText) promptsView.findViewById(R.id.etDialogImgName);
+        final CheckBox mChkBx = (CheckBox) promptsView.findViewById(R.id.chkBoxCover);
+        final RadioButton mRadioExist = (RadioButton) promptsView.findViewById(R.id.rdBtn_Existing);
+        final RadioButton mRadioNew = (RadioButton) promptsView.findViewById(R.id.rdBtn_New);
 
-        mVwColorBack.setBackgroundColor(mColor);
+
+        mRadioExist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onRadioButtonClicked(v);
+            }
+        });
+
+        mRadioNew.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onRadioButtonClicked(v);
+            }
+        });
+        //mRadioNew.setOnClickListener(radio_listener);
+
+        mSpinnerPaletteName_exist = (Spinner) promptsView.findViewById(R.id.spinner_existingPalette);
+
+        setup_spinnerItems(mSpinnerPaletteName_exist); //------------------ setUp the spinner for existing paletteList
+
+        mVwColorBg.setBackgroundColor(clr);
         mTxtVwColorCode.setText(mColor_HexConverted);
 
-        setupSpinner_paletteList(); //------------------ setUp the spinner for existing paletteList
-
         final AlertDialog mAlertDialog = mAlertBuilder.create();
+
         mAlertDialog.setOnShowListener(new DialogInterface.OnShowListener() {
 
             @Override
             public void onShow(DialogInterface dialog) {
 
-                Button b = mAlertDialog.getButton(AlertDialog.BUTTON_POSITIVE);
-                b.setOnClickListener(new View.OnClickListener() {
+                Button btnDialog_positive = mAlertDialog.getButton(AlertDialog.BUTTON_POSITIVE);
+                btnDialog_positive.setOnClickListener(new View.OnClickListener() {
 
                     @Override
                     public void onClick(View view) {
-                        if ((mEdtVwColorName.getText().toString().trim().length() > 0) && !(mpalettetNameFromSpinner.equals("")))
+                        int returnResult = 0;
+                        if (mRadioExist.isChecked())
+                            returnResult = func_addImageToExistingPlt(mEdtVwColorName,  mChkBx );
+
+                        else if (mRadioNew.isChecked())
+                            returnResult = func_addImageToNewPlt(mEdtVwColorName,  mChkBx );
+
+                        if(returnResult == 1)
                         {
-                            BeanColor _PaletteObj = new BeanColor("NULL", mpalettetIDFromSpinner, mColor_HexConverted, mEdtVwColorName.getText().toString(), "");
-                            Long dbColorInsert = myDbHelper.insert_newColor(_PaletteObj);
-                            Toast.makeText(getActivity(), "Color inserted successfully with row no# : " + dbColorInsert, Toast.LENGTH_SHORT).show();
 
                             mAlertDialog.dismiss();
-                        }
-                        else
-                            Toast.makeText(getActivity(), "Please insert color name.", Toast.LENGTH_SHORT).show();
+
+                            Intent intent_DetailsAct = new Intent(getActivity(), PaletteDetailsActivity.class);
+                            intent_DetailsAct.putExtra("xtra_pltID_fromListClk", mpalettetIDFromSpinner);
+                            intent_DetailsAct.putExtra("xtra_pltName_fromListClk", mpalettetNameFromSpinner);
+
+                            startActivity(intent_DetailsAct);
+
+                            getActivity().finish();}
                     }
                 });
             }
@@ -357,28 +395,128 @@ public class FragmentSimilarColor extends Fragment
         mAlertDialog.show();
     }
 
-
-    private void setupSpinner_paletteList()
+    private int func_addImageToNewPlt(EditText mEdtVwColorName,  CheckBox mChkBx )
     {
-        if(listPaletteDB.size() >0)
-            listPaletteDB.clear();
+        if ((mEdtVwPltName_new.getText().toString().trim().length() > 0) && (mEdtVwColorName.getText().toString().trim().length() > 0)) {
+            String _pltName = mEdtVwPltName_new.getText().toString();
+            String _clrName = mEdtVwColorName.getText().toString();
 
-        listPaletteDB = myDbHelper.getPaletteList();
-        mSpinnerAdapter = new MySpinAdapter_PaletteNames(getActivity(), android.R.layout.simple_spinner_item, listPaletteDB);
-        mSpinner.setAdapter(mSpinnerAdapter);
-        mSpinner.setSelection(listPaletteDB.size()-1);      // this is so that it auto selects the palette if any new palette created
-        mSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id)
+            if (myDbHelper.checkDuplicatePltName(_pltName)) {
+                Toast.makeText(getActivity(), "Palette Name already exists! Please try another name.", Toast.LENGTH_SHORT).show();
+            }
+            else {
+                BeanMain _PaletteObj = new BeanMain("NULL", _pltName, "image", "0", "");
+                paletteID_pkDB = myDbHelper.createNewPalette(_PaletteObj);
+
+
+                if (paletteID_pkDB != -1)   //new palette created successfully
+                {
+                    // Toast.makeText(mContext, "New Palette created succssfuly!\n Please wait for storing the image. ", Toast.LENGTH_SHORT).show();
+
+                    mpalettetIDFromSpinner = String.valueOf(paletteID_pkDB);
+
+                    BeanMain _mainObj = myDbHelper.getPaletteObjFromID(paletteID_pkDB.toString());
+                    mpalettetNameFromSpinner = _mainObj.getPaletteName();
+
+
+                    BeanColor _ColorObj = new BeanColor("NULL", mpalettetIDFromSpinner, mColor_HexConverted, _clrName, "");
+                    Long dbColorInsert = myDbHelper.insert_newColor(_ColorObj);
+
+
+                    Log.d("dbResult_explt", "Color Created DBresult:::" + dbColorInsert.toString() + " pltID_from_Spinner: " + _ColorObj.getPaletteID().toString());
+
+                    if (dbColorInsert == -1)
+                        Toast.makeText(getActivity(), "Something went wrong when saving the color in the palette!", Toast.LENGTH_SHORT).show();
+                    else {
+                        if (mChkBx.isChecked()) {
+                            Toast.makeText(getActivity(), "Image saved succssfuly!", Toast.LENGTH_SHORT).show();
+                            Long dbUpdateCover = myDbHelper.updateCoverInPalette(paletteID_pkDB.toString(), "color", dbColorInsert.toString());
+                        }
+                        return 1;
+                    }
+                } else
+                    Toast.makeText(getActivity(), "Something went wrong when creating a new palette!", Toast.LENGTH_SHORT).show();
+            }
+        } else    // either PaletteName or ImageName was not given
+            Toast.makeText(getActivity(), "Please check the Palette & Color Name!", Toast.LENGTH_SHORT).show();
+
+        return 0;
+    }
+
+
+    private int func_addImageToExistingPlt(EditText mEdtVwColorName,  CheckBox mChkBx_addAsCover )
+    {
+        if ((mEdtVwColorName.getText().toString().trim().length() > 0)  && !(mpalettetNameFromSpinner.equals("")))
+        {
+            String _clrName = mEdtVwColorName.getText().toString();
+
+            BeanColor _ColorObj = new BeanColor("NULL", mpalettetIDFromSpinner, mColor_HexConverted, _clrName, "");
+            Long dbColorInsert = myDbHelper.insert_newColor(_ColorObj);
+
+            Log.d("dbResult_explt", "Image Created DBresult:::" + dbColorInsert.toString() + " pltID_from_Spinner: " + _ColorObj.getPaletteID().toString());
+
+            if (dbColorInsert == -1)
+                Toast.makeText(getActivity(), "Something went wrong when saving the color in existing palette!", Toast.LENGTH_SHORT).show();
+            else
             {
-                BeanMain _paletteObj = (BeanMain) mSpinnerAdapter.getItem(position);
+                if(mChkBx_addAsCover.isChecked()) {
+//                    Toast.makeText(mContext, "Color saved succssfuly!", Toast.LENGTH_SHORT).show();
+                    Long dbUpdateCover = myDbHelper.updateCoverInPalette(mpalettetIDFromSpinner.toString(), "color", dbColorInsert.toString());
+                }
+                return 1;
+            }
+
+        }
+        else
+            Toast.makeText(getActivity(), "Please insert color name!", Toast.LENGTH_SHORT).show();
+
+        return 0;
+    }
+
+
+    private void setup_spinnerItems(Spinner mSpn)
+    {
+        ArrayList<BeanMain> listPaletteDB = myDbHelper.getPaletteList();
+
+        adapter_Spinner = new MySpinAdapter_PaletteNames(getActivity(), android.R.layout.simple_spinner_item, listPaletteDB);
+        mSpn.setAdapter(adapter_Spinner);
+        mSpn.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
+                BeanMain _paletteObj = (BeanMain) adapter_Spinner.getItem(position);
 
                 mpalettetNameFromSpinner = _paletteObj.getPaletteName().toString();
                 mpalettetIDFromSpinner = _paletteObj.getPaletteID();
+
+                // Toast.makeText(mContext, ""+ mpalettetIDFromSpinner + "\t" + mpalettetNameFromSpinner, Toast.LENGTH_SHORT).show();
             }
+
             @Override
-            public void onNothingSelected(AdapterView<?> adapter) {  }
+            public void onNothingSelected(AdapterView<?> adapter) {
+            }
         });
     }
+
+    public String onRadioButtonClicked(View view) {
+        // Is the button now checked?
+        boolean checked = ((RadioButton) view).isChecked();
+
+        switch(view.getId()) {
+            case R.id.rdBtn_Existing:
+                if (checked)
+                    mEdtVwPltName_new.setVisibility(View.GONE);
+                mEdtVwPltName_new.setText(null);
+                mSpinnerPaletteName_exist.setVisibility(View.VISIBLE);
+                break;
+            case R.id.rdBtn_New:
+                if (checked)
+                    mEdtVwPltName_new.setVisibility(View.VISIBLE);
+                mSpinnerPaletteName_exist.setVisibility(View.GONE);
+                break;
+
+        }return null;
+    }
+
 
 }
