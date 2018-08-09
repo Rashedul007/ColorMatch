@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_root"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:background="@color/colorAccent"
+    android:gravity="center_vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/customborder"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Color:"
+            android:textColor="@color/color_white"/>
+        <View
+            android:id="@+id/vwColorBackGround"
+            android:layout_width="80dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="5dp"
+            android:background="@color/colorPrimary"/>
+        <TextView
+            android:id="@+id/txtVwColorCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:textStyle="italic"
+            android:textColor="@color/color_white"
+            android:text="..."/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save options"
+        android:gravity="center_horizontal"
+        android:layout_marginBottom="10dp"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="@color/color_white"/>
+
+     <EditText
+            android:id="@+id/etDialogImgName"
+            android:hint="@string/image_name"
+            android:textColorHint="@color/color_edhint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:background="@drawable/custom_edittext_bg"
+            android:textColor="@color/color_black"
+            android:drawablePadding="10dp" >
+
+        <requestFocus />
+    </EditText>
+    
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+        <RadioButton
+            android:id="@+id/rdBtn_Existing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClicked"
+            android:textColor="@color/color_white"
+            android:text="Add To Existing Palette"
+            android:buttonTint="@color/color_white"
+            android:checked="true"
+            />
+        <Spinner
+            android:id="@+id/spinner_existingPalette"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/custom_spinner">
+        </Spinner>
+
+        <RadioButton
+            android:id="@+id/rdBtn_New"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClicked"
+            android:textColor="@color/color_white"
+            android:text="@string/add_to_new_palette"
+            android:buttonTint="@color/color_white"
+            android:layout_marginTop="20dp"/>
+
+
+        <EditText
+            android:id="@+id/editTextDialogUserInput"
+            android:hint="@string/add_to_new_palette"
+            android:textColorHint="@color/color_edhint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:padding="5dp"
+            android:background="@drawable/custom_edittext_bg"
+            android:drawablePadding="10dp"
+            android:textColor="@color/color_black"
+            android:visibility="gone"/>
+
+    </RadioGroup>
+
+
+
+
+    <CheckBox
+        android:id="@+id/chkBoxCover"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/color_white"
+        android:text="Add As Cover"
+        android:buttonTint="@color/color_white"/>
+
+</LinearLayout>

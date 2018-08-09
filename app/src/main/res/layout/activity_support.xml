@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    android:fitsSystemWindows="true">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"  >
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@null"
+            android:alpha="0.5">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/colorPrimaryDark"    />
+
+        </android.support.design.widget.AppBarLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:weightSum="5">
+
+    <EditText
+        android:id="@+id/edt_subject"
+        android:hint="Subject"
+        android:textColorHint="@color/color_edhint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_edittext_bg_blue"
+        android:drawablePadding="10dp"
+        android:textColor="@color/textcolor"
+        android:layout_weight="1"
+        android:maxHeight="100dp"/>
+
+    <EditText
+        android:id="@+id/edt_detail"
+        android:hint="Details"
+        android:textColorHint="@color/color_edhint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/custom_edittext_bg_blue"
+        android:drawablePadding="10dp"
+        android:textColor="@color/textcolor"
+        android:layout_weight="4"
+        android:maxHeight="200dp"/>
+
+    <Button
+        android:id="@+id/btn_support"
+        android:text="@string/submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="150dp"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/color_white"
+        android:background="@drawable/mycustom_button_square"
+        android:onClick="supportClk"/>
+
+</LinearLayout>
+
+</LinearLayout>
