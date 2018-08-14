@@ -21,48 +21,28 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.Transparent">
-        <activity android:name=".Activities.LoginActivity">
+
+        <activity android:name=".Activities.LoginActivity" />
+
+        <activity android:name=".Activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activities.MainActivity">
-            <intent-filter>
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".Activities.ImagePickerActivity">
-            <intent-filter>
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".Activities.ColorPickerActivity">
-            <intent-filter>
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".Activities.PaletteListActivity">
-            <intent-filter>
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".Activities.PaletteDetailsActivity">
-            <intent-filter>
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".Activities.ColorMatchingActivity">
-            <intent-filter>
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".Activities.ColorListFromImageActivity">
-            <intent-filter>
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
+
+        <activity android:name=".Activities.ImagePickerActivity" />
+
+        <activity android:name=".Activities.ColorPickerActivity" />
+
+        <activity android:name=".Activities.PaletteListActivity" />
+
+        <activity android:name=".Activities.PaletteDetailsActivity" />
+
+        <activity android:name=".Activities.ColorMatchingActivity" />
+
+        <activity android:name=".Activities.ColorListFromImageActivity" />
 
         <provider
             android:name="android.support.v4.content.FileProvider"
@@ -74,26 +54,16 @@
                 android:resource="@xml/shared_file_paths" />
         </provider>
 
-        <activity android:name=".Activities.CustomCameraActivity">
-            <intent-filter>
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".Activities.CallingCameraActivity">
-            <intent-filter>
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".Activities.Camera2Activity"
-            android:noHistory="true">
-            <intent-filter>
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".Activities.CustomCameraActivity" />
+
+        <activity android:name=".Activities.CallingCameraActivity" />
+
+        <activity android:name=".Activities.Camera2Activity" />
+
+
         <activity android:name=".Activities.About" />
         <activity android:name=".Activities.Support" />
-        <activity android:name=".Activities.SharingActivity"></activity>
+        <activity android:name=".Activities.SharingActivity" />
     </application>
 
 </manifest>

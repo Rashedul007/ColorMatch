@@ -27,49 +27,22 @@
         android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:testOnly="true"
         android:theme="@style/AppTheme.Transparent" >
-        <activity android:name="com.simlelifesolution.colormatch.Activities.LoginActivity" >
+        <activity android:name="com.simlelifesolution.colormatch.Activities.LoginActivity" />
+        <activity android:name="com.simlelifesolution.colormatch.Activities.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.simlelifesolution.colormatch.Activities.MainActivity" >
-            <intent-filter>
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity android:name="com.simlelifesolution.colormatch.Activities.ImagePickerActivity" >
-            <intent-filter>
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity android:name="com.simlelifesolution.colormatch.Activities.ColorPickerActivity" >
-            <intent-filter>
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity android:name="com.simlelifesolution.colormatch.Activities.PaletteListActivity" >
-            <intent-filter>
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity android:name="com.simlelifesolution.colormatch.Activities.PaletteDetailsActivity" >
-            <intent-filter>
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity android:name="com.simlelifesolution.colormatch.Activities.ColorMatchingActivity" >
-            <intent-filter>
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity android:name="com.simlelifesolution.colormatch.Activities.ColorListFromImageActivity" >
-            <intent-filter>
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
+        <activity android:name="com.simlelifesolution.colormatch.Activities.ImagePickerActivity" />
+        <activity android:name="com.simlelifesolution.colormatch.Activities.ColorPickerActivity" />
+        <activity android:name="com.simlelifesolution.colormatch.Activities.PaletteListActivity" />
+        <activity android:name="com.simlelifesolution.colormatch.Activities.PaletteDetailsActivity" />
+        <activity android:name="com.simlelifesolution.colormatch.Activities.ColorMatchingActivity" />
+        <activity android:name="com.simlelifesolution.colormatch.Activities.ColorListFromImageActivity" />
 
         <provider
             android:name="android.support.v4.content.FileProvider"
@@ -81,23 +54,9 @@
                 android:resource="@xml/shared_file_paths" />
         </provider>
 
-        <activity android:name="com.simlelifesolution.colormatch.Activities.CustomCameraActivity" >
-            <intent-filter>
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity android:name="com.simlelifesolution.colormatch.Activities.CallingCameraActivity" >
-            <intent-filter>
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name="com.simlelifesolution.colormatch.Activities.Camera2Activity"
-            android:noHistory="true" >
-            <intent-filter>
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
+        <activity android:name="com.simlelifesolution.colormatch.Activities.CustomCameraActivity" />
+        <activity android:name="com.simlelifesolution.colormatch.Activities.CallingCameraActivity" />
+        <activity android:name="com.simlelifesolution.colormatch.Activities.Camera2Activity" />
         <activity android:name="com.simlelifesolution.colormatch.Activities.About" />
         <activity android:name="com.simlelifesolution.colormatch.Activities.Support" />
         <activity android:name="com.simlelifesolution.colormatch.Activities.SharingActivity" />

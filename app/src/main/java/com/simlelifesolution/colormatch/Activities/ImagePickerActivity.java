@@ -243,6 +243,7 @@ public class ImagePickerActivity extends AppCompatActivity {
                                intent_DetailsAct.putExtra("xtra_pltID_fromListClk", pltID_from_Spinner);
                                intent_DetailsAct.putExtra("xtra_pltName_fromListClk", pltName_from_Spinner);
 
+                               intent_DetailsAct.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                                startActivity(intent_DetailsAct);
 
                               finish();}

@@ -174,7 +174,7 @@ private Context mContext = PaletteListActivity.this;
                 if(view instanceof Button) // share button in actionbar/optionMenu
                     intent_DetailsAct.putExtra("xtra_isShareFromPltLst", "yes");
 
-
+                intent_DetailsAct.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                 startActivity(intent_DetailsAct);
             }
         });

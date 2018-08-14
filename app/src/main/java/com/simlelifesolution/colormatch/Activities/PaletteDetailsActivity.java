@@ -243,7 +243,7 @@ public class PaletteDetailsActivity extends AppCompatActivity
                             intntCameraAct.putExtra("xtra_img_path", mImgObj.getimagePath());
                             intntCameraAct.putExtra("xtra_flag_imgOrClr", "image");
                         startActivity(intntCameraAct);
-                        finish();
+//                        finish();
                     }
 //endregion
 

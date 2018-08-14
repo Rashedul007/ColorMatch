@@ -317,6 +317,7 @@ public class FragmentComplementaryColor extends Fragment
                             intent_DetailsAct.putExtra("xtra_pltID_fromListClk", mpalettetIDFromSpinner);
                             intent_DetailsAct.putExtra("xtra_pltName_fromListClk", mpalettetNameFromSpinner);
 
+                            intent_DetailsAct.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                             startActivity(intent_DetailsAct);
 
                             getActivity().finish();}

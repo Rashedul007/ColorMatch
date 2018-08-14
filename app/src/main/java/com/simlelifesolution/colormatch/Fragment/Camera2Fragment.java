@@ -60,6 +60,7 @@ import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.util.Size;
 import android.util.SparseIntArray;
@@ -69,6 +70,7 @@ import android.view.Surface;
 import android.view.TextureView;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.Toast;
 
@@ -96,6 +98,8 @@ import static android.app.Activity.RESULT_OK;
 @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
 public class Camera2Fragment extends Fragment implements View.OnClickListener, ActivityCompat.OnRequestPermissionsResultCallback
 {
+    private Toolbar mToolbar;
+
     static String img_Time_Name = "" ;
     String strImgPath = null;
     private File outputImageFile;
@@ -105,6 +109,7 @@ public class Camera2Fragment extends Fragment implements View.OnClickListener, A
     ZoomableImageView mImgVwZoom;
     FrameLayout mFrmLayout;
     FloatingActionButton mBtnTakePic;
+    Button mBtnBack;
 
     /**
      * Conversion from screen rotation to JPEG orientation.
@@ -459,10 +464,13 @@ public class Camera2Fragment extends Fragment implements View.OnClickListener, A
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_camera2, container, false);
+
     }
 
     @Override
     public void onViewCreated(final View view, Bundle savedInstanceState) {
+
+        mBtnBack = (Button)view.findViewById(R.id.btn_back);
         mBtnTakePic = (FloatingActionButton) view.findViewById(R.id.takepic_button);
         mBtnTakePic.setOnClickListener(this);
         // view.findViewById(R.id.info).setOnClickListener(this);
@@ -473,6 +481,14 @@ public class Camera2Fragment extends Fragment implements View.OnClickListener, A
         mImgVwZoom = (ZoomableImageView)view.findViewById(R.id.zoomimgvw);
 
         getIntent_setlayoutNimage();
+
+
+        mBtnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().onBackPressed();
+            }
+        });
 
     }
 
@@ -619,10 +635,10 @@ public class Camera2Fragment extends Fragment implements View.OnClickListener, A
                 int orientation = getResources().getConfiguration().orientation;
                 if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
                     mTextureView.setAspectRatio( mPreviewSize.getWidth(), mPreviewSize.getHeight());
-                    Toast.makeText(getActivity(), "LAND", Toast.LENGTH_SHORT).show();
+                  //  Toast.makeText(getActivity(), "LAND", Toast.LENGTH_SHORT).show();
                 } else {
                     mTextureView.setAspectRatio(mPreviewSize.getHeight(), mPreviewSize.getWidth());
-                    Toast.makeText(getActivity(), "POTR", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(getActivity(), "POTR", Toast.LENGTH_SHORT).show();
                 }
 
                 // Check if the flash is supported.
@@ -884,7 +900,7 @@ public class Camera2Fragment extends Fragment implements View.OnClickListener, A
                 public void onCaptureCompleted(@NonNull CameraCaptureSession session,
                                                @NonNull CaptureRequest request,
                                                @NonNull TotalCaptureResult result) {
-                    showToast("Saved: " + outputImageFile);
+                  //  showToast("Saved: " + outputImageFile);
                     Log.d("log_came2", "Inside cam2-file path:  " +outputImageFile.toString());
                     unlockFocus();
 

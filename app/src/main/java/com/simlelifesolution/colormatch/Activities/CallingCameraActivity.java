@@ -169,6 +169,7 @@ public class CallingCameraActivity extends AppCompatActivity
             } else {
                 mCameraBitmap = null;
                 mSaveImageButton_new.setEnabled(false);
+                finish();
             }
 
     }

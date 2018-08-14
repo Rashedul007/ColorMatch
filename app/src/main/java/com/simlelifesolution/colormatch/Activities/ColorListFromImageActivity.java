@@ -291,9 +291,9 @@ public class ColorListFromImageActivity extends AppCompatActivity
                         {  mAlertDialog.dismiss();
 
                             Intent intent_DetailsAct = new Intent(mContext, PaletteDetailsActivity.class);
-                            intent_DetailsAct.putExtra("xtra_pltID_fromListClk", mpalettetIDFromSpinner);
-                            intent_DetailsAct.putExtra("xtra_pltName_fromListClk", mpalettetNameFromSpinner);
-
+                                intent_DetailsAct.putExtra("xtra_pltID_fromListClk", mpalettetIDFromSpinner);
+                                intent_DetailsAct.putExtra("xtra_pltName_fromListClk", mpalettetNameFromSpinner);
+                            intent_DetailsAct.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                             startActivity(intent_DetailsAct);
 
                             finish();}
