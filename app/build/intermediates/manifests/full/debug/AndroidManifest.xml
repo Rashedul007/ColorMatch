@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.simlelifesolution.colormatch"
+    package="com.usefullittleappproduction.palettestudio"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -19,7 +19,7 @@
     <uses-feature android:name="android.hardware.camera.autofocus" />
 
     <application
-        android:name="com.simlelifesolution.colormatch.Helpers.App"
+        android:name="com.usefullittleappproduction.palettestudio.Helpers.App"
         android:allowBackup="false"
         android:debuggable="true"
         android:icon="@mipmap/ic_launcher"
@@ -27,26 +27,25 @@
         android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:testOnly="true"
         android:theme="@style/AppTheme.Transparent" >
-        <activity android:name="com.simlelifesolution.colormatch.Activities.LoginActivity" />
-        <activity android:name="com.simlelifesolution.colormatch.Activities.MainActivity" >
+        <activity android:name="com.usefullittleappproduction.palettestudio.Activities.LoginActivity" />
+        <activity android:name="com.usefullittleappproduction.palettestudio.Activities.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.simlelifesolution.colormatch.Activities.ImagePickerActivity" />
-        <activity android:name="com.simlelifesolution.colormatch.Activities.ColorPickerActivity" />
-        <activity android:name="com.simlelifesolution.colormatch.Activities.PaletteListActivity" />
-        <activity android:name="com.simlelifesolution.colormatch.Activities.PaletteDetailsActivity" />
-        <activity android:name="com.simlelifesolution.colormatch.Activities.ColorMatchingActivity" />
-        <activity android:name="com.simlelifesolution.colormatch.Activities.ColorListFromImageActivity" />
+        <activity android:name="com.usefullittleappproduction.palettestudio.Activities.ImagePickerActivity" />
+        <activity android:name="com.usefullittleappproduction.palettestudio.Activities.ColorPickerActivity" />
+        <activity android:name="com.usefullittleappproduction.palettestudio.Activities.PaletteListActivity" />
+        <activity android:name="com.usefullittleappproduction.palettestudio.Activities.PaletteDetailsActivity" />
+        <activity android:name="com.usefullittleappproduction.palettestudio.Activities.ColorMatchingActivity" />
+        <activity android:name="com.usefullittleappproduction.palettestudio.Activities.ColorListFromImageActivity" />
 
         <provider
             android:name="android.support.v4.content.FileProvider"
-            android:authorities="com.simlelifesolution.colormatch.provider"
+            android:authorities="com.usefullittleappproduction.palettestudio.provider"
             android:exported="false"
             android:grantUriPermissions="true" >
             <meta-data
@@ -54,12 +53,12 @@
                 android:resource="@xml/shared_file_paths" />
         </provider>
 
-        <activity android:name="com.simlelifesolution.colormatch.Activities.CustomCameraActivity" />
-        <activity android:name="com.simlelifesolution.colormatch.Activities.CallingCameraActivity" />
-        <activity android:name="com.simlelifesolution.colormatch.Activities.Camera2Activity" />
-        <activity android:name="com.simlelifesolution.colormatch.Activities.About" />
-        <activity android:name="com.simlelifesolution.colormatch.Activities.Support" />
-        <activity android:name="com.simlelifesolution.colormatch.Activities.SharingActivity" />
+        <activity android:name="com.usefullittleappproduction.palettestudio.Activities.CustomCameraActivity" />
+        <activity android:name="com.usefullittleappproduction.palettestudio.Activities.CallingCameraActivity" />
+        <activity android:name="com.usefullittleappproduction.palettestudio.Activities.Camera2Activity" />
+        <activity android:name="com.usefullittleappproduction.palettestudio.Activities.About" />
+        <activity android:name="com.usefullittleappproduction.palettestudio.Activities.Support" />
+        <activity android:name="com.usefullittleappproduction.palettestudio.Activities.SharingActivity" />
     </application>
 
 </manifest>

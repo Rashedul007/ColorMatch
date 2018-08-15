@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\AndroidStudioProjects\\ColorMatch\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v23\\values-v23.xml",
+            "outputFile": "C:\\AndroidStudioProjects\\PaletteStudio\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v23\\values-v23.xml",
             "map": [
                 {
                     "source": "C:\\Users\\rhsha\\.gradle\\caches\\transforms-1\\files-1.1\\cardview-v7-25.2.0.aar\\78a71aca6b464674b46827f4a853eda2\\res\\values-v23\\values-v23.xml",

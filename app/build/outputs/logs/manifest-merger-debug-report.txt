@@ -1,20 +1,20 @@
 -- Merging decision tree log ---
 provider#android.support.v4.content.FileProvider
-INJECTED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:47:9-55:20
+INJECTED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:47:9-55:20
 	android:grantUriPermissions
-		ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:51:13-47
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:51:13-47
 	android:authorities
-		INJECTED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml
-		ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:49:13-60
+		INJECTED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:49:13-60
 	android:exported
-		ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:50:13-37
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:50:13-37
 	android:name
-		ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:48:13-67
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:48:13-67
 manifest
-ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:2:1-69:12
-INJECTED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:2:1-69:12
-INJECTED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:2:1-69:12
-INJECTED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:2:1-69:12
+ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:2:1-69:12
+INJECTED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:2:1-69:12
+INJECTED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:2:1-69:12
+INJECTED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:2:1-69:12
 MERGED from [com.android.support:design:25.2.0] C:\Users\rhsha\.gradle\caches\transforms-1\files-1.1\design-25.2.0.aar\5ca89c63d2b510ea2a64e82c053bae2d\AndroidManifest.xml:17:1-27:12
 MERGED from [com.android.support:appcompat-v7:25.2.0] C:\Users\rhsha\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.2.0.aar\8d4df000e874312d7e3fb7c81d37b3a9\AndroidManifest.xml:17:1-27:12
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\rhsha\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\0cd8baf6f871adbfd3d82be5a1abd4ba\AndroidManifest.xml:2:1-11:12
@@ -31,57 +31,57 @@ MERGED from [com.android.support:support-core-ui:25.2.0] C:\Users\rhsha\.gradle\
 MERGED from [com.android.support:support-core-utils:25.2.0] C:\Users\rhsha\.gradle\caches\transforms-1\files-1.1\support-core-utils-25.2.0.aar\acd2b274c6eba7f847901771bef5c9fd\AndroidManifest.xml:17:1-27:12
 MERGED from [com.android.support:support-media-compat:25.2.0] C:\Users\rhsha\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.2.0.aar\a78d3e503b00a403b85168e57c967bc7\AndroidManifest.xml:17:1-27:12
 MERGED from [com.android.support:support-compat:25.2.0] C:\Users\rhsha\.gradle\caches\transforms-1\files-1.1\support-compat-25.2.0.aar\d2fd1d16762280d349e326cd269e9f6e\AndroidManifest.xml:17:1-27:12
-INJECTED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:2:1-69:12
-INJECTED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:2:1-69:12
-INJECTED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:2:1-69:12
+INJECTED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:2:1-69:12
+INJECTED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:2:1-69:12
+INJECTED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:2:1-69:12
 	package
-		ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:3:5-47
-		INJECTED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml
-		INJECTED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:3:5-58
+		INJECTED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml
+		INJECTED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml
-		ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:2:1-69:12
-		INJECTED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml
+		INJECTED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:2:1-69:12
+		INJECTED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml
 	android:versionCode
-		INJECTED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml
-		ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:2:1-69:12
-		INJECTED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml
+		INJECTED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:2:1-69:12
+		INJECTED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:2:11-69
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:2:11-69
 uses-permission#android.permission.INTERNET
-ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:5:5-67
+ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:5:5-67
 	android:name
-		ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:5:22-64
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:5:22-64
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:6:5-80
+ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:6:5-80
 	android:name
-		ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:6:22-77
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:6:22-77
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:7:5-81
+ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:7:5-81
 	android:name
-		ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:7:22-78
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:7:22-78
 uses-permission#android.permission.CAMERA
-ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:8:5-65
+ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:8:5-65
 	android:name
-		ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:8:22-62
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:8:22-62
 uses-permission#android.permission.SEND_SMS
-ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:9:5-67
+ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:9:5-67
 	android:name
-		ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:9:22-64
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:9:22-64
 uses-feature#android.hardware.camera2.full
-ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:11:5-66
+ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:11:5-66
 	android:name
-		ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:11:19-63
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:11:19-63
 uses-feature#android.hardware.camera
-ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:12:5-60
+ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:12:5-60
 	android:name
-		ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:12:19-57
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:12:19-57
 uses-feature#android.hardware.camera.autofocus
-ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:13:5-70
+ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:13:5-70
 	android:name
-		ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:13:19-67
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:13:19-67
 application
-ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:15:5-67:19
+ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:15:5-67:19
 MERGED from [com.android.support:design:25.2.0] C:\Users\rhsha\.gradle\caches\transforms-1\files-1.1\design-25.2.0.aar\5ca89c63d2b510ea2a64e82c053bae2d\AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:design:25.2.0] C:\Users\rhsha\.gradle\caches\transforms-1\files-1.1\design-25.2.0.aar\5ca89c63d2b510ea2a64e82c053bae2d\AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:appcompat-v7:25.2.0] C:\Users\rhsha\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.2.0.aar\8d4df000e874312d7e3fb7c81d37b3a9\AndroidManifest.xml:25:5-20
@@ -113,91 +113,91 @@ MERGED from [com.android.support:support-media-compat:25.2.0] C:\Users\rhsha\.gr
 MERGED from [com.android.support:support-compat:25.2.0] C:\Users\rhsha\.gradle\caches\transforms-1\files-1.1\support-compat-25.2.0.aar\d2fd1d16762280d349e326cd269e9f6e\AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-compat:25.2.0] C:\Users\rhsha\.gradle\caches\transforms-1\files-1.1\support-compat-25.2.0.aar\d2fd1d16762280d349e326cd269e9f6e\AndroidManifest.xml:25:5-20
 	android:supportsRtl
-		ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:22:9-35
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:22:9-35
 	android:label
-		ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:19:9-41
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:19:9-41
 	android:roundIcon
-		ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:21:9-54
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:21:9-54
 	android:largeHeap
-		ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:20:9-33
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:20:9-33
 	android:icon
-		ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:18:9-43
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:18:9-43
 	android:allowBackup
-		ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:17:9-36
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:17:9-36
 	android:theme
-		ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:23:9-52
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:23:9-52
 	android:name
-		ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:16:9-36
-activity#com.simlelifesolution.colormatch.Activities.LoginActivity
-ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:25:9-62
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:16:9-36
+activity#com.usefullittleappproduction.palettestudio.Activities.LoginActivity
+ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:25:9-62
 	android:name
-		ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:25:19-59
-activity#com.simlelifesolution.colormatch.Activities.MainActivity
-ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:27:9-33:20
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:25:19-59
+activity#com.usefullittleappproduction.palettestudio.Activities.MainActivity
+ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:27:9-33:20
 	android:name
-		ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:27:19-58
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:27:19-58
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:28:13-32:29
+ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:28:13-32:29
 action#android.intent.action.MAIN
-ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:29:17-69
+ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:29:17-69
 	android:name
-		ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:29:25-66
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:29:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:31:17-77
+ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:31:17-77
 	android:name
-		ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:31:27-74
-activity#com.simlelifesolution.colormatch.Activities.ImagePickerActivity
-ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:35:9-68
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:31:27-74
+activity#com.usefullittleappproduction.palettestudio.Activities.ImagePickerActivity
+ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:35:9-68
 	android:name
-		ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:35:19-65
-activity#com.simlelifesolution.colormatch.Activities.ColorPickerActivity
-ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:37:9-68
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:35:19-65
+activity#com.usefullittleappproduction.palettestudio.Activities.ColorPickerActivity
+ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:37:9-68
 	android:name
-		ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:37:19-65
-activity#com.simlelifesolution.colormatch.Activities.PaletteListActivity
-ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:39:9-68
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:37:19-65
+activity#com.usefullittleappproduction.palettestudio.Activities.PaletteListActivity
+ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:39:9-68
 	android:name
-		ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:39:19-65
-activity#com.simlelifesolution.colormatch.Activities.PaletteDetailsActivity
-ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:41:9-71
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:39:19-65
+activity#com.usefullittleappproduction.palettestudio.Activities.PaletteDetailsActivity
+ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:41:9-71
 	android:name
-		ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:41:19-68
-activity#com.simlelifesolution.colormatch.Activities.ColorMatchingActivity
-ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:43:9-70
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:41:19-68
+activity#com.usefullittleappproduction.palettestudio.Activities.ColorMatchingActivity
+ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:43:9-70
 	android:name
-		ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:43:19-67
-activity#com.simlelifesolution.colormatch.Activities.ColorListFromImageActivity
-ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:45:9-75
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:43:19-67
+activity#com.usefullittleappproduction.palettestudio.Activities.ColorListFromImageActivity
+ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:45:9-75
 	android:name
-		ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:45:19-72
-activity#com.simlelifesolution.colormatch.Activities.CustomCameraActivity
-ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:57:9-69
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:45:19-72
+activity#com.usefullittleappproduction.palettestudio.Activities.CustomCameraActivity
+ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:57:9-69
 	android:name
-		ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:57:19-66
-activity#com.simlelifesolution.colormatch.Activities.CallingCameraActivity
-ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:59:9-70
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:57:19-66
+activity#com.usefullittleappproduction.palettestudio.Activities.CallingCameraActivity
+ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:59:9-70
 	android:name
-		ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:59:19-67
-activity#com.simlelifesolution.colormatch.Activities.Camera2Activity
-ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:61:9-64
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:59:19-67
+activity#com.usefullittleappproduction.palettestudio.Activities.Camera2Activity
+ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:61:9-64
 	android:name
-		ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:61:19-61
-activity#com.simlelifesolution.colormatch.Activities.About
-ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:64:9-54
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:61:19-61
+activity#com.usefullittleappproduction.palettestudio.Activities.About
+ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:64:9-54
 	android:name
-		ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:64:19-51
-activity#com.simlelifesolution.colormatch.Activities.Support
-ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:65:9-56
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:64:19-51
+activity#com.usefullittleappproduction.palettestudio.Activities.Support
+ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:65:9-56
 	android:name
-		ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:65:19-53
-activity#com.simlelifesolution.colormatch.Activities.SharingActivity
-ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:66:9-64
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:65:19-53
+activity#com.usefullittleappproduction.palettestudio.Activities.SharingActivity
+ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:66:9-64
 	android:name
-		ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:66:19-61
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:66:19-61
 uses-sdk
-INJECTED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml
-INJECTED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml
+INJECTED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml
+INJECTED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml
 MERGED from [com.android.support:design:25.2.0] C:\Users\rhsha\.gradle\caches\transforms-1\files-1.1\design-25.2.0.aar\5ca89c63d2b510ea2a64e82c053bae2d\AndroidManifest.xml:21:5-23:62
 MERGED from [com.android.support:design:25.2.0] C:\Users\rhsha\.gradle\caches\transforms-1\files-1.1\design-25.2.0.aar\5ca89c63d2b510ea2a64e82c053bae2d\AndroidManifest.xml:21:5-23:62
 MERGED from [com.android.support:appcompat-v7:25.2.0] C:\Users\rhsha\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.2.0.aar\8d4df000e874312d7e3fb7c81d37b3a9\AndroidManifest.xml:21:5-23:78
@@ -230,21 +230,21 @@ MERGED from [com.android.support:support-media-compat:25.2.0] C:\Users\rhsha\.gr
 MERGED from [com.android.support:support-media-compat:25.2.0] C:\Users\rhsha\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.2.0.aar\a78d3e503b00a403b85168e57c967bc7\AndroidManifest.xml:21:5-23:63
 MERGED from [com.android.support:support-compat:25.2.0] C:\Users\rhsha\.gradle\caches\transforms-1\files-1.1\support-compat-25.2.0.aar\d2fd1d16762280d349e326cd269e9f6e\AndroidManifest.xml:21:5-23:58
 MERGED from [com.android.support:support-compat:25.2.0] C:\Users\rhsha\.gradle\caches\transforms-1\files-1.1\support-compat-25.2.0.aar\d2fd1d16762280d349e326cd269e9f6e\AndroidManifest.xml:21:5-23:58
-INJECTED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml
-INJECTED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml
+INJECTED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml
+INJECTED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml
 	tools:overrideLibrary
 		ADDED from [com.android.support:design:25.2.0] C:\Users\rhsha\.gradle\caches\transforms-1\files-1.1\design-25.2.0.aar\5ca89c63d2b510ea2a64e82c053bae2d\AndroidManifest.xml:23:9-59
 	android:targetSdkVersion
-		INJECTED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml
-		ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml
-		INJECTED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml
+		INJECTED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml
+		INJECTED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml
-		ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml
-		INJECTED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml
+		INJECTED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml
+		INJECTED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:52:13-54:61
+ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:52:13-54:61
 	android:resource
-		ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:54:17-58
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:54:17-58
 	android:name
-		ADDED from C:\AndroidStudioProjects\ColorMatch\app\src\main\AndroidManifest.xml:53:17-67
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:53:17-67

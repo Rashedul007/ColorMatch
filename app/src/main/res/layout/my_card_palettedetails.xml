@@ -49,7 +49,7 @@
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_gravity="center_horizontal|right|end"
-                android:background="@drawable/icfab_camera"
+                android:background="@drawable/ic_cam"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentLeft="true"/>
 
