@@ -37,6 +37,15 @@
 
     <!--region .....................for navigation drawer items............................................ -->
     <string name="submit">Submit</string>
+    <string name="exit">Exit</string>
+    <string name="subscribe_unsubscribe">Subscribe/Unsubscribe</string>
+    <string name="permissions">Permissions</string>
+    <string name="storage_options">Storage options</string>
+    <string name="about">About</string>
+    <string name="support">Support</string>
+    <string name="webpage">Webpage</string>
+    <string name="privacy_policy">privacy policy</string>
+    <string name="about_detail">Palette Studio brought to you by \'Simple Life Solutions\'   Please susbcribe and let us know what you think of our efforts.</string>
     <!--endregion-->
 
 

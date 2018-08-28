@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"/>
 
 
-        <com.usefullittleappproduction.palettestudio.Helpers.MyGradientView
+        <com.simplelifesolutions.palettestudio.Helpers.MyGradientView
             android:id="@+id/pickerTop"
             app:radius="@dimen/radius"
             app:pointerDrawable="@mipmap/pointer_simple"
@@ -36,7 +36,7 @@
             android:layout_weight="1"/>
         <!--android:layout_height="300dp"-->
 
-        <com.usefullittleappproduction.palettestudio.Helpers.MyGradientView
+        <com.simplelifesolutions.palettestudio.Helpers.MyGradientView
             android:id="@+id/pickerBottom"
             android:background="@drawable/gradient_background"
             android:layout_margin="@dimen/gap_large"

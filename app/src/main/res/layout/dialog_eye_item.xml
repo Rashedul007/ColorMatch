@@ -19,7 +19,7 @@
     android:layout_height="0dp"
     android:orientation="vertical"
     android:layout_weight="4">
-    <com.usefullittleappproduction.palettestudio.Helpers.ZoomableImageView
+    <com.simplelifesolutions.palettestudio.Helpers.ZoomableImageView
         android:id="@+id/eye_imgVw"
         android:layout_width="match_parent"
         android:layout_height="match_parent"    />

@@ -42,8 +42,7 @@
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:clickable="true"
                 android:adjustViewBounds="true"
-                android:scaleType="centerCrop"
-                android:onClick="clkCoverImage_details"/>
+                android:scaleType="centerCrop"/>
 
     </LinearLayout>
 

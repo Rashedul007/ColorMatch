@@ -4,16 +4,16 @@
         <menu>
             <item android:id="@+id/mn_subscribe"
                 android:icon="@drawable/ic_subscribe"
-                android:title="Subscribe/Unsubscribe"/>
+                android:title="@string/subscribe_unsubscribe"/>
             <item android:id="@+id/mn_permissions"
                 android:icon="@drawable/ic_permission"
-                android:title="Permissions"/>
+                android:title="@string/permissions"/>
             <item android:id="@+id/mn_options"
                 android:icon="@drawable/ic_storage"
-                android:title="Storage options"/>
+                android:title="@string/storage_options"/>
             <item android:id="@+id/mn_uninstall"
                 android:icon="@drawable/ic_exit"
-                android:title="Exit"/>
+                android:title="@string/exit"/>
         </menu>
     </item>
 
@@ -21,13 +21,16 @@
     <group>
         <item android:id="@+id/mn_about"
             android:icon="@android:drawable/picture_frame"
-            android:title="About" />
+            android:title="@string/about" />
         <item android:id="@+id/mn_support"
             android:icon="@android:drawable/picture_frame"
-            android:title="Support" />
+            android:title="@string/support" />
         <item android:id="@+id/mn_webpage"
             android:icon="@android:drawable/picture_frame"
-            android:title="Webpage" />
+            android:title="@string/webpage" />
+        <item android:id="@+id/mn_privacy"
+            android:icon="@android:drawable/picture_frame"
+            android:title="@string/privacy_policy" />
     </group>
 
 
