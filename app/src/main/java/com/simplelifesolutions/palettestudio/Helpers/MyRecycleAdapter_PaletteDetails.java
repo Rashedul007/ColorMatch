@@ -6,6 +6,7 @@ import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.support.v4.graphics.drawable.DrawableCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -90,6 +91,13 @@ public class MyRecycleAdapter_PaletteDetails extends RecyclerView.Adapter<MyRecy
 
             mImgVw.setOnClickListener(this);
             mCameraButton.setOnClickListener(this);
+
+
+           /* Drawable drawable = mContext.getResources().getDrawable(R.drawable.ic_eye);
+            drawable = DrawableCompat.wrap(drawable);
+            DrawableCompat.setTint(drawable, mContext.getResources().getColor(R.color.colorPrimary));
+
+            mEyeButton.setCompoundDrawables(null, drawable, null, null);*/
 
         }
 
@@ -185,10 +193,14 @@ public class MyRecycleAdapter_PaletteDetails extends RecyclerView.Adapter<MyRecy
                 mAlertBuilder.setNegativeButton("cancel", null);
                 mAlertBuilder.setView(promptsView);
 
+                final TextView mEyeTxtVwTitle = (TextView) promptsView.findViewById(R.id.txtVw_eyeItemTitle);
               //  final ImageView mEyeImgVw = (ImageView) promptsView.findViewById(R.id.eye_imgVw);
                 final ZoomableImageView mEyeImgVw = (ZoomableImageView) promptsView.findViewById(R.id.eye_imgVw);
                 final CheckBox mChkBx_cover = (CheckBox) promptsView.findViewById(R.id.eye_chkBoxCover);
                 final CheckBox mChkBx_delete = (CheckBox) promptsView.findViewById(R.id.eye_chkBoxDelete);
+
+
+
 
 //region turn on only one checkbox at a time
                 mChkBx_cover.setOnClickListener(new View.OnClickListener() {
@@ -208,6 +220,8 @@ public class MyRecycleAdapter_PaletteDetails extends RecyclerView.Adapter<MyRecy
                 if(flag_imgOrClr.equals("image")) {
                     BeanImage clkImgObj = (BeanImage) holder.mEyeButton.getTag();
 
+                    mEyeTxtVwTitle.setText(clkImgObj.getimageName());
+
                     String mainImgPath = clkImgObj.getimagePath() ;
                     try{
                         Bitmap cameraBitmap = MyImageHelper.rotateImageFromURI(mContext,  Uri.fromFile(new File(mainImgPath)));
@@ -222,9 +236,13 @@ public class MyRecycleAdapter_PaletteDetails extends RecyclerView.Adapter<MyRecy
                 else if(flag_imgOrClr.equals("color")){
                     BeanColor clkClrObj = (BeanColor) holder.mEyeButton.getTag();
 
+                    mEyeTxtVwTitle.setText(clkClrObj.getColorName());
+
                     String mCOlorCode = clkClrObj.getColorCode().trim();
                     mEyeImgVw.setBackgroundColor(Color.parseColor(mCOlorCode));
                 }
+
+
 //endregion
 
                 final AlertDialog mAlertDialog = mAlertBuilder.create();

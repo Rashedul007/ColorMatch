@@ -8,23 +8,27 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.SEND_SMS" />
 
-  <!--  <uses-feature android:name="android.hardware.camera2.full" />
+    <!--
+      <uses-feature android:name="android.hardware.camera2.full" />
     <uses-feature android:name="android.hardware.camera" />
-    <uses-feature android:name="android.hardware.camera.autofocus" />-->
-
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    -->
     <application
         android:name=".Helpers.App"
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:largeHeap="true"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.Transparent">
 
-        <activity android:name=".Activities.LoginActivity" />
+        <activity android:name=".Activities.LoginActivity"
+            android:screenOrientation="portrait"    />
 
-        <activity android:name=".Activities.MainActivity">
+
+        <activity android:name=".Activities.MainActivity"
+            android:screenOrientation="portrait"    >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -32,17 +36,28 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".Activities.ImagePickerActivity" />
 
-        <activity android:name=".Activities.ColorPickerActivity" />
+        <activity android:name=".Activities.ImagePickerActivity"
+            android:screenOrientation="portrait"    />
 
-        <activity android:name=".Activities.PaletteListActivity" />
 
-        <activity android:name=".Activities.PaletteDetailsActivity" />
+        <activity android:name=".Activities.ColorPickerActivity"
+            android:screenOrientation="portrait"    />
 
-        <activity android:name=".Activities.ColorMatchingActivity" />
+        <activity android:name=".Activities.PaletteListActivity"
+            android:screenOrientation="portrait"    />
 
-        <activity android:name=".Activities.ColorListFromImageActivity" />
+
+        <activity android:name=".Activities.PaletteDetailsActivity"
+            android:screenOrientation="portrait"    />
+
+
+        <activity android:name=".Activities.ColorMatchingActivity"
+            android:screenOrientation="portrait"    />
+
+
+        <activity android:name=".Activities.ColorListFromImageActivity"
+            android:screenOrientation="portrait"    />
 
         <provider
             android:name="android.support.v4.content.FileProvider"
@@ -54,16 +69,47 @@
                 android:resource="@xml/shared_file_paths" />
         </provider>
 
-        <activity android:name=".Activities.CustomCameraActivity" />
-
-        <activity android:name=".Activities.CallingCameraActivity" />
-
-        <activity android:name=".Activities.Camera2Activity" />
+        <activity android:name=".Activities.CustomCameraActivity"
+            android:screenOrientation="portrait"    />
 
 
-        <activity android:name=".Activities.About" />
-        <activity android:name=".Activities.Support" />
-        <activity android:name=".Activities.SharingActivity" />
+        <activity android:name=".Activities.CallingCameraActivity"
+            android:screenOrientation="portrait"    />
+
+
+        <activity android:name=".Activities.Camera2Activity"
+            android:screenOrientation="portrait"    />
+
+
+        <activity android:name=".Activities.About"
+            android:screenOrientation="portrait"    />
+
+
+        <activity android:name=".Activities.Support"
+            android:screenOrientation="portrait"    />
+
+
+        <activity android:name=".Activities.SharingActivity"
+            android:screenOrientation="portrait"    />
+
+        <activity android:name=".Activities.DownloadSharedPaletteActivity"
+            android:screenOrientation="portrait"    >
+            <intent-filter>
+<!--
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+-->
+
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data  android:host="simple-life-solutions.com"  android:scheme="https" />
+            </intent-filter>
+        </activity>
+
+
     </application>
 
 </manifest>

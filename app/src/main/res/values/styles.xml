@@ -27,10 +27,9 @@
         <item name="android:background">@color/windowbackgroundcolor</item>
     </style>
 
- <!--   <style name="ButtonColor" parent="@android:style/Widget.Button">
-        <item name="android:textColor">@color/color_white</item>
-
+    <style name="ButtonColor" parent="@android:style/Widget.Button">
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:textSize">12sp</item>
     </style>
--->
 
 </resources>

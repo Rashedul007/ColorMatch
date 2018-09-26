@@ -92,15 +92,15 @@ public class MainActivity extends AppCompatActivity
                 int id = item.getItemId();
                 switch(id)
                 {
-                    case R.id.mn_subscribe:
+                    /*case R.id.mn_subscribe:
                         Toast.makeText(mContext, "Susbscribe",Toast.LENGTH_SHORT).show();
-                        break;
+                        break;*/
                     case R.id.mn_permissions:
                         func_navItem_permission();
                         break;
-                    case R.id.mn_options:
+                  /*  case R.id.mn_options:
                         Toast.makeText(mContext, "Options",Toast.LENGTH_SHORT).show();
-                        break;
+                        break;*/
                     case R.id.mn_uninstall:
                         func_navItem_exit();
                         break;
@@ -391,6 +391,9 @@ private void func_navItem_exit()
         i.setData(Uri.parse(url));
         startActivity(i);
     }
+
+
+
 
 
 }

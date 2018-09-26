@@ -1,20 +1,20 @@
 -- Merging decision tree log ---
 provider#android.support.v4.content.FileProvider
-INJECTED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:47:9-55:20
+INJECTED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:62:9-70:20
 	android:grantUriPermissions
-		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:51:13-47
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:66:13-47
 	android:authorities
 		INJECTED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml
-		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:49:13-60
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:64:13-60
 	android:exported
-		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:50:13-37
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:65:13-37
 	android:name
-		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:48:13-67
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:63:13-67
 manifest
-ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:2:1-69:12
-INJECTED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:2:1-69:12
-INJECTED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:2:1-69:12
-INJECTED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:2:1-69:12
+ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:2:1-115:12
+INJECTED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:2:1-115:12
+INJECTED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:2:1-115:12
+INJECTED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:2:1-115:12
 MERGED from [com.android.support:design:26.1.0] C:\Users\rhsha\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\771a50645b9545f3c236b6f76167d458\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\rhsha\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\8d64d4d9c72db1795a0fadcf7e5c6dbf\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\rhsha\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\0cd8baf6f871adbfd3d82be5a1abd4ba\AndroidManifest.xml:2:1-11:12
@@ -32,20 +32,20 @@ MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\rhsha\.grad
 MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\rhsha\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\92809be4dfcdf4efc7d80ea6441510c3\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:support-compat:26.1.0] C:\Users\rhsha\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\2b8bcb4c3bfc6ef6e11b4bfff250617a\AndroidManifest.xml:17:1-31:12
 MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\rhsha\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\dd9791b06fd21cda21ad30b5be89ebd1\AndroidManifest.xml:17:1-30:12
-INJECTED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:2:1-69:12
-INJECTED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:2:1-69:12
-INJECTED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:2:1-69:12
+INJECTED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:2:1-115:12
+INJECTED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:2:1-115:12
+INJECTED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:2:1-115:12
 	package
 		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:3:5-52
 		INJECTED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml
 		INJECTED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml
-		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:2:1-69:12
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:2:1-115:12
 		INJECTED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml
-		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:2:1-69:12
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:2:1-115:12
 		INJECTED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:2:11-69
@@ -70,7 +70,7 @@ ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.x
 	android:name
 		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:9:22-64
 application
-ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:15:5-67:19
+ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:16:5-113:19
 MERGED from [com.android.support:design:26.1.0] C:\Users\rhsha\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\771a50645b9545f3c236b6f76167d458\AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:design:26.1.0] C:\Users\rhsha\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\771a50645b9545f3c236b6f76167d458\AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\rhsha\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\8d64d4d9c72db1795a0fadcf7e5c6dbf\AndroidManifest.xml:25:5-29:19
@@ -106,87 +106,141 @@ MERGED from [com.android.support:support-compat:26.1.0] C:\Users\rhsha\.gradle\c
 MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\rhsha\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\dd9791b06fd21cda21ad30b5be89ebd1\AndroidManifest.xml:24:5-28:19
 MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\rhsha\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\dd9791b06fd21cda21ad30b5be89ebd1\AndroidManifest.xml:24:5-28:19
 	android:supportsRtl
-		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:22:9-35
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:23:9-35
 	android:label
-		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:19:9-41
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:20:9-41
 	android:roundIcon
-		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:21:9-54
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:22:9-48
 	android:largeHeap
-		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:20:9-33
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:21:9-33
 	android:icon
-		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:18:9-43
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:19:9-43
 	android:allowBackup
-		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:17:9-36
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:18:9-36
 	android:theme
-		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:23:9-52
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:24:9-52
 	android:name
-		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:16:9-36
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:17:9-36
 activity#com.simplelifesolutions.palettestudio.Activities.LoginActivity
-ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:25:9-62
+ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:26:9-27:55
+	android:screenOrientation
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:27:13-49
 	android:name
-		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:25:19-59
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:26:19-59
 activity#com.simplelifesolutions.palettestudio.Activities.MainActivity
-ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:27:9-33:20
+ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:30:9-37:20
+	android:screenOrientation
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:31:13-49
 	android:name
-		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:27:19-58
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:30:19-58
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:28:13-32:29
+ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:32:13-36:29
 action#android.intent.action.MAIN
-ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:29:17-69
+ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:33:17-69
 	android:name
-		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:29:25-66
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:33:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:31:17-77
+ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:35:17-77
 	android:name
-		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:31:27-74
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:35:27-74
 activity#com.simplelifesolutions.palettestudio.Activities.ImagePickerActivity
-ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:35:9-68
+ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:40:9-41:55
+	android:screenOrientation
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:41:13-49
 	android:name
-		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:35:19-65
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:40:19-65
 activity#com.simplelifesolutions.palettestudio.Activities.ColorPickerActivity
-ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:37:9-68
+ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:44:9-45:55
+	android:screenOrientation
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:45:13-49
 	android:name
-		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:37:19-65
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:44:19-65
 activity#com.simplelifesolutions.palettestudio.Activities.PaletteListActivity
-ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:39:9-68
+ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:47:9-48:55
+	android:screenOrientation
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:48:13-49
 	android:name
-		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:39:19-65
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:47:19-65
 activity#com.simplelifesolutions.palettestudio.Activities.PaletteDetailsActivity
-ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:41:9-71
+ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:51:9-52:55
+	android:screenOrientation
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:52:13-49
 	android:name
-		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:41:19-68
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:51:19-68
 activity#com.simplelifesolutions.palettestudio.Activities.ColorMatchingActivity
-ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:43:9-70
+ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:55:9-56:55
+	android:screenOrientation
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:56:13-49
 	android:name
-		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:43:19-67
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:55:19-67
 activity#com.simplelifesolutions.palettestudio.Activities.ColorListFromImageActivity
-ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:45:9-75
+ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:59:9-60:55
+	android:screenOrientation
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:60:13-49
 	android:name
-		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:45:19-72
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:59:19-72
 activity#com.simplelifesolutions.palettestudio.Activities.CustomCameraActivity
-ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:57:9-69
+ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:72:9-73:55
+	android:screenOrientation
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:73:13-49
 	android:name
-		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:57:19-66
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:72:19-66
 activity#com.simplelifesolutions.palettestudio.Activities.CallingCameraActivity
-ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:59:9-70
+ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:76:9-77:55
+	android:screenOrientation
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:77:13-49
 	android:name
-		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:59:19-67
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:76:19-67
 activity#com.simplelifesolutions.palettestudio.Activities.Camera2Activity
-ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:61:9-64
+ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:80:9-81:55
+	android:screenOrientation
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:81:13-49
 	android:name
-		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:61:19-61
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:80:19-61
 activity#com.simplelifesolutions.palettestudio.Activities.About
-ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:64:9-54
+ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:84:9-85:55
+	android:screenOrientation
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:85:13-49
 	android:name
-		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:64:19-51
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:84:19-51
 activity#com.simplelifesolutions.palettestudio.Activities.Support
-ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:65:9-56
+ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:88:9-89:55
+	android:screenOrientation
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:89:13-49
 	android:name
-		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:65:19-53
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:88:19-53
 activity#com.simplelifesolutions.palettestudio.Activities.SharingActivity
-ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:66:9-64
+ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:92:9-93:55
+	android:screenOrientation
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:93:13-49
 	android:name
-		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:66:19-61
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:92:19-61
+activity#com.simplelifesolutions.palettestudio.Activities.DownloadSharedPaletteActivity
+ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:95:9-110:20
+	android:screenOrientation
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:96:13-49
+	android:name
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:95:19-75
+intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:host:simple-life-solutions.com+data:scheme:https
+ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:97:13-109:29
+action#android.intent.action.VIEW
+ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:104:17-69
+	android:name
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:104:25-66
+category#android.intent.category.DEFAULT
+ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:105:17-76
+	android:name
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:105:27-73
+category#android.intent.category.BROWSABLE
+ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:106:17-78
+	android:name
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:106:27-75
+data
+ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:108:17-91
+	android:host
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:108:24-64
+	android:scheme
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:108:66-88
 uses-sdk
 INJECTED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml
@@ -238,11 +292,11 @@ INJECTED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifes
 		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml
 		INJECTED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:52:13-54:61
+ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:67:13-69:61
 	android:resource
-		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:54:17-58
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:69:17-58
 	android:name
-		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:53:17-67
+		ADDED from C:\AndroidStudioProjects\PaletteStudio\app\src\main\AndroidManifest.xml:68:17-67
 meta-data#android.support.VERSION
 ADDED from [com.android.support:design:26.1.0] C:\Users\rhsha\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\771a50645b9545f3c236b6f76167d458\AndroidManifest.xml:26:9-28:38
 MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\rhsha\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\8d64d4d9c72db1795a0fadcf7e5c6dbf\AndroidManifest.xml:26:9-28:38

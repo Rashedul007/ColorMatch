@@ -41,6 +41,8 @@
                 android:layout_height="30dp"
                 android:layout_gravity="center_horizontal|left|end"
                 android:background="@drawable/ic_eye"
+                android:layout_marginTop="-5dp"
+                android:layout_marginRight="-5dp"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentRight="true"/>
 
@@ -50,6 +52,8 @@
                 android:layout_height="30dp"
                 android:layout_gravity="center_horizontal|right|end"
                 android:background="@drawable/ic_cam"
+                android:layout_marginTop="-5dp"
+                android:layout_marginLeft="-5dp"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentLeft="true"/>
 

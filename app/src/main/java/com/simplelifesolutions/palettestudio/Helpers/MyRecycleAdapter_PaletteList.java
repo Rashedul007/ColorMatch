@@ -123,15 +123,18 @@ public class MyRecycleAdapter_PaletteList extends RecyclerView.Adapter<MyRecycle
                                    {
                                        if(!beanClass.get_paletteObj().getCoverID().equals("0")) {
                                            for (BeanObject mObj : beanClass.get_imgOrClrObjLst()) {
-                                               BeanImage imgObj = (BeanImage) mObj.getAnyObjLst();
-                                               String mainImgPath = imgObj.getimagePath();
-                                               String thumbPath = imgObj.getThumbPath();
+                                               if (mObj.getFlag_imgOrClr().equals("image"))
+                                               {
+                                                   BeanImage imgObj = (BeanImage) mObj.getAnyObjLst();
+                                                   String mainImgPath = imgObj.getimagePath();
+                                                   String thumbPath = imgObj.getThumbPath();
 
-                                               if (chkImageExist(mainImgPath))
-                                                   MyImageHelper.deleteRecursive(new File(mainImgPath));
+                                                   if (chkImageExist(mainImgPath))
+                                                       MyImageHelper.deleteRecursive(new File(mainImgPath));
 
-                                               if (chkImageExist(thumbPath))
-                                                   MyImageHelper.deleteRecursive(new File(thumbPath));
+                                                   if (chkImageExist(thumbPath))
+                                                       MyImageHelper.deleteRecursive(new File(thumbPath));
+                                                }
                                            }
                                        }
                                    }

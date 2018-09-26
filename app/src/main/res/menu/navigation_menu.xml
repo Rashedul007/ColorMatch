@@ -2,15 +2,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:title="Settings">
         <menu>
-            <item android:id="@+id/mn_subscribe"
+           <!-- <item android:id="@+id/mn_subscribe"
                 android:icon="@drawable/ic_subscribe"
-                android:title="@string/subscribe_unsubscribe"/>
+                android:title="@string/subscribe_unsubscribe"/>-->
             <item android:id="@+id/mn_permissions"
                 android:icon="@drawable/ic_permission"
                 android:title="@string/permissions"/>
-            <item android:id="@+id/mn_options"
+       <!--     <item android:id="@+id/mn_options"
                 android:icon="@drawable/ic_storage"
-                android:title="@string/storage_options"/>
+                android:title="@string/storage_options"/>-->
             <item android:id="@+id/mn_uninstall"
                 android:icon="@drawable/ic_exit"
                 android:title="@string/exit"/>

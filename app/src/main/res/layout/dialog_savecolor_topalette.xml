@@ -35,7 +35,8 @@
             android:layout_marginLeft="10dp"
             android:textStyle="italic"
             android:textColor="@color/color_white"
-            android:text="..."/>
+            android:text="..."
+            android:imeOptions="actionDone"/>
     </LinearLayout>
 
     <TextView
@@ -57,7 +58,8 @@
             android:padding="5dp"
             android:background="@drawable/custom_edittext_bg"
             android:textColor="@color/color_black"
-            android:drawablePadding="10dp" >
+            android:drawablePadding="10dp"
+            android:inputType="text"    >
 
         <requestFocus />
     </EditText>
@@ -107,7 +109,8 @@
             android:background="@drawable/custom_edittext_bg"
             android:drawablePadding="10dp"
             android:textColor="@color/color_black"
-            android:visibility="gone"/>
+            android:visibility="gone"
+            android:inputType="text"    />
 
     </RadioGroup>
 

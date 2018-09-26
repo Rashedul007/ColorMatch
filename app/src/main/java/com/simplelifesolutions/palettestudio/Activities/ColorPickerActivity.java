@@ -198,7 +198,7 @@ public class ColorPickerActivity extends AppCompatActivity
                     Log.d("dbResult_explt", "Color Created DBresult:::" + dbColorInsert.toString() + " pltID_from_Spinner: " + _ColorObj.getPaletteID().toString());
 
                     if (dbColorInsert == -1)
-                        Toast.makeText(mContext, "Something went wrong when saving the color in the palette!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(mContext, "Something went wrong when saving the color in the palette! \n Please try giving another name.", Toast.LENGTH_SHORT).show();
                     else {
                         if (mChkBx.isChecked()) {
                             Toast.makeText(mContext, "Image saved succssfuly!", Toast.LENGTH_SHORT).show();
@@ -228,7 +228,7 @@ public class ColorPickerActivity extends AppCompatActivity
             Log.d("dbResult_explt", "Image Created DBresult:::" + dbColorInsert.toString() + " pltID_from_Spinner: " + _ColorObj.getPaletteID().toString());
 
             if (dbColorInsert == -1)
-                Toast.makeText(mContext, "Something went wrong when saving the color in existing palette!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(mContext, "Something went wrong when saving the color in existing palette!\n Please try giving another name.", Toast.LENGTH_SHORT).show();
             else
             {
                 if(mChkBx_addAsCover.isChecked()) {

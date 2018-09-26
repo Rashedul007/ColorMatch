@@ -221,7 +221,7 @@ public class DatabaseHelper extends SQLiteOpenHelper
 
         String selectQuery = "SELECT  * FROM " + TABLE_MAIN + " WHERE paletteid_pk=" + mPltid;
 
-        Log.e(LOG, selectQuery);
+        Log.d(LOG, selectQuery);
 
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = db.rawQuery(selectQuery, null);

@@ -519,11 +519,13 @@ public class PaletteDetailsActivity extends AppCompatActivity
                             if(str_error_substr.equals("Error"))
                                 {   Toast.makeText(getApplication(), "" + result_shareID , Toast.LENGTH_LONG).show(); }
                             else {
-                                String str_sms = "http://simple-life-solutions.com/ceye/colorapp_share_response.php?arg_shareID="+result_shareID ;
+                              String str_sms = "https://simple-life-solutions.com/ceye/colorapp_share_response.php?arg_shareID="+result_shareID ;
+                              //  String str_sms = "https://simple-life-solutions.com/ceye/colorapp_share_response__new.php?arg_shareID="+result_shareID ;
                                 //Log.d("msg_frm_server","URL should be:: " + str_sms) ;
                                 // sendSMSwithOutSmsApp("+447826305563", str_sms); //rausan
 
-                                sendSmsApp(str_sms);
+                              //  sendSmsApp(str_sms);
+                                sharePalette(str_sms);
 
                             }
 
@@ -569,6 +571,20 @@ public class PaletteDetailsActivity extends AppCompatActivity
         smsIntent.setType("vnd.android-dir/mms-sms");
         smsIntent.putExtra("sms_body",argMsg);
         startActivity(smsIntent);
+    }
+
+
+    private void sharePalette(String argMsg)
+    {
+
+        Intent sendIntent = new Intent();
+        sendIntent.setAction(Intent.ACTION_SEND);
+        sendIntent.putExtra(Intent.EXTRA_TEXT, argMsg);
+        sendIntent.setType("text/plain");
+       // startActivity(sendIntent);
+        startActivity(Intent.createChooser(sendIntent, getResources().getText(R.string.share_send_to)));
+        finish();
+
     }
 
 //endregion

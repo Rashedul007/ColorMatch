@@ -19,7 +19,8 @@
         android:background="@drawable/custom_edittext_bg"
         android:drawablePadding="10dp"
         android:textColor="@color/textcolor"
-        android:drawableLeft="@drawable/ic_custom_username"/>
+        android:drawableLeft="@drawable/ic_custom_username"
+        android:imeOptions="actionDone"/>
 
     <EditText
         android:id="@+id/edt_loginpass"
@@ -31,7 +32,8 @@
         android:background="@drawable/custom_edittext_bg"
         android:drawablePadding="10dp"
         android:textColor="@color/textcolor"
-        android:drawableLeft="@drawable/ic_custom_password"/>
+        android:drawableLeft="@drawable/ic_custom_password"
+        android:imeOptions="actionDone"/>
 
     <Button
         android:id="@+id/btn_login"
